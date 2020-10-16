@@ -56,6 +56,19 @@ class OxfordClient(
         return entries(EntryQuery(word))
     }
 
+    /**
+     * /api/v2/lemmas/{source_lang}/{word_id}:
+     * Use this to check if a word exists in the dictionary, or what 'root' form it links to (e.g., swimming > swim).
+     *
+     * The response tells you the possible lemmas for a given inflected word. This can then be combined with other
+     * endpoints to retrieve more information.
+     *
+     * The results can be filtered by lexicalCategories and/or grammaticalFeatures. Filters can be combined.
+     * Combining different filters will build a query using 'AND' operators, while if a filter contains more than
+     * one value it will build a query using 'OR' operators. For example, a combination of filters
+     * like '?grammaticalFeatures=singular&lexicalCategory=noun,verb' will return entries which match
+     * the query ('noun' OR 'verb') AND 'singular'.
+     */
     fun lemmas(query: LemmaQuery): Lemmatron? {
         val httpUrl = createUrl(query)
         val request = createRequest(httpUrl)
