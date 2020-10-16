@@ -1,5 +1,6 @@
 package com.github.sparkmuse
 
+import com.github.sparkmuse.entries.EntryQuery
 import com.github.sparkmuse.wiremock.Wiremock
 import com.github.sparkmuse.wiremock.WiremockExtension
 import com.github.tomakehurst.wiremock.WireMockServer

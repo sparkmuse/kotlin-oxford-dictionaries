@@ -1,4 +1,4 @@
-package com.github.sparkmuse
+package com.github.sparkmuse.entries
 
 import com.fasterxml.jackson.annotation.JsonProperty
 

@@ -2,6 +2,8 @@ package com.github.sparkmuse
 
 import com.fasterxml.jackson.core.JsonProcessingException
 import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
+import com.github.sparkmuse.entries.EntryQuery
+import com.github.sparkmuse.entries.RetrieveEntry
 import mu.KotlinLogging
 import okhttp3.HttpUrl
 import okhttp3.HttpUrl.Companion.toHttpUrl
