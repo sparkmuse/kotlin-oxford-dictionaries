@@ -1,4 +1,4 @@
-package com.github.sparkmuse.common
+package com.github.sparkmuse.query
 
 interface Query {
     fun parameters(): Map<String, String>

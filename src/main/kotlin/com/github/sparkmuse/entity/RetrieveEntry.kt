@@ -1,4 +1,4 @@
-package com.github.sparkmuse.entries
+package com.github.sparkmuse.entity
 
 import com.fasterxml.jackson.annotation.JsonProperty
 
@@ -238,17 +238,6 @@ data class RelatedEntry(
     val text: String
 )
 
-data class GrammaticalFeature(
-
-    val id: String,
-    val text: String,
-    val type: String
-)
-
-data class LexicalCategory(
-    val id: String,
-    val text: String
-)
 
 data class Entry(
 

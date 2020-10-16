@@ -1,6 +1,4 @@
-package com.github.sparkmuse.lemmas
-
-import com.github.sparkmuse.common.Query
+package com.github.sparkmuse.query
 
 class LemmaQuery(
 

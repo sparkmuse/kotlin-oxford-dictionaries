@@ -1,8 +1,8 @@
 package com.github.sparkmuse
 
 import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
-import com.github.sparkmuse.entries.RetrieveEntry
-import com.github.sparkmuse.lemmas.Lemmatron
+import com.github.sparkmuse.entity.RetrieveEntry
+import com.github.sparkmuse.entity.Lemmatron
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.DisplayName
 import org.junit.jupiter.api.Test

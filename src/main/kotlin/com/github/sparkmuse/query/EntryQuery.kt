@@ -1,7 +1,4 @@
-package com.github.sparkmuse.entries
-
-import com.github.sparkmuse.common.Query
-import com.github.sparkmuse.lemmas.SourceLanguage
+package com.github.sparkmuse.query
 
 class EntryQuery(
 

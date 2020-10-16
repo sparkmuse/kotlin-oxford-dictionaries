@@ -1,4 +1,4 @@
-package com.github.sparkmuse.entries
+package com.github.sparkmuse.query
 
 import com.github.nylle.javafixture.Fixture
 import org.assertj.core.api.Assertions.assertThat

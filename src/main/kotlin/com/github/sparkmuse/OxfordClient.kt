@@ -2,11 +2,11 @@ package com.github.sparkmuse
 
 import com.fasterxml.jackson.core.JsonProcessingException
 import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
-import com.github.sparkmuse.common.Query
-import com.github.sparkmuse.entries.EntryQuery
-import com.github.sparkmuse.entries.RetrieveEntry
-import com.github.sparkmuse.lemmas.LemmaQuery
-import com.github.sparkmuse.lemmas.Lemmatron
+import com.github.sparkmuse.query.Query
+import com.github.sparkmuse.query.EntryQuery
+import com.github.sparkmuse.entity.RetrieveEntry
+import com.github.sparkmuse.query.LemmaQuery
+import com.github.sparkmuse.entity.Lemmatron
 import mu.KotlinLogging
 import okhttp3.HttpUrl
 import okhttp3.HttpUrl.Companion.toHttpUrl

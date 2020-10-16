@@ -1,4 +1,4 @@
-package com.github.sparkmuse.lemmas
+package com.github.sparkmuse.entity
 
 data class Lemmatron(
 
@@ -29,7 +29,7 @@ data class HeadwordLemmatron(
     /**
      * A grouping of various senses in a specific language, and a lexical category that relates to a word
      */
-    val lexicalEntries: List<LexicalEntry>,
+    val lexicalEntries: List<LemmatronLexicalEntry>,
 
     /**
      * The json object type. Could be 'headword', 'inflection' or 'phrase' (Optional)
@@ -43,7 +43,7 @@ data class HeadwordLemmatron(
 )
 
 
-data class LexicalEntry(
+data class LemmatronLexicalEntry(
 
     /**
      * GrammaticalFeatures (Optional)
@@ -53,7 +53,7 @@ data class LexicalEntry(
     /**
      * The canonical form of words for which the entry is an inflection
      */
-    val inflectionOf: List<Inflection>,
+    val inflectionOf: List<LematronInflection>,
 
     /**
      * IANA language code
@@ -73,18 +73,7 @@ data class LexicalEntry(
     val text: String
 )
 
-class GrammaticalFeature(
-    val id: String,
-    val text: String,
-    val type: String,
-)
-
-data class Inflection(
-    val id: String,
-    val text: String
-)
-
-data class LexicalCategory(
+data class LematronInflection(
     val id: String,
     val text: String
 )
