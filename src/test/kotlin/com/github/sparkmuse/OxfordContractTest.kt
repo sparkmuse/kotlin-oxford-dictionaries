@@ -8,10 +8,10 @@ import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.DisplayName
 import org.junit.jupiter.api.Test
 
+@DisplayName("correctly deserializes")
 class OxfordContractTest {
 
     @Test
-    @DisplayName("/entries")
     fun entries() {
 
         val json = OxfordContractTest::class.java.getResource("/__files/entries.json").readText()
@@ -22,7 +22,6 @@ class OxfordContractTest {
     }
 
     @Test
-    @DisplayName("correctly deserializes lemmas")
     fun lemmas() {
 
         val json = OxfordContractTest::class.java.getResource("/__files/lemmas.json").readText()
@@ -33,10 +32,19 @@ class OxfordContractTest {
     }
 
     @Test
-    @DisplayName("correctly deserializes search translations")
-    fun searchTranslations() {
+    fun `search translations`() {
 
         val json = OxfordContractTest::class.java.getResource("/__files/search_translations.json").readText()
+
+        val wordlist = jacksonObjectMapper().readValue(json, Wordlist::class.java)
+
+        assertThat(wordlist).isNotNull
+    }
+
+    @Test
+    fun search() {
+
+        val json = OxfordContractTest::class.java.getResource("/__files/search.json").readText()
 
         val wordlist = jacksonObjectMapper().readValue(json, Wordlist::class.java)
 

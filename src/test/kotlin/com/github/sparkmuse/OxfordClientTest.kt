@@ -16,8 +16,7 @@ class OxfordClientTest {
     lateinit var wiremock: WireMockServer
 
     @Test
-    @DisplayName("gets the entries")
-    fun getEntries() {
+    fun `gets entries`() {
 
         val oxfordClient = OxfordClient("appId", "appKey", wiremock.baseUrl())
 
@@ -37,8 +36,7 @@ class OxfordClientTest {
     }
 
     @Test
-    @DisplayName("gets the lemmas")
-    fun getLemmas() {
+    fun `gets lemmas`() {
 
         val oxfordClient = OxfordClient("appId", "appKey", wiremock.baseUrl())
 
@@ -57,8 +55,7 @@ class OxfordClientTest {
     }
 
     @Test
-    @DisplayName("gets search translations")
-    fun getSearchTranslations() {
+    fun `gets search translations`() {
 
         val oxfordClient = OxfordClient("appId", "appKey", wiremock.baseUrl())
 
@@ -77,8 +74,26 @@ class OxfordClientTest {
     }
 
     @Test
-    @DisplayName("gets null entry when error")
-    fun getEntriesError() {
+    fun `gets search`() {
+
+        val oxfordClient = OxfordClient("appId", "appKey", wiremock.baseUrl())
+
+        wiremock.stubFor(
+            get(urlPathMatching("/search/en-gb"))
+                .willReturn(
+                    aResponse()
+                        .withStatus(200)
+                        .withBodyFile("search.json")
+                )
+        )
+
+        val retrieveEntry = oxfordClient.search("ace")
+
+        assertThat(retrieveEntry).isNotNull
+    }
+
+    @Test
+    fun `gets null entry when error`() {
 
         val oxfordClient = OxfordClient("appId", "appKey", wiremock.baseUrl())
 

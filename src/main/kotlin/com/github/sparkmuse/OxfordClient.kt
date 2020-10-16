@@ -8,6 +8,7 @@ import com.github.sparkmuse.entity.RetrieveEntry
 import com.github.sparkmuse.query.LemmaQuery
 import com.github.sparkmuse.entity.Lemmatron
 import com.github.sparkmuse.entity.search.Wordlist
+import com.github.sparkmuse.query.search.SearchQuery
 import com.github.sparkmuse.query.search.SearchTranslationsQuery
 import mu.KotlinLogging
 import okhttp3.HttpUrl
@@ -99,6 +100,23 @@ class OxfordClient(
      */
     fun searchTranslations(query: String): Wordlist? {
         return searchTranslations(SearchTranslationsQuery(query))
+    }
+
+    /**
+     * /search/translations/{source_lang_search}/{target_lang_search}:
+     * Use this to find possible translations for a given word.
+     */
+    fun search(query: SearchQuery): Wordlist? {
+        val httpUrl = createUrl(query)
+        val request = createRequest(httpUrl)
+        return call(request)
+    }
+
+    /**
+     * @see OxfordClient.search
+     */
+    fun search(query: String): Wordlist? {
+        return search(SearchQuery(query))
     }
 
     /**
