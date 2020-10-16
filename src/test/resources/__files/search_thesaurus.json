@@ -1,0 +1,22 @@
+{
+  "metadata": {
+    "limit": "5000",
+    "offset": "0",
+    "operation": "search",
+    "provider": "Oxford University Press",
+    "schema": "WordList",
+    "sourceLanguage": "en-gb",
+    "total": "1"
+  },
+  "results": [
+    {
+      "id": "ace",
+      "label": "ace",
+      "matchString": "ace",
+      "matchType": "headword",
+      "region": "gb",
+      "score": 151.9758,
+      "word": "ace"
+    }
+  ]
+}

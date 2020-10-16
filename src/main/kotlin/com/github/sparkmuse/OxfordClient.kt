@@ -7,8 +7,9 @@ import com.github.sparkmuse.query.EntryQuery
 import com.github.sparkmuse.entity.RetrieveEntry
 import com.github.sparkmuse.query.LemmaQuery
 import com.github.sparkmuse.entity.Lemmatron
-import com.github.sparkmuse.entity.search.Wordlist
+import com.github.sparkmuse.entity.search.WordList
 import com.github.sparkmuse.query.search.SearchQuery
+import com.github.sparkmuse.query.search.SearchThesaurusQuery
 import com.github.sparkmuse.query.search.SearchTranslationsQuery
 import mu.KotlinLogging
 import okhttp3.HttpUrl
@@ -89,7 +90,7 @@ class OxfordClient(
      * /search/translations/{source_lang_search}/{target_lang_search}:
      * Use this to find possible translations for a given word.
      */
-    fun searchTranslations(query: SearchTranslationsQuery): Wordlist? {
+    fun searchTranslations(query: SearchTranslationsQuery): WordList? {
         val httpUrl = createUrl(query)
         val request = createRequest(httpUrl)
         return call(request)
@@ -98,15 +99,16 @@ class OxfordClient(
     /**
      * @see OxfordClient.searchTranslations
      */
-    fun searchTranslations(query: String): Wordlist? {
+    fun searchTranslations(query: String): WordList? {
         return searchTranslations(SearchTranslationsQuery(query))
     }
 
     /**
-     * /search/translations/{source_lang_search}/{target_lang_search}:
-     * Use this to find possible translations for a given word.
+     * /api/v2/search/{source_lang}:
+     * Use this to retrieve possible headword matches for a given string of text.
+     * The results are calculated using headword matching, fuzzy matching, and lemmatization
      */
-    fun search(query: SearchQuery): Wordlist? {
+    fun search(query: SearchQuery): WordList? {
         val httpUrl = createUrl(query)
         val request = createRequest(httpUrl)
         return call(request)
@@ -115,9 +117,28 @@ class OxfordClient(
     /**
      * @see OxfordClient.search
      */
-    fun search(query: String): Wordlist? {
+    fun search(query: String): WordList? {
         return search(SearchQuery(query))
     }
+
+    /**
+     * /api/v2/search/thesaurus/{source_lang}:
+     * Use this to retrieve possible headword matches for a given string of text.
+     * The results are calculated using headword matching, fuzzy matching, and lemmatization
+     */
+    fun searchThesaurus(query: SearchThesaurusQuery): WordList? {
+        val httpUrl = createUrl(query)
+        val request = createRequest(httpUrl)
+        return call(request)
+    }
+
+    /**
+     * @see OxfordClient.searchThesaurus
+     */
+    fun searchThesaurus(query: String): WordList? {
+        return searchThesaurus(SearchThesaurusQuery(query))
+    }
+
 
     /**
      * Makes the actual call using the client.

@@ -16,3 +16,7 @@ enum class LanguageMonolingual(val value: String) {
 enum class LanguageBilingual() {
     en, ar, de, el, es, ha, hi, id, it, mr, ms, nso, pt, qu, ru, te, tk, tn, tpi, tt, ur, xh, zh, zu;
 }
+
+enum class LanguageThesaurus() {
+    en
+}

@@ -1,6 +1,6 @@
 package com.github.sparkmuse.entity.search
 
-data class Wordlist(
+data class WordList(
 
     /**
      *  Additional Information provided by OUP (Optional)
@@ -21,6 +21,11 @@ data class Results(
     val id: String,
 
     /**
+     * Label (Optional)
+     */
+    val label: String = "",
+
+    /**
      * MatchString (Optional)
      */
     val matchString: String = "",
@@ -34,6 +39,11 @@ data class Results(
      * Name of region. (Optional)
      */
     val region: String = "",
+
+    /**
+     * Score (Optional)
+     */
+    val score: Double = 0.0,
 
     /**
      * A given written or spoken realisation of an entry, lowercased. (Deprecated, Optional)

@@ -2,6 +2,7 @@ package com.github.sparkmuse.query
 
 import com.github.nylle.javafixture.Fixture
 import com.github.sparkmuse.query.search.SearchQuery
+import com.github.sparkmuse.query.search.SearchThesaurusQuery
 import com.github.sparkmuse.query.search.SearchTranslationsQuery
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.DisplayName
@@ -40,6 +41,24 @@ class SearchQueryTest {
         )
 
         val actual = searchQuery.parameters()
+
+        assertThat(actual).containsExactlyEntriesOf(expected)
+
+    }
+
+    @Test
+    fun `search thesaurus`() {
+
+        val searchThesaurusQuery = Fixture.fixture().create(SearchThesaurusQuery::class.java)
+
+        val expected = mapOf(
+            "q" to searchThesaurusQuery.q,
+            "prefix" to searchThesaurusQuery.prefix.toString(),
+            "limit" to searchThesaurusQuery.limit.toString(),
+            "offset" to searchThesaurusQuery.offset.toString(),
+        )
+
+        val actual = searchThesaurusQuery.parameters()
 
         assertThat(actual).containsExactlyEntriesOf(expected)
 

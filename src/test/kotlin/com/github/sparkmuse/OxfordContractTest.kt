@@ -3,7 +3,7 @@ package com.github.sparkmuse
 import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
 import com.github.sparkmuse.entity.RetrieveEntry
 import com.github.sparkmuse.entity.Lemmatron
-import com.github.sparkmuse.entity.search.Wordlist
+import com.github.sparkmuse.entity.search.WordList
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.DisplayName
 import org.junit.jupiter.api.Test
@@ -36,7 +36,7 @@ class OxfordContractTest {
 
         val json = OxfordContractTest::class.java.getResource("/__files/search_translations.json").readText()
 
-        val wordlist = jacksonObjectMapper().readValue(json, Wordlist::class.java)
+        val wordlist = jacksonObjectMapper().readValue(json, WordList::class.java)
 
         assertThat(wordlist).isNotNull
     }
@@ -46,8 +46,18 @@ class OxfordContractTest {
 
         val json = OxfordContractTest::class.java.getResource("/__files/search.json").readText()
 
-        val wordlist = jacksonObjectMapper().readValue(json, Wordlist::class.java)
+        val wordlist = jacksonObjectMapper().readValue(json, WordList::class.java)
 
         assertThat(wordlist).isNotNull
+    }
+
+    @Test
+    fun `search thesaurus`() {
+
+        val json = OxfordContractTest::class.java.getResource("/__files/search_thesaurus.json").readText()
+
+        val thesaurusWordList = jacksonObjectMapper().readValue(json, WordList::class.java)
+
+        assertThat(thesaurusWordList).isNotNull
     }
 }
