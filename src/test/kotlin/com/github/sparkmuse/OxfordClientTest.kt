@@ -37,6 +37,27 @@ class OxfordClientTest {
     }
 
     @Test
+    @DisplayName("uses all values from query")
+    fun getEntriesQuery() {
+
+        val oxfordClient = OxfordClient("appId", "appKey", wiremock.baseUrl())
+
+        wiremock.stubFor(
+            get(urlPathMatching("/entries/en-gb/ace"))
+                .withQueryParam("strictMatch", equalTo("false"))
+                .willReturn(
+                    aResponse()
+                        .withStatus(200)
+                        .withBodyFile("entries.json")
+                )
+        )
+
+        val retrieveEntry = oxfordClient.entries(EntryQuery("ace"))
+
+        assertThat(retrieveEntry).isNotNull
+    }
+
+    @Test
     @DisplayName("gets null entry when error")
     fun getEntriesError() {
 
