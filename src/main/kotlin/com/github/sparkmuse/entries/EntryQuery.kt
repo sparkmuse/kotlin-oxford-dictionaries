@@ -1,5 +1,8 @@
 package com.github.sparkmuse.entries
 
+import com.github.sparkmuse.common.Query
+import com.github.sparkmuse.lemmas.SourceLanguage
+
 class EntryQuery(
 
     /**
@@ -66,20 +69,15 @@ class EntryQuery(
      * Specifies whether diacritics must match exactly. If "false", near-homographs for the given word_id will
      * also be selected (e.g., rose matches both rose and rosé; similarly rosé matches both).
      */
-    val strictMatch: Boolean = false,
-) {
+    val strictMatch: Boolean = false
 
-    /**
-     * The api endpoint for the call
-     */
-    private val _api: String = "entries"
-    val api: String
-        get() = _api
+) : Query {
+
 
     /**
      * Get gets the parameters of the call as a map of strings
      */
-    fun parameters(): Map<String, String> {
+    override fun parameters(): Map<String, String> {
         return mapOf(
             "fields" to fields.joinToString(","),
             "grammaticalFeatures" to grammaticalFeatures.joinToString(","),
@@ -88,6 +86,13 @@ class EntryQuery(
             "registers" to registers.joinToString(","),
             "strictMatch" to strictMatch.toString(),
         ).filterValues { it.isNotEmpty() };
+    }
+
+    /**
+     * Get the url path fragment for the call
+     */
+    override fun pathFragment(): String {
+        return "entries/${sourceLanguage.value}/$word"
     }
 }
 
@@ -100,17 +105,4 @@ enum class DataField {
     regions,
     registers,
     variantForms
-}
-
-enum class SourceLanguage(val value: String) {
-    English_gb("en-gb"),
-    English_us("en-us"),
-    Spanish("es"),
-    French("fr"),
-    Gujarati("gu"),
-    Hindi("hi"),
-    Latvian("lv"),
-    Romanian("ro"),
-    Swahili("sw"),
-    Tamil("ta")
 }

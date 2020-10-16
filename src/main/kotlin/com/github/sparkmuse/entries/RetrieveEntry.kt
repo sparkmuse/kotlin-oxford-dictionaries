@@ -51,15 +51,13 @@ data class HeadwordEntry(
     /**
      * The json object type. Could be 'headword', 'inflection' or 'phrase' (Optional)
      */
-    val type: HeadwordEntryType,
+    val type: String = "",
 
     /**
      * A given written or spoken realisation of an entry, lowercased. (Deprecated, Optional)
      */
     val word: String = ""
 )
-
-enum class HeadwordEntryType { headword, inflecction, phrase }
 
 data class LexicalEntry(
 

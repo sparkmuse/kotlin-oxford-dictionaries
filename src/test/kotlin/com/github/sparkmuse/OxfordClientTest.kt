@@ -1,6 +1,5 @@
 package com.github.sparkmuse
 
-import com.github.sparkmuse.entries.EntryQuery
 import com.github.sparkmuse.wiremock.Wiremock
 import com.github.sparkmuse.wiremock.WiremockExtension
 import com.github.tomakehurst.wiremock.WireMockServer
@@ -17,7 +16,7 @@ class OxfordClientTest {
     lateinit var wiremock: WireMockServer
 
     @Test
-    @DisplayName("gets the entries with default configuration")
+    @DisplayName("gets the entries")
     fun getEntries() {
 
         val oxfordClient = OxfordClient("appId", "appKey", wiremock.baseUrl())
@@ -38,22 +37,21 @@ class OxfordClientTest {
     }
 
     @Test
-    @DisplayName("uses all values from query")
-    fun getEntriesQuery() {
+    @DisplayName("gets the lemmas")
+    fun getLemmas() {
 
         val oxfordClient = OxfordClient("appId", "appKey", wiremock.baseUrl())
 
         wiremock.stubFor(
-            get(urlPathMatching("/entries/en-gb/ace"))
-                .withQueryParam("strictMatch", equalTo("false"))
+            get(urlPathMatching("/lemmas/en-gb/ace"))
                 .willReturn(
                     aResponse()
                         .withStatus(200)
-                        .withBodyFile("entries.json")
+                        .withBodyFile("lemmas.json")
                 )
         )
 
-        val retrieveEntry = oxfordClient.entries(EntryQuery("ace"))
+        val retrieveEntry = oxfordClient.lemmas("ace")
 
         assertThat(retrieveEntry).isNotNull
     }

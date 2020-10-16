@@ -13,7 +13,7 @@ class OxfordContractTest {
     @DisplayName("/entries")
     fun entries() {
 
-        val json = OxfordContractTest::class.java.getResource("/contracts/entries.json").readText()
+        val json = OxfordContractTest::class.java.getResource("/__files/entries.json").readText()
 
         val retrieveEntry = jacksonObjectMapper().readValue(json, RetrieveEntry::class.java)
 
@@ -24,7 +24,7 @@ class OxfordContractTest {
     @DisplayName("correctly deserializes lemmas")
     fun lemmas() {
 
-        val json = OxfordContractTest::class.java.getResource("/contracts/lemmas.json").readText()
+        val json = OxfordContractTest::class.java.getResource("/__files/lemmas.json").readText()
 
         val lemmatron = jacksonObjectMapper().readValue(json, Lemmatron::class.java)
 

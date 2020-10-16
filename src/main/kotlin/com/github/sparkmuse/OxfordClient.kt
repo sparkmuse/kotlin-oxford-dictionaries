@@ -2,8 +2,11 @@ package com.github.sparkmuse
 
 import com.fasterxml.jackson.core.JsonProcessingException
 import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
+import com.github.sparkmuse.common.Query
 import com.github.sparkmuse.entries.EntryQuery
 import com.github.sparkmuse.entries.RetrieveEntry
+import com.github.sparkmuse.lemmas.LemmaQuery
+import com.github.sparkmuse.lemmas.Lemmatron
 import mu.KotlinLogging
 import okhttp3.HttpUrl
 import okhttp3.HttpUrl.Companion.toHttpUrl
@@ -41,7 +44,7 @@ class OxfordClient(
      * query ('noun' OR 'verb') AND 'singular'.
      */
     fun entries(query: EntryQuery): RetrieveEntry? {
-        val httpUrl = createEntryUrl(query)
+        val httpUrl = createUrl(query)
         val request = createRequest(httpUrl)
         return call(request)
     }
@@ -53,6 +56,22 @@ class OxfordClient(
         return entries(EntryQuery(word))
     }
 
+    fun lemmas(query: LemmaQuery): Lemmatron? {
+        val httpUrl = createUrl(query)
+        val request = createRequest(httpUrl)
+        return call(request)
+    }
+
+    /**
+     * @see OxfordClient.lemmas
+     */
+    fun lemmas(word: String): Lemmatron? {
+        return lemmas(LemmaQuery(word))
+    }
+
+    /**
+     * Makes the actual call using the client.
+     */
     private inline fun <reified T> call(request: Request): T? {
         client.newCall(request).execute().use { response ->
             if (!response.isSuccessful) {
@@ -63,6 +82,9 @@ class OxfordClient(
         }
     }
 
+    /**
+     * Parses the response from the client and returns the parse object.
+     */
     private inline fun <reified T> parse(response: Response): T? {
         return try {
             val json = response.body?.string()
@@ -73,17 +95,21 @@ class OxfordClient(
         }
     }
 
-    private fun createEntryUrl(query: EntryQuery): HttpUrl {
+    /**
+     * Creates the url to get the entries
+     */
+    private fun createUrl(query: Query): HttpUrl {
         return baseUrl
             .toHttpUrl()
             .newBuilder()
-            .addPathSegment(query.api)
-            .addPathSegment(query.sourceLanguage.value)
-            .addPathSegment(query.word)
+            .addPathSegments(query.pathFragment())
             .apply { query.parameters().forEach { (key, value) -> addQueryParameter(key, value) } }
             .build()
     }
 
+    /**
+     * Generica method for a request. It adds all needed headers.
+     */
     private fun createRequest(httpUrl: HttpUrl): Request {
         return Request.Builder()
             .header("User-Agent", "OkHttp Headers.java")
