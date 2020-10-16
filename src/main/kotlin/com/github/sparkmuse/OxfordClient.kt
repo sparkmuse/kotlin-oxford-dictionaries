@@ -7,6 +7,8 @@ import com.github.sparkmuse.query.EntryQuery
 import com.github.sparkmuse.entity.RetrieveEntry
 import com.github.sparkmuse.query.LemmaQuery
 import com.github.sparkmuse.entity.Lemmatron
+import com.github.sparkmuse.entity.search.Wordlist
+import com.github.sparkmuse.query.search.SearchTranslationsQuery
 import mu.KotlinLogging
 import okhttp3.HttpUrl
 import okhttp3.HttpUrl.Companion.toHttpUrl
@@ -80,6 +82,23 @@ class OxfordClient(
      */
     fun lemmas(word: String): Lemmatron? {
         return lemmas(LemmaQuery(word))
+    }
+
+    /**
+     * /search/translations/{source_lang_search}/{target_lang_search}:
+     * Use this to find possible translations for a given word.
+     */
+    fun searchTranslations(query: SearchTranslationsQuery): Wordlist? {
+        val httpUrl = createUrl(query)
+        val request = createRequest(httpUrl)
+        return call(request)
+    }
+
+    /**
+     * @see OxfordClient.searchTranslations
+     */
+    fun searchTranslations(query: String): Wordlist? {
+        return searchTranslations(SearchTranslationsQuery(query))
     }
 
     /**

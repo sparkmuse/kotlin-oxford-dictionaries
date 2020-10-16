@@ -57,6 +57,26 @@ class OxfordClientTest {
     }
 
     @Test
+    @DisplayName("gets search translations")
+    fun getSearchTranslations() {
+
+        val oxfordClient = OxfordClient("appId", "appKey", wiremock.baseUrl())
+
+        wiremock.stubFor(
+            get(urlPathMatching("/search/translations/en/es"))
+                .willReturn(
+                    aResponse()
+                        .withStatus(200)
+                        .withBodyFile("search_translations.json")
+                )
+        )
+
+        val retrieveEntry = oxfordClient.searchTranslations("ace")
+
+        assertThat(retrieveEntry).isNotNull
+    }
+
+    @Test
     @DisplayName("gets null entry when error")
     fun getEntriesError() {
 

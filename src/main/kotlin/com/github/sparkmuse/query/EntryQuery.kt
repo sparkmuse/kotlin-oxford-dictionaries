@@ -10,7 +10,7 @@ class EntryQuery(
     /**
      * Language code of the source language in a monolingual dataset
      */
-    val sourceLanguage: SourceLanguage = SourceLanguage.English_gb,
+    val sourceLanguage: LanguageMonolingual = LanguageMonolingual.English_gb,
 
     /**
      * A comma-separated list of data fields to return for the matched entries.

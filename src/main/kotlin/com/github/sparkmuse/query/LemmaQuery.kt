@@ -10,7 +10,7 @@ class LemmaQuery(
     /**
      * Language code of the source language in a monolingual dataset
      */
-    val sourceLanguage: SourceLanguage = SourceLanguage.English_gb,
+    val sourceLanguage: LanguageMonolingual = LanguageMonolingual.English_gb,
 
     /**
      * Selection filter: a comma-separated list of grammatical features ids to match on (default: all features).

@@ -1,0 +1,14 @@
+{
+  "metadata": {
+    "total": "string"
+  },
+  "results": [
+    {
+      "id": "string",
+      "matchString": "string",
+      "matchType": "string",
+      "region": "string",
+      "word": "string"
+    }
+  ]
+}
