@@ -1,26 +1,24 @@
 package com.github.sparkmuse.query
 
-import com.github.nylle.javafixture.Fixture
+import com.github.nylle.javafixture.annotations.fixture.TestWithFixture
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test
 
 class EntryQueryTest {
 
-    @Test
-    fun `parameters gets all query parameters as a map`() {
-
-        val entryQuery = Fixture.fixture().create(EntryQuery::class.java)
+    @TestWithFixture
+    fun `parameters gets all query parameters as a map`(query: EntryQuery) {
 
         val expected = mapOf(
-            "fields" to entryQuery.fields.joinToString(","),
-            "grammaticalFeatures" to entryQuery.grammaticalFeatures.joinToString(","),
-            "lexicalCategory" to entryQuery.lexicalCategory.joinToString(","),
-            "domains" to entryQuery.domains.joinToString(","),
-            "registers" to entryQuery.registers.joinToString(","),
-            "strictMatch" to entryQuery.strictMatch.toString()
+            "fields" to query.fields.joinToString(","),
+            "grammaticalFeatures" to query.grammaticalFeatures.joinToString(","),
+            "lexicalCategory" to query.lexicalCategory.joinToString(","),
+            "domains" to query.domains.joinToString(","),
+            "registers" to query.registers.joinToString(","),
+            "strictMatch" to query.strictMatch.toString()
         )
 
-        val actual = entryQuery.parameters()
+        val actual = query.parameters()
 
         assertThat(actual).containsExactlyEntriesOf(expected)
     }
@@ -37,5 +35,12 @@ class EntryQueryTest {
         )
 
         assertThat(actual).containsExactlyEntriesOf(expected)
+    }
+
+    @Test
+    fun pathFragment() {
+        val query = EntryQuery("ace", LanguageMonolingual.English_gb)
+        val actual = query.pathFragment()
+        assertThat(actual).isEqualTo("entries/en-gb/ace")
     }
 }

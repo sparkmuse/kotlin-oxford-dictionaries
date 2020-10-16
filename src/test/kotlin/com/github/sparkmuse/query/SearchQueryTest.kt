@@ -1,66 +1,90 @@
 package com.github.sparkmuse.query
 
-import com.github.nylle.javafixture.Fixture
+import com.github.nylle.javafixture.annotations.fixture.TestWithFixture
 import com.github.sparkmuse.query.search.SearchQuery
 import com.github.sparkmuse.query.search.SearchThesaurusQuery
 import com.github.sparkmuse.query.search.SearchTranslationsQuery
 import org.assertj.core.api.Assertions.assertThat
-import org.junit.jupiter.api.DisplayName
+import org.junit.jupiter.api.Nested
 import org.junit.jupiter.api.Test
 
-@DisplayName("parameters gets all query parameters as a map for")
 class SearchQueryTest {
 
-    @Test
-    fun `search translations`() {
+    @Nested
+    inner class SearchTranslations {
 
-        val searchTranslationQuery = Fixture.fixture().create(SearchTranslationsQuery::class.java)
+        @TestWithFixture
+        fun `parameters gets all query parameters as a map`(query: SearchTranslationsQuery) {
 
-        val expected = mapOf(
-            "q" to searchTranslationQuery.q,
-            "prefix" to searchTranslationQuery.prefix.toString(),
-            "limit" to searchTranslationQuery.limit.toString(),
-            "offset" to searchTranslationQuery.offset.toString(),
-        )
+            val expected = mapOf(
+                "q" to query.q,
+                "prefix" to query.prefix.toString(),
+                "limit" to query.limit.toString(),
+                "offset" to query.offset.toString(),
+            )
 
-        val actual = searchTranslationQuery.parameters()
+            val actual = query.parameters()
 
-        assertThat(actual).containsExactlyEntriesOf(expected)
+            assertThat(actual).containsExactlyEntriesOf(expected)
+        }
+
+        @Test
+        fun pathFragment() {
+            val query = SearchTranslationsQuery("ace", LanguageBilingual.en, LanguageBilingual.es)
+            val actual = query.pathFragment()
+            assertThat(actual).isEqualTo("search/translations/en/es")
+        }
     }
 
-    @Test
-    fun search() {
+    @Nested
+    inner class Search {
 
-        val searchQuery = Fixture.fixture().create(SearchQuery::class.java)
+        @TestWithFixture
+        fun `parameters gets all query parameters as a map`(query: SearchQuery) {
 
-        val expected = mapOf(
-            "q" to searchQuery.q,
-            "prefix" to searchQuery.prefix.toString(),
-            "limit" to searchQuery.limit.toString(),
-            "offset" to searchQuery.offset.toString(),
-        )
+            val expected = mapOf(
+                "q" to query.q,
+                "prefix" to query.prefix.toString(),
+                "limit" to query.limit.toString(),
+                "offset" to query.offset.toString(),
+            )
 
-        val actual = searchQuery.parameters()
+            val actual = query.parameters()
 
-        assertThat(actual).containsExactlyEntriesOf(expected)
+            assertThat(actual).containsExactlyEntriesOf(expected)
+        }
 
+        @Test
+        fun pathFragment() {
+            val query = SearchQuery("ace", LanguageMonolingual.English_gb)
+            val actual = query.pathFragment()
+            assertThat(actual).isEqualTo("search/en-gb")
+        }
     }
 
-    @Test
-    fun `search thesaurus`() {
+    @Nested
+    inner class SearchThesaurus {
 
-        val searchThesaurusQuery = Fixture.fixture().create(SearchThesaurusQuery::class.java)
+        @TestWithFixture
+        fun `parameters gets all query parameters as a map`(query: SearchThesaurusQuery) {
 
-        val expected = mapOf(
-            "q" to searchThesaurusQuery.q,
-            "prefix" to searchThesaurusQuery.prefix.toString(),
-            "limit" to searchThesaurusQuery.limit.toString(),
-            "offset" to searchThesaurusQuery.offset.toString(),
-        )
+            val expected = mapOf(
+                "q" to query.q,
+                "prefix" to query.prefix.toString(),
+                "limit" to query.limit.toString(),
+                "offset" to query.offset.toString(),
+            )
 
-        val actual = searchThesaurusQuery.parameters()
+            val actual = query.parameters()
 
-        assertThat(actual).containsExactlyEntriesOf(expected)
+            assertThat(actual).containsExactlyEntriesOf(expected)
+        }
 
+        @Test
+        fun pathFragment() {
+            val query = SearchThesaurusQuery("ace", LanguageThesaurus.en)
+            val actual = query.pathFragment()
+            assertThat(actual).isEqualTo("search/thesaurus/en")
+        }
     }
 }

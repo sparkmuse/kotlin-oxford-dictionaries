@@ -1,22 +1,21 @@
 package com.github.sparkmuse.query
 
 import com.github.nylle.javafixture.Fixture
+import com.github.nylle.javafixture.annotations.fixture.TestWithFixture
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test
 
 class LemmaQueryTest {
 
-    @Test
-    fun `parameters gets all query parameters as a map`() {
-
-        val entryQuery = Fixture.fixture().create(LemmaQuery::class.java)
+    @TestWithFixture
+    fun `parameters gets all query parameters as a map`(query: LemmaQuery) {
 
         val expected = mapOf(
-            "grammaticalFeatures" to entryQuery.grammaticalFeatures.joinToString(","),
-            "lexicalCategory" to entryQuery.lexicalCategory.joinToString(","),
+            "grammaticalFeatures" to query.grammaticalFeatures.joinToString(","),
+            "lexicalCategory" to query.lexicalCategory.joinToString(","),
         )
 
-        val actual = entryQuery.parameters()
+        val actual = query.parameters()
 
         assertThat(actual).containsExactlyEntriesOf(expected)
     }
@@ -30,5 +29,12 @@ class LemmaQueryTest {
 
         val expected = mapOf("grammaticalFeatures" to "abbreviation")
         assertThat(actual).containsExactlyEntriesOf(expected)
+    }
+
+    @Test
+    fun pathFragment() {
+        val query = LemmaQuery("ace", LanguageMonolingual.English_gb)
+        val actual = query.pathFragment()
+        assertThat(actual).isEqualTo("lemmas/en-gb/ace")
     }
 }
