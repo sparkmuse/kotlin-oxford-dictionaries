@@ -91,23 +91,4 @@ class OxfordClientTest {
 
         assertThat(retrieveEntry).isNotNull
     }
-
-    @Test
-    fun `gets null entry when error`() {
-
-        val oxfordClient = OxfordClient("appId", "appKey", wiremock.baseUrl())
-
-        wiremock.stubFor(
-            get(urlPathMatching("/entries/en-gb/ace"))
-                .willReturn(
-                    aResponse()
-                        .withStatus(400)
-                        .withBody("""{"error": "string"}""")
-                )
-        )
-
-        val retrieveEntry = oxfordClient.entries("ace")
-
-        assertThat(retrieveEntry).isNull()
-    }
 }

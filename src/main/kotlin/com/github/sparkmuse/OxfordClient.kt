@@ -1,24 +1,15 @@
 package com.github.sparkmuse
 
-import com.fasterxml.jackson.core.JsonProcessingException
-import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
-import com.github.sparkmuse.query.Query
-import com.github.sparkmuse.query.EntryQuery
-import com.github.sparkmuse.entity.RetrieveEntry
-import com.github.sparkmuse.query.LemmaQuery
 import com.github.sparkmuse.entity.Lemmatron
+import com.github.sparkmuse.entity.RetrieveEntry
 import com.github.sparkmuse.entity.search.WordList
+import com.github.sparkmuse.internal.HttpClient
+import com.github.sparkmuse.internal.parse
+import com.github.sparkmuse.query.EntryQuery
+import com.github.sparkmuse.query.LemmaQuery
 import com.github.sparkmuse.query.search.SearchQuery
 import com.github.sparkmuse.query.search.SearchThesaurusQuery
 import com.github.sparkmuse.query.search.SearchTranslationsQuery
-import mu.KotlinLogging
-import okhttp3.HttpUrl
-import okhttp3.HttpUrl.Companion.toHttpUrl
-import okhttp3.OkHttpClient
-import okhttp3.Request
-import okhttp3.Response
-
-private val logger = KotlinLogging.logger {}
 
 class OxfordClient(
     val appId: String,
@@ -26,7 +17,7 @@ class OxfordClient(
     val baseUrl: String = "https://od-api.oxforddictionaries.com/api/v2"
 ) {
 
-    private val client = OkHttpClient()
+    private val httpClient = HttpClient(appId, appKey, baseUrl)
 
     /**
      * /api/v2/entries/{source_lang}/{word_id}:
@@ -48,9 +39,7 @@ class OxfordClient(
      * query ('noun' OR 'verb') AND 'singular'.
      */
     fun entries(query: EntryQuery): RetrieveEntry? {
-        val httpUrl = createUrl(query)
-        val request = createRequest(httpUrl)
-        return call(request)
+        return parse(httpClient.execute(query))
     }
 
     /**
@@ -74,9 +63,7 @@ class OxfordClient(
      * the query ('noun' OR 'verb') AND 'singular'.
      */
     fun lemmas(query: LemmaQuery): Lemmatron? {
-        val httpUrl = createUrl(query)
-        val request = createRequest(httpUrl)
-        return call(request)
+        return parse(httpClient.execute(query))
     }
 
     /**
@@ -91,9 +78,7 @@ class OxfordClient(
      * Use this to find possible translations for a given word.
      */
     fun searchTranslations(query: SearchTranslationsQuery): WordList? {
-        val httpUrl = createUrl(query)
-        val request = createRequest(httpUrl)
-        return call(request)
+        return parse(httpClient.execute(query))
     }
 
     /**
@@ -109,9 +94,7 @@ class OxfordClient(
      * The results are calculated using headword matching, fuzzy matching, and lemmatization
      */
     fun search(query: SearchQuery): WordList? {
-        val httpUrl = createUrl(query)
-        val request = createRequest(httpUrl)
-        return call(request)
+        return parse(httpClient.execute(query))
     }
 
     /**
@@ -127,9 +110,7 @@ class OxfordClient(
      * The results are calculated using headword matching, fuzzy matching, and lemmatization
      */
     fun searchThesaurus(query: SearchThesaurusQuery): WordList? {
-        val httpUrl = createUrl(query)
-        val request = createRequest(httpUrl)
-        return call(request)
+        return parse(httpClient.execute(query))
     }
 
     /**
@@ -137,58 +118,6 @@ class OxfordClient(
      */
     fun searchThesaurus(query: String): WordList? {
         return searchThesaurus(SearchThesaurusQuery(query))
-    }
-
-
-    /**
-     * Makes the actual call using the client.
-     */
-    private inline fun <reified T> call(request: Request): T? {
-        client.newCall(request).execute().use { response ->
-            if (!response.isSuccessful) {
-                logger.error { response.message }
-                return null
-            }
-            return parse<T>(response)
-        }
-    }
-
-    /**
-     * Parses the response from the client and returns the parse object.
-     */
-    private inline fun <reified T> parse(response: Response): T? {
-        return try {
-            val json = response.body?.string()
-            jacksonObjectMapper().readValue(json, T::class.java)
-        } catch (ex: Exception) {
-            logger.error { ex.message }
-            return null
-        }
-    }
-
-    /**
-     * Creates the url to get the entries
-     */
-    private fun createUrl(query: Query): HttpUrl {
-        return baseUrl
-            .toHttpUrl()
-            .newBuilder()
-            .addPathSegments(query.pathFragment())
-            .apply { query.parameters().forEach { (key, value) -> addQueryParameter(key, value) } }
-            .build()
-    }
-
-    /**
-     * Generica method for a request. It adds all needed headers.
-     */
-    private fun createRequest(httpUrl: HttpUrl): Request {
-        return Request.Builder()
-            .header("User-Agent", "OkHttp Headers.java")
-            .addHeader("Accept", "application/json")
-            .addHeader("app_id", appId)
-            .addHeader("app_key", appKey)
-            .url(httpUrl)
-            .build()
     }
 }
 
