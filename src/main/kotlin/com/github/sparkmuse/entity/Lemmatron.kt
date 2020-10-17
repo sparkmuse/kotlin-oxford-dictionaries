@@ -11,69 +11,69 @@ data class Lemmatron(
      * A list of inflections matching a given word (Optional)
      */
     val results: List<HeadwordLemmatron> = listOf()
-)
+) {
 
-data class HeadwordLemmatron(
+    data class HeadwordLemmatron(
 
-    /**
-     * The identifier of a word
-     */
-    val id: String,
+        /**
+         * The identifier of a word
+         */
+        val id: String = "",
 
-    /**
-     * IANA language code
-     * https://www.iana.org/assignments/language-subtag-registry/language-subtag-registry
-     */
-    val language: String,
+        /**
+         * IANA language code
+         * https://www.iana.org/assignments/language-subtag-registry/language-subtag-registry
+         */
+        val language: String = "",
 
-    /**
-     * A grouping of various senses in a specific language, and a lexical category that relates to a word
-     */
-    val lexicalEntries: List<LemmatronLexicalEntry>,
+        /**
+         * A grouping of various senses in a specific language, and a lexical category that relates to a word
+         */
+        val lexicalEntries: List<LemmatronLexicalEntry> = listOf(),
 
-    /**
-     * The json object type. Could be 'headword', 'inflection' or 'phrase' (Optional)
-     */
-    val type: String = "",
+        /**
+         * The json object type. Could be 'headword', 'inflection' or 'phrase' (Optional)
+         */
+        val type: String = "",
 
-    /**
-     * A given written or spoken realisation of an entry, lowercased. (Deprecated, Optional)
-     */
-    val word: String = ""
-)
+        /**
+         * A given written or spoken realisation of an entry, lowercased. (Deprecated, Optional)
+         */
+        val word: String = ""
+    ) {
+        data class LemmatronLexicalEntry(
 
+            /**
+             * GrammaticalFeatures (Optional)
+             */
+            val grammaticalFeatures: List<GrammaticalFeature> = listOf(),
 
-data class LemmatronLexicalEntry(
+            /**
+             * The canonical form of words for which the entry is an inflection
+             */
+            val inflectionOf: List<Inflection> = listOf(),
 
-    /**
-     * GrammaticalFeatures (Optional)
-     */
-    val grammaticalFeatures: List<GrammaticalFeature> = listOf(),
+            /**
+             * IANA language code
+             * https://www.iana.org/assignments/language-subtag-registry/language-subtag-registry
+             */
+            val language: String = "",
 
-    /**
-     * The canonical form of words for which the entry is an inflection
-     */
-    val inflectionOf: List<LematronInflection>,
+            /**
+             * A linguistic category of words (or more precisely lexical items), generally defined by the syntactic or
+             * morphological behaviour of the lexical item in question, such as noun or verb
+             */
+            val lexicalCategory: LexicalCategory = LexicalCategory(),
 
-    /**
-     * IANA language code
-     * https://www.iana.org/assignments/language-subtag-registry/language-subtag-registry
-     */
-    val language: String,
-
-    /**
-     * A linguistic category of words (or more precisely lexical items), generally defined by the syntactic or
-     * morphological behaviour of the lexical item in question, such as noun or verb
-     */
-    val lexicalCategory: LexicalCategory,
-
-    /**
-     *  A given written or spoken realisation of an entry
-     */
-    val text: String
-)
-
-data class LematronInflection(
-    val id: String,
-    val text: String
-)
+            /**
+             *  A given written or spoken realisation of an entry
+             */
+            val text: String
+        ) {
+            data class Inflection(
+                val id: String,
+                val text: String
+            )
+        }
+    }
+}

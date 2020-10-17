@@ -1,0 +1,268 @@
+{
+  "metadata": {},
+  "results": [
+    {
+      "id": "string",
+      "language": "string",
+      "lexicalEntries": [
+        {
+          "entries": [
+            {
+              "grammaticalFeatures": [
+                {
+                  "id": "string",
+                  "text": "string",
+                  "type": "string"
+                }
+              ],
+              "homographNumber": "string",
+              "senses": [
+                {
+                  "antonyms": [
+                    {
+                      "domains": [
+                        {
+                          "id": "string",
+                          "text": "string"
+                        }
+                      ],
+                      "id": "string",
+                      "language": "string",
+                      "regions": [
+                        {
+                          "id": "string",
+                          "text": "string"
+                        }
+                      ],
+                      "registers": [
+                        {
+                          "id": "string",
+                          "text": "string"
+                        }
+                      ],
+                      "text": "string"
+                    }
+                  ],
+                  "domainClasses": [
+                    {
+                      "id": "string",
+                      "text": "string"
+                    }
+                  ],
+                  "domains": [
+                    {
+                      "id": "string",
+                      "text": "string"
+                    }
+                  ],
+                  "examples": [
+                    {
+                      "definitions": [
+                        "string"
+                      ],
+                      "domains": [
+                        {
+                          "id": "string",
+                          "text": "string"
+                        }
+                      ],
+                      "notes": [
+                        {
+                          "id": "string",
+                          "text": "string",
+                          "type": "string"
+                        }
+                      ],
+                      "regions": [
+                        {
+                          "id": "string",
+                          "text": "string"
+                        }
+                      ],
+                      "registers": [
+                        {
+                          "id": "string",
+                          "text": "string"
+                        }
+                      ],
+                      "senseIds": [
+                        "string"
+                      ],
+                      "text": "string"
+                    }
+                  ],
+                  "id": "string",
+                  "regions": [
+                    {
+                      "id": "string",
+                      "text": "string"
+                    }
+                  ],
+                  "registers": [
+                    {
+                      "id": "string",
+                      "text": "string"
+                    }
+                  ],
+                  "semanticClasses": [
+                    {
+                      "id": "string",
+                      "text": "string"
+                    }
+                  ],
+                  "subsenses": [
+                    {}
+                  ],
+                  "synonyms": [
+                    {
+                      "domains": [
+                        {
+                          "id": "string",
+                          "text": "string"
+                        }
+                      ],
+                      "id": "string",
+                      "language": "string",
+                      "regions": [
+                        {
+                          "id": "string",
+                          "text": "string"
+                        }
+                      ],
+                      "registers": [
+                        {
+                          "id": "string",
+                          "text": "string"
+                        }
+                      ],
+                      "text": "string"
+                    }
+                  ]
+                }
+              ],
+              "variantForms": [
+                {
+                  "domains": [
+                    {
+                      "id": "string",
+                      "text": "string"
+                    }
+                  ],
+                  "notes": [
+                    {
+                      "id": "string",
+                      "text": "string",
+                      "type": "string"
+                    }
+                  ],
+                  "pronunciations": [
+                    {
+                      "audioFile": "string",
+                      "dialects": [
+                        "string"
+                      ],
+                      "phoneticNotation": "string",
+                      "phoneticSpelling": "string",
+                      "regions": [
+                        {
+                          "id": "string",
+                          "text": "string"
+                        }
+                      ],
+                      "registers": [
+                        {
+                          "id": "string",
+                          "text": "string"
+                        }
+                      ]
+                    }
+                  ],
+                  "regions": [
+                    {
+                      "id": "string",
+                      "text": "string"
+                    }
+                  ],
+                  "registers": [
+                    {
+                      "id": "string",
+                      "text": "string"
+                    }
+                  ],
+                  "text": "string"
+                }
+              ]
+            }
+          ],
+          "grammaticalFeatures": [
+            {
+              "id": "string",
+              "text": "string",
+              "type": "string"
+            }
+          ],
+          "language": "string",
+          "lexicalCategory": {
+            "id": "string",
+            "text": "string"
+          },
+          "text": "string",
+          "variantForms": [
+            {
+              "domains": [
+                {
+                  "id": "string",
+                  "text": "string"
+                }
+              ],
+              "notes": [
+                {
+                  "id": "string",
+                  "text": "string",
+                  "type": "string"
+                }
+              ],
+              "pronunciations": [
+                {
+                  "audioFile": "string",
+                  "dialects": [
+                    "string"
+                  ],
+                  "phoneticNotation": "string",
+                  "phoneticSpelling": "string",
+                  "regions": [
+                    {
+                      "id": "string",
+                      "text": "string"
+                    }
+                  ],
+                  "registers": [
+                    {
+                      "id": "string",
+                      "text": "string"
+                    }
+                  ]
+                }
+              ],
+              "regions": [
+                {
+                  "id": "string",
+                  "text": "string"
+                }
+              ],
+              "registers": [
+                {
+                  "id": "string",
+                  "text": "string"
+                }
+              ],
+              "text": "string"
+            }
+          ]
+        }
+      ],
+      "type": "string",
+      "word": "string"
+    }
+  ]
+}

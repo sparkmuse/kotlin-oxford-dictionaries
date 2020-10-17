@@ -2,7 +2,7 @@ package com.github.sparkmuse
 
 import com.github.sparkmuse.entity.Lemmatron
 import com.github.sparkmuse.entity.RetrieveEntry
-import com.github.sparkmuse.entity.search.WordList
+import com.github.sparkmuse.entity.WordList
 import com.github.sparkmuse.internal.HttpClient
 import com.github.sparkmuse.internal.parse
 import com.github.sparkmuse.query.EntryQuery
