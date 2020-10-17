@@ -91,4 +91,24 @@ class OxfordClientTest {
 
         assertThat(retrieveEntry).isNotNull
     }
+
+
+    @Test
+    fun thesaurus() {
+
+        val oxfordClient = OxfordClient("appId", "appKey", wiremock.baseUrl())
+
+        wiremock.stubFor(
+            get(urlPathMatching("/thesaurus/en/ace"))
+                .willReturn(
+                    aResponse()
+                        .withStatus(200)
+                        .withBodyFile("thesaurus.json")
+                )
+        )
+
+        val retrieveEntry = oxfordClient.thesaurus("ace")
+
+        assertThat(retrieveEntry).isNotNull
+    }
 }

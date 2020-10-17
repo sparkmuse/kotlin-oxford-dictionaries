@@ -2,10 +2,12 @@ package com.github.sparkmuse
 
 import com.github.sparkmuse.entity.Lemmatron
 import com.github.sparkmuse.entity.RetrieveEntry
+import com.github.sparkmuse.entity.Thesaurus
 import com.github.sparkmuse.entity.WordList
 import com.github.sparkmuse.internal.HttpClient
 import com.github.sparkmuse.internal.parse
 import com.github.sparkmuse.query.EntryQuery
+import com.github.sparkmuse.query.ThesaurusQuery
 import com.github.sparkmuse.query.LemmaQuery
 import com.github.sparkmuse.query.search.SearchQuery
 import com.github.sparkmuse.query.search.SearchThesaurusQuery
@@ -118,6 +120,22 @@ class OxfordClient(
      */
     fun searchThesaurus(query: String): WordList? {
         return searchThesaurus(SearchThesaurusQuery(query))
+    }
+
+    /**
+     * /api/v2/search/thesaurus/{source_lang}:
+     * Use this to retrieve possible headword matches for a given string of text.
+     * The results are calculated using headword matching, fuzzy matching, and lemmatization
+     */
+    fun thesaurus(query: ThesaurusQuery): Thesaurus? {
+        return parse(httpClient.execute(query))
+    }
+
+    /**
+     * @see OxfordClient.thesaurus
+     */
+    fun thesaurus(query: String): Thesaurus? {
+        return thesaurus(ThesaurusQuery(query))
     }
 }
 
