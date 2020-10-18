@@ -1,10 +1,7 @@
 package com.github.sparkmuse
 
 import com.github.sparkmuse.entity.*
-import com.github.sparkmuse.entity.utility.RetrieveDomain
-import com.github.sparkmuse.entity.utility.RetrieveField
-import com.github.sparkmuse.entity.utility.RetrieveFilter
-import com.github.sparkmuse.entity.utility.RetrieveGrammaticalFeature
+import com.github.sparkmuse.entity.utility.*
 import com.github.sparkmuse.internal.HttpClient
 import com.github.sparkmuse.internal.parse
 import com.github.sparkmuse.query.*
@@ -267,6 +264,22 @@ class OxfordClient(
      * Lists available grammatical features in a bilingual dataset
      */
     fun grammaticalFeature(query: GrammaticalFeatureBilingualQuery): RetrieveGrammaticalFeature? {
+        return parse(httpClient.execute(query))
+    }
+
+    /**
+     * /lexicalCategories/{source_lang}:
+     * Lists available lexical categories in a monolingual dataset
+     */
+    fun lexicalCategory(query: LexicalCategoryMonolingualQuery): RetrieveLexicalCategory? {
+        return parse(httpClient.execute(query))
+    }
+
+    /**
+     * /lexicalCategories/{source_lang_grammatical}/{target_lang_grammatical}:
+     * Lists available lexical categories in a bilingual dataset
+     */
+    fun lexicalCategory(query: LexicalCategoryBilingualQuery): RetrieveLexicalCategory? {
         return parse(httpClient.execute(query))
     }
 }

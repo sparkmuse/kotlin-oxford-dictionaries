@@ -31,8 +31,8 @@ As we support more endpoints they will be added to the list bellow:
 | /api/v2/grammaticalFeatures/{source_lang}:                                       	|      ✅     	|
 | /api/v2/grammaticalFeatures/{source_lang_grammatical}/{target_lang_grammatical}: 	|      ✅     	|
 | /api/v2/languages:                                                               	|      ❌     	|
-| /api/v2/lexicalCategories/{source_lang}:                                         	|      ❌     	|
-| /api/v2/lexicalCategories/{source_lang_lexical}/{target_lang_lexical}:           	|      ❌     	|
+| /api/v2/lexicalCategories/{source_lang}:                                         	|      ✅     	|
+| /api/v2/lexicalCategories/{source_lang_lexical}/{target_lang_lexical}:           	|      ✅     	|
 | /api/v2/registers/{source_lang}:                                                 	|      ❌     	|
 | /api/v2/registers/{source_lang_registers}/{target_lang_registers}:               	|      ❌     	|
 

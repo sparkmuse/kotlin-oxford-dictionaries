@@ -1,0 +1,66 @@
+{
+  "metadata": {
+    "operation": "retrieve",
+    "provider": "Oxford University Press",
+    "schema": "RetrieveEntry"
+  },
+  "results": {
+    "adjective": {
+      "en": "Adjective"
+    },
+    "adverb": {
+      "en": "Adverb"
+    },
+    "combiningForm": {
+      "en": "Combining Form"
+    },
+    "conjunction": {
+      "en": "Conjunction"
+    },
+    "contraction": {
+      "en": "Contraction"
+    },
+    "determiner": {
+      "en": "Determiner"
+    },
+    "idiomatic": {
+      "en": "Idiomatic"
+    },
+    "interjection": {
+      "en": "Interjection"
+    },
+    "noun": {
+      "en": "Noun"
+    },
+    "numeral": {
+      "en": "Numeral"
+    },
+    "other": {
+      "en": "Other"
+    },
+    "particle": {
+      "en": "Particle"
+    },
+    "predeterminer": {
+      "en": "Predeterminer"
+    },
+    "prefix": {
+      "en": "Prefix"
+    },
+    "preposition": {
+      "en": "Preposition"
+    },
+    "pronoun": {
+      "en": "Pronoun"
+    },
+    "residual": {
+      "en": "Residual"
+    },
+    "suffix": {
+      "en": "Suffix"
+    },
+    "verb": {
+      "en": "Verb"
+    }
+  }
+}

@@ -313,4 +313,36 @@ class OxfordClientTest {
 
         assertThat(results).isNotNull
     }
+
+    @Test
+    fun lexicalCategoriesMonolingual() {
+        wiremock.stubFor(
+            get(urlPathMatching("/lexicalCategories/en-gb"))
+                .willReturn(
+                    aResponse()
+                        .withStatus(200)
+                        .withBodyFile("utility/lexical_categories.json")
+                )
+        )
+
+        val results = oxfordClient.lexicalCategory(LexicalCategoryMonolingualQuery(English_gb))
+
+        assertThat(results).isNotNull
+    }
+
+    @Test
+    fun lexicalCategoriesBilingual() {
+        wiremock.stubFor(
+            get(urlPathMatching("/lexicalCategories/en/es"))
+                .willReturn(
+                    aResponse()
+                        .withStatus(200)
+                        .withBodyFile("utility/lexical_categories.json")
+                )
+        )
+
+        val results = oxfordClient.lexicalCategory(LexicalCategoryBilingualQuery(English, Spanish))
+
+        assertThat(results).isNotNull
+    }
 }

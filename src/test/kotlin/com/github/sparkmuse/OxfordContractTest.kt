@@ -2,10 +2,7 @@ package com.github.sparkmuse
 
 import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
 import com.github.sparkmuse.entity.*
-import com.github.sparkmuse.entity.utility.RetrieveDomain
-import com.github.sparkmuse.entity.utility.RetrieveField
-import com.github.sparkmuse.entity.utility.RetrieveFilter
-import com.github.sparkmuse.entity.utility.RetrieveGrammaticalFeature
+import com.github.sparkmuse.entity.utility.*
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.DisplayName
 import org.junit.jupiter.api.Test
@@ -139,5 +136,14 @@ class OxfordContractTest {
         val grammaticalFeature = jacksonObjectMapper().readValue(json, RetrieveGrammaticalFeature::class.java)
 
         assertThat(grammaticalFeature).isNotNull
+    }
+
+    @Test
+    fun lexicalCategories() {
+        val json = clazz.getResource("/__files/utility/lexical_categories.json").readText()
+
+        val lexicalCategory = jacksonObjectMapper().readValue(json, RetrieveLexicalCategory::class.java)
+
+        assertThat(lexicalCategory).isNotNull
     }
 }
