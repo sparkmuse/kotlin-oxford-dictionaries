@@ -281,4 +281,36 @@ class OxfordClientTest {
 
         assertThat(results).isNotNull
     }
+
+    @Test
+    fun grammaticalFeaturesMonolingual() {
+        wiremock.stubFor(
+            get(urlPathMatching("/grammaticalFeatures/en-gb"))
+                .willReturn(
+                    aResponse()
+                        .withStatus(200)
+                        .withBodyFile("utility/grammatical_features.json")
+                )
+        )
+
+        val results = oxfordClient.grammaticalFeature(GrammaticalFeatureMonolingualQuery(English_gb))
+
+        assertThat(results).isNotNull
+    }
+
+    @Test
+    fun grammaticalFeaturesBilingual() {
+        wiremock.stubFor(
+            get(urlPathMatching("/grammaticalFeatures/en/es"))
+                .willReturn(
+                    aResponse()
+                        .withStatus(200)
+                        .withBodyFile("utility/grammatical_features.json")
+                )
+        )
+
+        val results = oxfordClient.grammaticalFeature(GrammaticalFeatureBilingualQuery(English, Spanish))
+
+        assertThat(results).isNotNull
+    }
 }

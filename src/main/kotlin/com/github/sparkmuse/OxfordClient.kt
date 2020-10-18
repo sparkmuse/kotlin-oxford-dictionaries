@@ -4,6 +4,7 @@ import com.github.sparkmuse.entity.*
 import com.github.sparkmuse.entity.utility.RetrieveDomain
 import com.github.sparkmuse.entity.utility.RetrieveField
 import com.github.sparkmuse.entity.utility.RetrieveFilter
+import com.github.sparkmuse.entity.utility.RetrieveGrammaticalFeature
 import com.github.sparkmuse.internal.HttpClient
 import com.github.sparkmuse.internal.parse
 import com.github.sparkmuse.query.*
@@ -250,6 +251,22 @@ class OxfordClient(
      * Lists available filters for specific endpoint
      */
     fun filter(query: FilterEndpointQuery): RetrieveFilter? {
+        return parse(httpClient.execute(query))
+    }
+
+    /**
+     * /grammaticalFeatures/{source_lang}:
+     * Lists available grammatical features in a monolingual dataset
+     */
+    fun grammaticalFeature(query: GrammaticalFeatureMonolingualQuery): RetrieveGrammaticalFeature? {
+        return parse(httpClient.execute(query))
+    }
+
+    /**
+     * /grammaticalFeatures/{source_lang_grammatical}/{target_lang_grammatical}:
+     * Lists available grammatical features in a bilingual dataset
+     */
+    fun grammaticalFeature(query: GrammaticalFeatureBilingualQuery): RetrieveGrammaticalFeature? {
         return parse(httpClient.execute(query))
     }
 }

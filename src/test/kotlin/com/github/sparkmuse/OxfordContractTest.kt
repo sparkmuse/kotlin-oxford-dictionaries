@@ -5,6 +5,7 @@ import com.github.sparkmuse.entity.*
 import com.github.sparkmuse.entity.utility.RetrieveDomain
 import com.github.sparkmuse.entity.utility.RetrieveField
 import com.github.sparkmuse.entity.utility.RetrieveFilter
+import com.github.sparkmuse.entity.utility.RetrieveGrammaticalFeature
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.DisplayName
 import org.junit.jupiter.api.Test
@@ -129,5 +130,14 @@ class OxfordContractTest {
         val retrieveFilter = jacksonObjectMapper().readValue(json, RetrieveFilter::class.java)
 
         assertThat(retrieveFilter).isNotNull
+    }
+
+    @Test
+    fun grammaticalFeatures() {
+        val json = clazz.getResource("/__files/utility/grammatical_features.json").readText()
+
+        val grammaticalFeature = jacksonObjectMapper().readValue(json, RetrieveGrammaticalFeature::class.java)
+
+        assertThat(grammaticalFeature).isNotNull
     }
 }

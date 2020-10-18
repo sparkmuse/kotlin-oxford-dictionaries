@@ -1,0 +1,92 @@
+{
+  "metadata": {
+    "operation": "retrieve",
+    "provider": "Oxford University Press",
+    "schema": "RetrieveEntry"
+  },
+  "results": {
+    "Countability": {
+      "mass": {
+        "en": "Mass"
+      }
+    },
+    "Event Modality": {
+      "modal": {
+        "en": "Modal"
+      }
+    },
+    "Marker": {
+      "nonFiniteness": {
+        "en": "Non Finiteness"
+      }
+    },
+    "Non Finiteness": {
+      "infinitive": {
+        "en": "Infinitive"
+      },
+      "pastParticiple": {
+        "en": "Past Participle"
+      }
+    },
+    "Number": {
+      "plural": {
+        "en": "Plural"
+      }
+    },
+    "Numeral": {
+      "cardinal": {
+        "en": "Cardinal"
+      },
+      "ordinal": {
+        "en": "Ordinal"
+      }
+    },
+    "Properness": {
+      "proper": {
+        "en": "Proper"
+      }
+    },
+    "Referential": {
+      "interrogative": {
+        "en": "Interrogative"
+      },
+      "possessive": {
+        "en": "Possessive"
+      },
+      "relative": {
+        "en": "Relative"
+      }
+    },
+    "Residual": {
+      "abbreviation": {
+        "en": "Abbreviation"
+      },
+      "symbol": {
+        "en": "Symbol"
+      }
+    },
+    "Subcategorization": {
+      "intransitive": {
+        "en": "Intransitive"
+      },
+      "transitive": {
+        "en": "Transitive"
+      }
+    },
+    "Tense": {
+      "past": {
+        "en": "Past"
+      }
+    },
+    "Unit Structure": {
+      "phrasal": {
+        "en": "Phrasal"
+      }
+    },
+    "Verb": {
+      "auxiliary": {
+        "en": "Auxiliary"
+      }
+    }
+  }
+}
