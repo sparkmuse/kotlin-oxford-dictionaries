@@ -34,7 +34,7 @@ class OxfordContractTest {
     @Test
     fun `search translations`() {
 
-        val json = clazz.getResource("/__files/search_translations.json").readText()
+        val json = clazz.getResource("/__files/search/search_translations.json").readText()
 
         val wordlist = jacksonObjectMapper().readValue(json, WordList::class.java)
 
@@ -44,7 +44,7 @@ class OxfordContractTest {
     @Test
     fun search() {
 
-        val json = clazz.getResource("/__files/search.json").readText()
+        val json = clazz.getResource("/__files/search/search.json").readText()
 
         val wordlist = jacksonObjectMapper().readValue(json, WordList::class.java)
 
@@ -54,7 +54,7 @@ class OxfordContractTest {
     @Test
     fun `search thesaurus`() {
 
-        val json = clazz.getResource("/__files/search_thesaurus.json").readText()
+        val json = clazz.getResource("/__files/search/search_thesaurus.json").readText()
 
         val thesaurusWordList = jacksonObjectMapper().readValue(json, WordList::class.java)
 

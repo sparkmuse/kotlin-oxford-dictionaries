@@ -72,7 +72,24 @@ class OxfordClientTest {
                 .willReturn(
                     aResponse()
                         .withStatus(200)
-                        .withBodyFile("search_translations.json")
+                        .withBodyFile("search/search_translations.json")
+                )
+        )
+
+        val retrieveEntry = oxfordClient.searchTranslations("ace")
+
+        assertThat(retrieveEntry).isNotNull
+    }
+
+    @Test
+    fun `gets search thesaurus`() {
+
+        wiremock.stubFor(
+            get(urlPathMatching("/search/translations/en/es"))
+                .willReturn(
+                    aResponse()
+                        .withStatus(200)
+                        .withBodyFile("search/search_thesaurus.json")
                 )
         )
 
@@ -89,7 +106,7 @@ class OxfordClientTest {
                 .willReturn(
                     aResponse()
                         .withStatus(200)
-                        .withBodyFile("search.json")
+                        .withBodyFile("search/search.json")
                 )
         )
 

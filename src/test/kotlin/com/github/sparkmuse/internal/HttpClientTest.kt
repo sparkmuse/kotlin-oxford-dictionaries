@@ -38,7 +38,7 @@ class HttpClientTest {
                 .willReturn(
                     aResponse()
                         .withStatus(200)
-                        .withBodyFile("search.json")
+                        .withBodyFile("search/search.json")
                 )
         )
 
