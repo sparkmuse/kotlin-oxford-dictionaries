@@ -5,7 +5,6 @@ import com.github.sparkmuse.wiremock.WiremockExtension
 import com.github.tomakehurst.wiremock.WireMockServer
 import com.github.tomakehurst.wiremock.client.WireMock.*
 import org.assertj.core.api.Assertions.assertThat
-import org.junit.jupiter.api.DisplayName
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.extension.ExtendWith
 
@@ -110,5 +109,25 @@ class OxfordClientTest {
         val retrieveEntry = oxfordClient.thesaurus("ace")
 
         assertThat(retrieveEntry).isNotNull
+    }
+
+    @Test
+    fun translations() {
+
+        val oxfordClient = OxfordClient("appId", "appKey", wiremock.baseUrl())
+
+        wiremock.stubFor(
+            get(urlPathMatching("/translations/en/es/ace"))
+                .withQueryParam("strictMatch", equalTo("false"))
+                .willReturn(
+                    aResponse()
+                        .withStatus(200)
+                        .withBodyFile("translations.json")
+                )
+        )
+
+        val translation = oxfordClient.translations("ace")
+
+        assertThat(translation).isNotNull
     }
 }

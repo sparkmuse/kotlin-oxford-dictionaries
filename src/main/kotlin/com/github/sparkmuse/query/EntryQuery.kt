@@ -92,14 +92,3 @@ class EntryQuery(
         return "entries/${sourceLanguage.value}/$word"
     }
 }
-
-enum class DataField {
-    definitions,
-    domains,
-    etymologies,
-    examples,
-    pronunciations,
-    regions,
-    registers,
-    variantForms
-}

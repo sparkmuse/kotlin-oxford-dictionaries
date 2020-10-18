@@ -1,7 +1,20 @@
-package com.github.sparkmuse
+package com.github.sparkmuse.query
 
-class EntryQuery(
+import com.github.sparkmuse.query.LanguageBilingual
+import com.github.sparkmuse.query.LanguageMonolingual
+import com.github.sparkmuse.query.Query
 
+class TranslationQuery(
+
+    /**
+     * Language code of the source language in a bilingual dataset.
+     */
+    val sourceLanguage: LanguageBilingual = LanguageBilingual.en,
+
+    /**
+     * Language code of the target language in a bilingual dataset.
+     */
+    val targetLanguage: LanguageBilingual = LanguageBilingual.es,
 
     /**
      * The identifier for an Entry (case-sensitive)
@@ -9,9 +22,10 @@ class EntryQuery(
     val word: String,
 
     /**
-     * Language code of the source language in a monolingual dataset
+     * Specifies whether diacritics must match exactly. If "false", near-homographs for the given word_id will
+     * also be selected (e.g., rose matches both rose and rosé; similarly rosé matches both).
      */
-    val sourceLanguage: SourceLanguage = SourceLanguage.English_gb,
+    val strictMatch: Boolean = false,
 
     /**
      * A comma-separated list of data fields to return for the matched entries.
@@ -26,7 +40,7 @@ class EntryQuery(
     /**
      * Selection filter: a comma-separated list of grammatical features ids to match on (default: all features).
      * The available grammatical features for a given language (or language pair) can be obtained from
-     * the /grammaticalfeatures/ endpoint. TODO: Not sure what this endpoint is
+     * the /grammaticalfeatures/ endpoint.
      *
      * The filter keeps all the entries in the response whose grammaticalFeatures "id" matches the values in
      * the grammaticalFeatures parameter.
@@ -36,7 +50,7 @@ class EntryQuery(
     /**
      * Selection filter: a comma-separated list of lexical categories ids to match on (default: all categories).
      * The available lexical categories for a given language (or language pair) can be obtained from
-     * the /lexicalcategories/ endpoint. TODO: Not sure what this endpoint is
+     * the /lexicalcategories/ endpoint.
      *
      * The filter keeps all the entries in the response whose lexicalCategory "id" matches the values in the
      * lexicalCategory parameter.
@@ -46,7 +60,6 @@ class EntryQuery(
     /**
      * Selection filter: a comma-separated list of domains ids to match on (default: all domains).
      * The available domains for a given language (or language pair) can be obtained from the /domains/ endpoint.
-     * TODO: Not sure what this endpoint is
      *
      * The filter keeps all the senses and subsenses in the response whose domains "id" matches the values in the
      * domains parameter.
@@ -56,62 +69,33 @@ class EntryQuery(
     /**
      * Selection filter: a comma-separated list of registers ids to match on (default: all registers).
      * The available registers for a given language (or language pair) can be obtained from the /registers/ endpoint.
-     * TODO: Not sure what this endpoint is
      *
      * The filter keeps all the senses and subsenses in the response whose registers "id" matches the values in the
      * registers parameter.
      */
     val registers: List<String> = listOf(),
 
-    /**
-     * Specifies whether diacritics must match exactly. If "false", near-homographs for the given word_id will
-     * also be selected (e.g., rose matches both rose and rosé; similarly rosé matches both).
-     */
-    val strictMatch: Boolean = false,
-) {
-
-    /**
-     * The api endpoint for the call
-     */
-    private val _api: String = "entries"
-    val api: String
-        get() = _api
+    ) : Query {
 
     /**
      * Get gets the parameters of the call as a map of strings
      */
-    fun parameters(): Map<String, String> {
+    override fun parameters(): Map<String, String> {
         return mapOf(
+            "strictMatch" to strictMatch.toString(),
             "fields" to fields.joinToString(","),
             "grammaticalFeatures" to grammaticalFeatures.joinToString(","),
             "lexicalCategory" to lexicalCategory.joinToString(","),
             "domains" to domains.joinToString(","),
             "registers" to registers.joinToString(","),
-            "strictMatch" to strictMatch.toString(),
         ).filterValues { it.isNotEmpty() };
+    }
+
+    /**
+     * Get the url path fragment for the call
+     */
+    override fun pathFragment(): String {
+        return "translations/${sourceLanguage.name}/${targetLanguage.name}/${word}"
     }
 }
 
-enum class DataField {
-    definitions,
-    domains,
-    etymologies,
-    examples,
-    pronunciations,
-    regions,
-    registers,
-    variantForms
-}
-
-enum class SourceLanguage(val value: String) {
-    English_gb("en-gb"),
-    English_us("en-us"),
-    Spanish("es"),
-    French("fr"),
-    Gujarati("gu"),
-    Hindi("hi"),
-    Latvian("lv"),
-    Romanian("ro"),
-    Swahili("sw"),
-    Tamil("ta")
-}
