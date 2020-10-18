@@ -21,6 +21,7 @@ class OxfordClient(
 
     /**
      * /api/v2/entries/{source_lang}/{word_id}:
+     *
      * Use this to retrieve definitions, pronunciations, example sentences, grammatical information and word origins
      *
      * TIP: Entries ONLY works for dictionary headwords. You may need to use the Lemmas endpoint first to link an
@@ -46,11 +47,12 @@ class OxfordClient(
      * @see OxfordClient.entries
      */
     fun entries(word: String): RetrieveEntry? {
-        return entries(EntryQuery(word))
+        return this.entries(EntryQuery(word = word))
     }
 
     /**
      * /api/v2/lemmas/{source_lang}/{word_id}:
+     *
      * Use this to check if a word exists in the dictionary, or what 'root' form it links to (e.g., swimming > swim).
      *
      * The response tells you the possible lemmas for a given inflected word. This can then be combined with other
@@ -70,11 +72,12 @@ class OxfordClient(
      * @see OxfordClient.lemmas
      */
     fun lemmas(word: String): Lemmatron? {
-        return lemmas(LemmaQuery(word))
+        return this.lemmas(LemmaQuery(word = word))
     }
 
     /**
      * /search/translations/{source_lang_search}/{target_lang_search}:
+     *
      * Use this to find possible translations for a given word.
      */
     fun searchTranslations(query: SearchTranslationsQuery): WordList? {
@@ -85,11 +88,12 @@ class OxfordClient(
      * @see OxfordClient.searchTranslations
      */
     fun searchTranslations(query: String): WordList? {
-        return searchTranslations(SearchTranslationsQuery(query))
+        return this.searchTranslations(SearchTranslationsQuery(q = query))
     }
 
     /**
      * /api/v2/search/{source_lang}:
+     *
      * Use this to retrieve possible headword matches for a given string of text.
      * The results are calculated using headword matching, fuzzy matching, and lemmatization
      */
@@ -101,11 +105,12 @@ class OxfordClient(
      * @see OxfordClient.search
      */
     fun search(query: String): WordList? {
-        return search(SearchQuery(query))
+        return this.search(SearchQuery(q = query))
     }
 
     /**
      * /api/v2/search/thesaurus/{source_lang}:
+     *
      * Use this to retrieve possible headword matches for a given string of text.
      * The results are calculated using headword matching, fuzzy matching, and lemmatization
      */
@@ -117,11 +122,12 @@ class OxfordClient(
      * @see OxfordClient.searchThesaurus
      */
     fun searchThesaurus(query: String): WordList? {
-        return searchThesaurus(SearchThesaurusQuery(query))
+        return this.searchThesaurus(SearchThesaurusQuery(q = query))
     }
 
     /**
      * /api/v2/search/thesaurus/{source_lang}:
+     *
      * Use this to retrieve possible headword matches for a given string of text.
      * The results are calculated using headword matching, fuzzy matching, and lemmatization
      */
@@ -132,14 +138,15 @@ class OxfordClient(
     /**
      * @see OxfordClient.thesaurus
      */
-    fun thesaurus(query: String): Thesaurus? {
-        return thesaurus(ThesaurusQuery(query))
+    fun thesaurus(word: String): Thesaurus? {
+        return this.thesaurus(ThesaurusQuery(word = word))
     }
 
     /**
-     * /api/v2/search/thesaurus/{source_lang}:
-     * Use this to retrieve possible headword matches for a given string of text.
-     * The results are calculated using headword matching, fuzzy matching, and lemmatization
+     * /api/v2/translations/{source_lang_translate}/{target_lang_translate}/{word_id}:
+     *
+     * Use this to return translations for a given word. In the event that a word in the dataset
+     * does not have a direct translation, the response will be a definition in the target language.
      */
     fun translations(query: TranslationQuery): RetrieveTranslation? {
         return parse(httpClient.execute(query))
