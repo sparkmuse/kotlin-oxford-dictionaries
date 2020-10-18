@@ -15,7 +15,7 @@ class SearchThesaurusQuery(
     /**
      * Language code of the source language in a monolingual dataset.
      */
-    val sourceLanguage: LanguageThesaurus = LanguageThesaurus.en,
+    val sourceLanguage: LanguageThesaurus = LanguageThesaurus.English,
 
     /**
      * Use prefix=true to return only results that start with the value of the "q" parameter.
@@ -50,7 +50,7 @@ class SearchThesaurusQuery(
      * Get the url path fragment for the call
      */
     override fun pathFragment(): String {
-        return "search/thesaurus/${sourceLanguage.name}"
+        return "search/thesaurus/${sourceLanguage.value}"
     }
 }
 

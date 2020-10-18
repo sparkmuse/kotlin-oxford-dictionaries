@@ -24,12 +24,38 @@ enum class LanguageMonolingual(val value: String) {
 /**
  * Language code of the source language in a bilingual dataset.
  */
-enum class LanguageBilingual() {
-    en, ar, de, el, es, ha, hi, id, it, mr, ms, nso, pt, qu, ru, te, tk, tn, tpi, tt, ur, xh, zh, zu;
+enum class LanguageBilingual(val value: String) {
+    English("en"),
+    Arabic("ar"),
+    German("de"),
+    Greek("el"),
+    Spanish("es"),
+    Hausa("ha"),
+    Hindi("hi"),
+    Indonesian("id"),
+    Italian("it"),
+    Marathi("mr"),
+    Malay("ms"),
+    Northern_Sotho("nso"),
+    Portuguese("pt"),
+    Quechua("qu"),
+    Russian("ru"),
+    Telugu("te"),
+    Turkmen("tk"),
+    Tswana("tn"),
+    Tok_Pisin("tpi"),
+    Tatar("tt"),
+    Urdu("ur"),
+    Xhosa("xh"),
+    Chinese("zh"),
+    Zulu("zu");
 }
 
-enum class LanguageThesaurus() {
-    en
+/**
+ * Language code of the source language in a Thesaurus dataset.
+ */
+enum class LanguageThesaurus(val value: String) {
+    English("en")
 }
 
 

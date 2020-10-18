@@ -10,7 +10,7 @@ class ThesaurusQuery(
     /**
      * Language code of the source language in a Thesaurus dataset.
      */
-    val sourceLanguage: LanguageThesaurus = LanguageThesaurus.en,
+    val sourceLanguage: LanguageThesaurus = LanguageThesaurus.English,
 
     /**
      * A comma-separated list of data fields to return for the matched entries.
@@ -41,7 +41,7 @@ class ThesaurusQuery(
      * Get the url path fragment for the call
      */
     override fun pathFragment(): String {
-        return "thesaurus/${sourceLanguage.name}/$word"
+        return "thesaurus/${sourceLanguage.value}/$word"
     }
 
     enum class DataField {

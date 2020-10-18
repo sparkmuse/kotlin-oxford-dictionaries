@@ -1,20 +1,16 @@
 package com.github.sparkmuse.query
 
-import com.github.sparkmuse.query.LanguageBilingual
-import com.github.sparkmuse.query.LanguageMonolingual
-import com.github.sparkmuse.query.Query
-
 class TranslationQuery(
 
     /**
      * Language code of the source language in a bilingual dataset.
      */
-    val sourceLanguage: LanguageBilingual = LanguageBilingual.en,
+    val sourceLanguage: LanguageBilingual = LanguageBilingual.English,
 
     /**
      * Language code of the target language in a bilingual dataset.
      */
-    val targetLanguage: LanguageBilingual = LanguageBilingual.es,
+    val targetLanguage: LanguageBilingual = LanguageBilingual.Spanish,
 
     /**
      * The identifier for an Entry (case-sensitive)
@@ -95,7 +91,7 @@ class TranslationQuery(
      * Get the url path fragment for the call
      */
     override fun pathFragment(): String {
-        return "translations/${sourceLanguage.name}/${targetLanguage.name}/${word}"
+        return "translations/${sourceLanguage.value}/${targetLanguage.value}/${word}"
     }
 }
 

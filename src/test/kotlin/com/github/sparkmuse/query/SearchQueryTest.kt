@@ -30,7 +30,7 @@ class SearchQueryTest {
 
         @Test
         fun pathFragment() {
-            val query = SearchTranslationsQuery("ace", LanguageBilingual.en, LanguageBilingual.es)
+            val query = SearchTranslationsQuery("ace", LanguageBilingual.English, LanguageBilingual.Spanish)
             val actual = query.pathFragment()
             assertThat(actual).isEqualTo("search/translations/en/es")
         }
@@ -82,7 +82,7 @@ class SearchQueryTest {
 
         @Test
         fun pathFragment() {
-            val query = SearchThesaurusQuery("ace", LanguageThesaurus.en)
+            val query = SearchThesaurusQuery("ace", LanguageThesaurus.English)
             val actual = query.pathFragment()
             assertThat(actual).isEqualTo("search/thesaurus/en")
         }

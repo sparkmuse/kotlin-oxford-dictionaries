@@ -40,7 +40,7 @@ class TranslationQueryTest {
 
     @Test
     fun pathFragment() {
-        val query = TranslationQuery(word = "ace", sourceLanguage = en, targetLanguage = es)
+        val query = TranslationQuery(word = "ace", sourceLanguage = English, targetLanguage = Spanish)
         val actual = query.pathFragment()
         assertThat(actual).isEqualTo("translations/en/es/ace")
     }

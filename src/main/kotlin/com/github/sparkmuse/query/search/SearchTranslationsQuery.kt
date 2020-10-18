@@ -1,7 +1,6 @@
 package com.github.sparkmuse.query.search
 
 import com.github.sparkmuse.query.LanguageBilingual
-import com.github.sparkmuse.query.LanguageMonolingual
 import com.github.sparkmuse.query.Query
 
 class SearchTranslationsQuery(
@@ -14,12 +13,12 @@ class SearchTranslationsQuery(
     /**
      * Language code of the source language in a bilingual dataset.
      */
-    val sourceLanguage: LanguageBilingual = LanguageBilingual.en,
+    val sourceLanguage: LanguageBilingual = LanguageBilingual.English,
 
     /**
      * Language code of the target language in a bilingual dataset.
      */
-    val targetLanguage: LanguageBilingual = LanguageBilingual.es,
+    val targetLanguage: LanguageBilingual = LanguageBilingual.Spanish,
 
     /**
      * Use prefix=true to return only results that start with the value of the "q" parameter.
@@ -54,7 +53,7 @@ class SearchTranslationsQuery(
      * Get the url path fragment for the call
      */
     override fun pathFragment(): String {
-        return "search/translations/${sourceLanguage.name}/${targetLanguage.name}"
+        return "search/translations/${sourceLanguage.value}/${targetLanguage.value}"
     }
 }
 
