@@ -16,7 +16,7 @@ As we support more endpoints they will be added to the list bellow:
 | /api/v2/thesaurus/{lang}/{word_id}:                                              	|      ✅     	|
 | /api/v2/sentences/{source_lang}/{word_id}:                                       	|      ✅     	|
 | /api/v2/words/{source_lang}:                                                     	|      ✅     	|
-| /inflections/{source_lang}/{word_id}:                                            	|      ❌     	|
+| /api/v2/inflections/{source_lang}/{word_id}:                                    	|      ✅     	|
 | __Search__                                                                      	|            	|
 | /api/v2/search/translations/{source_lang_search}/{target_lang_search}:           	|      ✅     	|
 | /api/v2/search/{source_lang}:                                                    	|      ✅     	|

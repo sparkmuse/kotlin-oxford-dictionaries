@@ -164,4 +164,13 @@ class OxfordContractTest {
 
         assertThat(language).isNotNull
     }
+
+    @Test
+    fun inflections() {
+        val json = clazz.getResource("/__files/inflections.json").readText()
+
+        val inflection = jacksonObjectMapper().readValue(json, RetrieveInflection::class.java)
+
+        assertThat(inflection).isNotNull
+    }
 }

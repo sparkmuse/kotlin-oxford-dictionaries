@@ -204,6 +204,22 @@ class OxfordClient(
     }
 
     /**
+     * /inflections/{source_lang}/{word_id}:
+     * Retrieve all the inflections of a given word_id. The inflections are given for a lexicalEntry with a
+     * specific lexicalCategory.
+     */
+    fun inflections(query: InflectionQuery): RetrieveInflection? {
+        return parse(httpClient.execute(query))
+    }
+
+    /**
+     * @see OxfordClient.inflections
+     */
+    fun inflections(word: String): RetrieveInflection? {
+        return this.inflections(InflectionQuery(word = word))
+    }
+
+    /**
      * /domains/{source_lang}:
      * Lists available domains in a monolingual dataset
      */

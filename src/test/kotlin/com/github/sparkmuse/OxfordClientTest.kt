@@ -1,9 +1,7 @@
 package com.github.sparkmuse
 
-import com.github.sparkmuse.query.LanguageBilingual
 import com.github.sparkmuse.query.LanguageBilingual.English
 import com.github.sparkmuse.query.LanguageBilingual.Spanish
-import com.github.sparkmuse.query.LanguageMonolingual
 import com.github.sparkmuse.query.LanguageMonolingual.English_gb
 import com.github.sparkmuse.query.utility.*
 import com.github.sparkmuse.wiremock.Wiremock
@@ -166,6 +164,24 @@ class OxfordClientTest {
         val sentencesResults = oxfordClient.sentences("ace")
 
         assertThat(sentencesResults).isNotNull
+    }
+
+    @Test
+    fun inflections() {
+
+        wiremock.stubFor(
+            get(urlPathMatching("/inflections/en-gb/ace"))
+                .withQueryParam("strictMatch", equalTo("false"))
+                .willReturn(
+                    aResponse()
+                        .withStatus(200)
+                        .withBodyFile("inflections.json")
+                )
+        )
+
+        val inflection = oxfordClient.inflections("ace")
+
+        assertThat(inflection).isNotNull
     }
 
     @Test

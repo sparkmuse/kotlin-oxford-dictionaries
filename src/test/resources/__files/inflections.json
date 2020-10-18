@@ -1,0 +1,82 @@
+{
+  "metadata": {},
+  "results": [
+    {
+      "id": "string",
+      "language": "string",
+      "lexicalEntries": [
+        {
+          "grammaticalFeatures": [
+            {
+              "id": "string",
+              "text": "string",
+              "type": "string"
+            }
+          ],
+          "inflections": [
+            {
+              "domains": [
+                {
+                  "id": "string",
+                  "text": "string"
+                }
+              ],
+              "grammaticalFeatures": [
+                {
+                  "id": "string",
+                  "text": "string",
+                  "type": "string"
+                }
+              ],
+              "inflectedForm": "string",
+              "lexicalCategory": {
+                "id": "string",
+                "text": "string"
+              },
+              "pronunciations": [
+                {
+                  "audioFile": "string",
+                  "dialects": [
+                    "string"
+                  ],
+                  "phoneticNotation": "string",
+                  "phoneticSpelling": "string",
+                  "regions": [
+                    {
+                      "id": "string",
+                      "text": "string"
+                    }
+                  ],
+                  "registers": [
+                    {
+                      "id": "string",
+                      "text": "string"
+                    }
+                  ]
+                }
+              ],
+              "regions": [
+                {
+                  "id": "string",
+                  "text": "string"
+                }
+              ],
+              "registers": [
+                {
+                  "id": "string",
+                  "text": "string"
+                }
+              ]
+            }
+          ],
+          "language": "string",
+          "lexicalCategory": {
+            "id": "string",
+            "text": "string"
+          }
+        }
+      ],
+      "text": "string"
+    }
+  ]
+}
