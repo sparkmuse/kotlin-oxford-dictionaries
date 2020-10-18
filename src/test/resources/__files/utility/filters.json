@@ -1,0 +1,27 @@
+{
+  "metadata": {
+    "operation": "retrieve",
+    "provider": "Oxford University Press",
+    "schema": "RetrieveEntry"
+  },
+  "results": {
+    "entries": [
+      "pronunciations",
+      "regions",
+      "lexicalCategory",
+      "definitions",
+      "examples",
+      "antonyms",
+      "registers",
+      "inflections",
+      "translations",
+      "grammaticalFeatures",
+      "synonyms",
+      "domains"
+    ],
+    "lemmas": [
+      "lexicalCategory",
+      "grammaticalFeatures"
+    ]
+  }
+}

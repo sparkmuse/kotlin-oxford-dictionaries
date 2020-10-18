@@ -4,6 +4,7 @@ import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
 import com.github.sparkmuse.entity.*
 import com.github.sparkmuse.entity.utility.RetrieveDomain
 import com.github.sparkmuse.entity.utility.RetrieveField
+import com.github.sparkmuse.entity.utility.RetrieveFilter
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.DisplayName
 import org.junit.jupiter.api.Test
@@ -119,5 +120,14 @@ class OxfordContractTest {
         val retrieveField = jacksonObjectMapper().readValue(json, RetrieveField::class.java)
 
         assertThat(retrieveField).isNotNull
+    }
+
+    @Test
+    fun filters() {
+        val json = clazz.getResource("/__files/utility/filters.json").readText()
+
+        val retrieveFilter = jacksonObjectMapper().readValue(json, RetrieveFilter::class.java)
+
+        assertThat(retrieveFilter).isNotNull
     }
 }

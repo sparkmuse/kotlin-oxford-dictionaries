@@ -3,16 +3,14 @@ package com.github.sparkmuse
 import com.github.sparkmuse.entity.*
 import com.github.sparkmuse.entity.utility.RetrieveDomain
 import com.github.sparkmuse.entity.utility.RetrieveField
+import com.github.sparkmuse.entity.utility.RetrieveFilter
 import com.github.sparkmuse.internal.HttpClient
 import com.github.sparkmuse.internal.parse
 import com.github.sparkmuse.query.*
 import com.github.sparkmuse.query.search.SearchQuery
 import com.github.sparkmuse.query.search.SearchThesaurusQuery
 import com.github.sparkmuse.query.search.SearchTranslationsQuery
-import com.github.sparkmuse.query.utility.DomainBilingualQuery
-import com.github.sparkmuse.query.utility.DomainMonolingualQuery
-import com.github.sparkmuse.query.utility.FieldEndpointQuery
-import com.github.sparkmuse.query.utility.FieldQuery
+import com.github.sparkmuse.query.utility.*
 
 class OxfordClient(
     val appId: String,
@@ -236,6 +234,22 @@ class OxfordClient(
      * Lists available fields for specific endpoint
      */
     fun field(query: FieldEndpointQuery): RetrieveField? {
+        return parse(httpClient.execute(query))
+    }
+
+    /**
+     * /filters:
+     * Lists all available filters
+     */
+    fun filter(query: FilterQuery): RetrieveFilter? {
+        return parse(httpClient.execute(query))
+    }
+
+    /**
+     * /filters/{endpoint}:
+     * Lists available filters for specific endpoint
+     */
+    fun filter(query: FilterEndpointQuery): RetrieveFilter? {
         return parse(httpClient.execute(query))
     }
 }

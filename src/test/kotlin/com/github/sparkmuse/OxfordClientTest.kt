@@ -5,10 +5,7 @@ import com.github.sparkmuse.query.LanguageBilingual.English
 import com.github.sparkmuse.query.LanguageBilingual.Spanish
 import com.github.sparkmuse.query.LanguageMonolingual
 import com.github.sparkmuse.query.LanguageMonolingual.English_gb
-import com.github.sparkmuse.query.utility.DomainBilingualQuery
-import com.github.sparkmuse.query.utility.DomainMonolingualQuery
-import com.github.sparkmuse.query.utility.FieldEndpointQuery
-import com.github.sparkmuse.query.utility.FieldQuery
+import com.github.sparkmuse.query.utility.*
 import com.github.sparkmuse.wiremock.Wiremock
 import com.github.sparkmuse.wiremock.WiremockExtension
 import com.github.tomakehurst.wiremock.WireMockServer
@@ -249,6 +246,38 @@ class OxfordClientTest {
         )
 
         val results = oxfordClient.field(FieldEndpointQuery("entries"))
+
+        assertThat(results).isNotNull
+    }
+
+    @Test
+    fun filter() {
+        wiremock.stubFor(
+            get(urlPathMatching("/filters"))
+                .willReturn(
+                    aResponse()
+                        .withStatus(200)
+                        .withBodyFile("utility/filters.json")
+                )
+        )
+
+        val results = oxfordClient.filter(FilterQuery())
+
+        assertThat(results).isNotNull
+    }
+
+    @Test
+    fun `filter for specific endpoint`() {
+        wiremock.stubFor(
+            get(urlPathMatching("/filters/entries"))
+                .willReturn(
+                    aResponse()
+                        .withStatus(200)
+                        .withBodyFile("utility/filters.json")
+                )
+        )
+
+        val results = oxfordClient.filter(FilterEndpointQuery("entries"))
 
         assertThat(results).isNotNull
     }

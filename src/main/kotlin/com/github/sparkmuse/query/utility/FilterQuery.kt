@@ -1,13 +1,11 @@
 package com.github.sparkmuse.query.utility
 
-import com.github.sparkmuse.query.LanguageBilingual
-import com.github.sparkmuse.query.LanguageMonolingual
 import com.github.sparkmuse.query.Query
 
 /**
- * Lists available fields
+ * Lists available filters
  */
-class FieldQuery : Query {
+class FilterQuery : Query {
 
     /**
      * Get gets the parameters of the call as a map of strings
@@ -20,14 +18,14 @@ class FieldQuery : Query {
      * Get the url path fragment for the call
      */
     override fun pathFragment(): String {
-        return "fields"
+        return "filters"
     }
 }
 
 /**
- * Lists available fields for specific endpoint
+ * Lists available filters for specific endpoint
  */
-class FieldEndpointQuery(
+class FilterEndpointQuery(
 
     /**
      * path endpoint
@@ -47,6 +45,6 @@ class FieldEndpointQuery(
      * Get the url path fragment for the call
      */
     override fun pathFragment(): String {
-        return "fields/$endpoint"
+        return "filters/$endpoint"
     }
 }
