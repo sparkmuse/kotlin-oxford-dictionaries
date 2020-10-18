@@ -144,4 +144,22 @@ class OxfordClientTest {
 
         assertThat(sentencesResults).isNotNull
     }
+
+    @Test
+    fun words() {
+
+        wiremock.stubFor(
+            get(urlPathMatching("/words/en-gb"))
+                .withQueryParam("q", equalTo("ace"))
+                .willReturn(
+                    aResponse()
+                        .withStatus(200)
+                        .withBodyFile("entries.json")
+                )
+        )
+
+        val results = oxfordClient.words("ace")
+
+        assertThat(results).isNotNull
+    }
 }

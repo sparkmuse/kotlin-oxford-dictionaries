@@ -90,4 +90,14 @@ class OxfordContractTest {
 
         assertThat(sentencesResults).isNotNull
     }
+
+    @Test
+    fun words() {
+        // Words and entries endpoint return the same object
+        val json = clazz.getResource("/__files/entries.json").readText()
+
+        val retrieveEntry = jacksonObjectMapper().readValue(json, RetrieveEntry::class.java)
+
+        assertThat(retrieveEntry).isNotNull
+    }
 }

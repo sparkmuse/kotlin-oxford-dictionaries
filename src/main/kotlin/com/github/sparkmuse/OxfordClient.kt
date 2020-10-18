@@ -173,5 +173,32 @@ class OxfordClient(
     fun sentences(word: String): SentencesResults? {
         return this.sentences(SentenceQuery(word = word))
     }
+
+    /**
+     * /api/v2/words/{source_lang}:
+     *
+     * Use this endpoint to retrieve definitions, examples and other information for a given dictionary word or
+     * an inflection (e.g., running > run). The response contains information about the lemmas to which the
+     * given word/inflected form is linked.
+     *
+     * The results can be filtered by lexicalCategories, domains, registers or grammaticalFeatures.
+     * Filters can be combined.
+     *
+     * In addition, users can use fields to project some of the properties.
+     * Combining different filters will build a query using 'AND' operators, while if a filter contains more than
+     * one value it will build a query using 'OR' operators. For example, a combination of filters
+     * like '?grammaticalFeatures=singular&lexicalCategory=noun,verb' will return entries which match the query
+     * ('noun' OR 'verb') AND 'singular'.
+     */
+    fun words(query: WordQuery): RetrieveEntry? {
+        return parse(httpClient.execute(query))
+    }
+
+    /**
+     * @see OxfordClient.words
+     */
+    fun words(word: String): RetrieveEntry? {
+        return this.words(WordQuery(q = word))
+    }
 }
 
