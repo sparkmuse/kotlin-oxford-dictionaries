@@ -33,3 +33,54 @@ Kotlin client for the Oxford Dictionaries API
 | /api/v2/lexicalCategories/{source_lang_lexical}/{target_lang_lexical}:           	|      ❌     	|
 | /api/v2/registers/{source_lang}:                                                 	|      ❌     	|
 | /api/v2/registers/{source_lang_registers}/{target_lang_registers}:               	|      ❌     	|
+
+# Examples
+
+Retrieve entries for the word 'ace'
+
+<details open>
+<summary>kotlin</summary>
+<p>
+
+```kotlin
+@Test
+fun `retrieve entries for the word 'ace'`() {
+
+    val appId = System.getenv("APP_ID")
+    val appKey = System.getenv("APP_KEY")
+    val baseUrl = "https://od-api.oxforddictionaries.com/api/v2"
+
+    val oxfordClient = OxfordClient(appId, appKey, baseUrl)
+
+    val entries = oxfordClient.entries("ace")
+
+    assertNotNull(entries)
+}
+```
+
+</p>
+</details>
+
+<details>
+<summary>java</summary>
+<p>
+
+```java
+@Test
+@DisplayName("retrieve entries for the word 'ace'")
+void entries() {
+
+    String appId = System.getenv("APP_ID");
+    String appKey = System.getenv("APP_KEY");
+    String baseUrl = "https://od-api.oxforddictionaries.com/api/v2";
+
+    OxfordClient oxfordClient = new OxfordClient(appId, appKey, baseUrl);
+
+    RetrieveEntry entries = oxfordClient.entries("ace");
+
+    assertNotNull(entries);
+}
+```
+
+</p>
+</details>

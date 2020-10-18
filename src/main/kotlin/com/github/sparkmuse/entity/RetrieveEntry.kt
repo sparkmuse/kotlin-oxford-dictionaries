@@ -1,7 +1,5 @@
 package com.github.sparkmuse.entity
 
-import com.fasterxml.jackson.annotation.JsonProperty
-
 data class RetrieveEntry(
 
     /**
