@@ -48,7 +48,7 @@ enum class LanguageBilingual(val value: String) {
     Urdu("ur"),
     Xhosa("xh"),
     Chinese("zh"),
-    Zulu("zu");
+    Zulu("zu")
 }
 
 /**
@@ -56,6 +56,14 @@ enum class LanguageBilingual(val value: String) {
  */
 enum class LanguageThesaurus(val value: String) {
     English("en")
+}
+
+/**
+ * Language code of the source language. Used for sentences
+ */
+enum class LanguageSentence(val value: String) {
+    English("en"),
+    Spanish("es")
 }
 
 

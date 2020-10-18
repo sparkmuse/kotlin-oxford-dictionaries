@@ -1,0 +1,64 @@
+{
+  "metadata": {},
+  "results": [
+    {
+      "id": "string",
+      "language": "string",
+      "lexicalEntries": [
+        {
+          "grammaticalFeatures": [
+            {
+              "id": "string",
+              "text": "string",
+              "type": "string"
+            }
+          ],
+          "language": "string",
+          "lexicalCategory": {
+            "id": "string",
+            "text": "string"
+          },
+          "sentences": [
+            {
+              "definitions": [
+                "string"
+              ],
+              "domains": [
+                {
+                  "id": "string",
+                  "text": "string"
+                }
+              ],
+              "notes": [
+                {
+                  "id": "string",
+                  "text": "string",
+                  "type": "string"
+                }
+              ],
+              "regions": [
+                {
+                  "id": "string",
+                  "text": "string"
+                }
+              ],
+              "registers": [
+                {
+                  "id": "string",
+                  "text": "string"
+                }
+              ],
+              "senseIds": [
+                "string"
+              ],
+              "text": "string"
+            }
+          ],
+          "text": "string"
+        }
+      ],
+      "type": "string",
+      "word": "string"
+    }
+  ]
+}

@@ -3,10 +3,7 @@ package com.github.sparkmuse
 import com.github.sparkmuse.entity.*
 import com.github.sparkmuse.internal.HttpClient
 import com.github.sparkmuse.internal.parse
-import com.github.sparkmuse.query.EntryQuery
-import com.github.sparkmuse.query.ThesaurusQuery
-import com.github.sparkmuse.query.LemmaQuery
-import com.github.sparkmuse.query.TranslationQuery
+import com.github.sparkmuse.query.*
 import com.github.sparkmuse.query.search.SearchQuery
 import com.github.sparkmuse.query.search.SearchThesaurusQuery
 import com.github.sparkmuse.query.search.SearchTranslationsQuery
@@ -157,6 +154,24 @@ class OxfordClient(
      */
     fun translations(word: String): RetrieveTranslation? {
         return this.translations(TranslationQuery(word = word))
+    }
+
+    /**
+     * /api/v2/sentences/{source_lang}/{word_id}:
+     *
+     * Use this to retrieve sentences extracted from a corpus of real-world language, including news and blog content.
+     * This is available for English and Spanish. For English, the sentences are linked to the correct sense of the
+     * word in the dictionary. In Spanish, they are linked at the headword level.
+     */
+    fun sentences(query: SentenceQuery): SentencesResults? {
+        return parse(httpClient.execute(query))
+    }
+
+    /**
+     * @see OxfordClient.sentences
+     */
+    fun sentences(word: String): SentencesResults? {
+        return this.sentences(SentenceQuery(word = word))
     }
 }
 

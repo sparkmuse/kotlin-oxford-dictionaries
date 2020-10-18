@@ -80,4 +80,14 @@ class OxfordContractTest {
 
         assertThat(translation).isNotNull
     }
+
+    @Test
+    fun sentences() {
+
+        val json = clazz.getResource("/__files/sentences.json").readText()
+
+        val sentencesResults = jacksonObjectMapper().readValue(json, SentencesResults::class.java)
+
+        assertThat(sentencesResults).isNotNull
+    }
 }
