@@ -345,4 +345,36 @@ class OxfordClientTest {
 
         assertThat(results).isNotNull
     }
+
+    @Test
+    fun registersMonolingual() {
+        wiremock.stubFor(
+            get(urlPathMatching("/registers/en-gb"))
+                .willReturn(
+                    aResponse()
+                        .withStatus(200)
+                        .withBodyFile("utility/registers.json")
+                )
+        )
+
+        val results = oxfordClient.registers(RegisterMonolingualQuery(English_gb))
+
+        assertThat(results).isNotNull
+    }
+
+    @Test
+    fun registersBilingual() {
+        wiremock.stubFor(
+            get(urlPathMatching("/registers/en/es"))
+                .willReturn(
+                    aResponse()
+                        .withStatus(200)
+                        .withBodyFile("utility/registers.json")
+                )
+        )
+
+        val results = oxfordClient.registers(RegisterBilingualQuery(English, Spanish))
+
+        assertThat(results).isNotNull
+    }
 }

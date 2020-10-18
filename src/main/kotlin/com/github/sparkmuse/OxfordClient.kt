@@ -282,5 +282,21 @@ class OxfordClient(
     fun lexicalCategory(query: LexicalCategoryBilingualQuery): RetrieveLexicalCategory? {
         return parse(httpClient.execute(query))
     }
+
+    /**
+     * /registers/{source_lang}:
+     * Lists available registers in a monolingual dataset
+     */
+    fun registers(query: RegisterMonolingualQuery): RetrieveRegister? {
+        return parse(httpClient.execute(query))
+    }
+
+    /**
+     * /register/{source_lang_grammatical}/{target_lang_grammatical}:
+     * Lists available registers in a bilingual dataset
+     */
+    fun registers(query: RegisterBilingualQuery): RetrieveRegister? {
+        return parse(httpClient.execute(query))
+    }
 }
 

@@ -146,4 +146,13 @@ class OxfordContractTest {
 
         assertThat(lexicalCategory).isNotNull
     }
+
+    @Test
+    fun registers() {
+        val json = clazz.getResource("/__files/utility/registers.json").readText()
+
+        val retrieveRegister = jacksonObjectMapper().readValue(json, RetrieveRegister::class.java)
+
+        assertThat(retrieveRegister).isNotNull
+    }
 }

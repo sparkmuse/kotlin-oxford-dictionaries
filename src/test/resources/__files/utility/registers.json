@@ -1,0 +1,102 @@
+{
+  "metadata": {
+    "operation": "retrieve",
+    "provider": "Oxford University Press",
+    "schema": "RetrieveEntry"
+  },
+  "results": {
+    "archaic": {
+      "en": "Archaic"
+    },
+    "black_english": {
+      "en": "Black English"
+    },
+    "dated": {
+      "en": "Dated"
+    },
+    "derogatory": {
+      "en": "Derogatory"
+    },
+    "dialect": {
+      "en": "Dialect"
+    },
+    "euphemistic": {
+      "en": "Euphemistic"
+    },
+    "figurative": {
+      "en": "Figurative"
+    },
+    "formal": {
+      "en": "Formal"
+    },
+    "historical": {
+      "en": "Historical"
+    },
+    "humorous": {
+      "en": "Humorous"
+    },
+    "informal": {
+      "en": "Informal"
+    },
+    "ironic": {
+      "en": "Ironic"
+    },
+    "literal": {
+      "en": "Literal"
+    },
+    "literary": {
+      "en": "Literary"
+    },
+    "military_slang": {
+      "en": "Military Slang"
+    },
+    "nautical_slang": {
+      "en": "Nautical Slang"
+    },
+    "non-standard": {
+      "en": "Non-Standard"
+    },
+    "obsolete": {
+      "en": "Obsolete"
+    },
+    "offensive": {
+      "en": "Offensive"
+    },
+    "poetic": {
+      "en": "Poetic"
+    },
+    "proverb": {
+      "en": "Proverb"
+    },
+    "pseudo_archaic": {
+      "en": "Pseudo Archaic"
+    },
+    "rare": {
+      "en": "Rare"
+    },
+    "rhyming_slang": {
+      "en": "Rhyming Slang"
+    },
+    "slang": {
+      "en": "Slang"
+    },
+    "technical": {
+      "en": "Technical"
+    },
+    "theatrical_slang": {
+      "en": "Theatrical Slang"
+    },
+    "trademark": {
+      "en": "Trademark"
+    },
+    "trademark_in_uk": {
+      "en": "Trademark In Uk"
+    },
+    "trademark_in_us": {
+      "en": "Trademark In Us"
+    },
+    "vulgar_slang": {
+      "en": "Vulgar Slang"
+    }
+  }
+}
