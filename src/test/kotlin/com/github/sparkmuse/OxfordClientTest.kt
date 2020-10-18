@@ -5,6 +5,7 @@ import com.github.sparkmuse.wiremock.WiremockExtension
 import com.github.tomakehurst.wiremock.WireMockServer
 import com.github.tomakehurst.wiremock.client.WireMock.*
 import org.assertj.core.api.Assertions.assertThat
+import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.extension.ExtendWith
 
@@ -14,10 +15,15 @@ class OxfordClientTest {
     @Wiremock
     lateinit var wiremock: WireMockServer
 
+    lateinit var oxfordClient: OxfordClient
+
+    @BeforeEach
+    fun setUp() {
+        oxfordClient = OxfordClient("appId", "appKey", wiremock.baseUrl())
+    }
+
     @Test
     fun `gets entries`() {
-
-        val oxfordClient = OxfordClient("appId", "appKey", wiremock.baseUrl())
 
         wiremock.stubFor(
             get(urlPathMatching("/entries/en-gb/ace"))
@@ -37,8 +43,6 @@ class OxfordClientTest {
     @Test
     fun `gets lemmas`() {
 
-        val oxfordClient = OxfordClient("appId", "appKey", wiremock.baseUrl())
-
         wiremock.stubFor(
             get(urlPathMatching("/lemmas/en-gb/ace"))
                 .willReturn(
@@ -56,8 +60,6 @@ class OxfordClientTest {
     @Test
     fun `gets search translations`() {
 
-        val oxfordClient = OxfordClient("appId", "appKey", wiremock.baseUrl())
-
         wiremock.stubFor(
             get(urlPathMatching("/search/translations/en/es"))
                 .willReturn(
@@ -74,8 +76,6 @@ class OxfordClientTest {
 
     @Test
     fun `gets search`() {
-
-        val oxfordClient = OxfordClient("appId", "appKey", wiremock.baseUrl())
 
         wiremock.stubFor(
             get(urlPathMatching("/search/en-gb"))
@@ -95,8 +95,6 @@ class OxfordClientTest {
     @Test
     fun thesaurus() {
 
-        val oxfordClient = OxfordClient("appId", "appKey", wiremock.baseUrl())
-
         wiremock.stubFor(
             get(urlPathMatching("/thesaurus/en/ace"))
                 .willReturn(
@@ -113,8 +111,6 @@ class OxfordClientTest {
 
     @Test
     fun translations() {
-
-        val oxfordClient = OxfordClient("appId", "appKey", wiremock.baseUrl())
 
         wiremock.stubFor(
             get(urlPathMatching("/translations/en/es/ace"))
@@ -134,8 +130,6 @@ class OxfordClientTest {
     @Test
     fun sentences() {
 
-        val oxfordClient = OxfordClient("appId", "appKey", wiremock.baseUrl())
-
         wiremock.stubFor(
             get(urlPathMatching("/sentences/en/ace"))
                 .withQueryParam("strictMatch", equalTo("false"))
@@ -146,7 +140,7 @@ class OxfordClientTest {
                 )
         )
 
-        val sentencesResults = oxfordClient.sentences(word = "ace")
+        val sentencesResults = oxfordClient.sentences("ace")
 
         assertThat(sentencesResults).isNotNull
     }
