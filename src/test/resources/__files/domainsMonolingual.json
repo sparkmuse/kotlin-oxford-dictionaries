@@ -1,0 +1,3876 @@
+{
+  "metadata": {
+    "operation": "retrieve",
+    "provider": "Oxford University Press",
+    "schema": "RetrieveEntry"
+  },
+  "results": {
+    "ability": {
+      "en": "Ability"
+    },
+    "account": {
+      "en": "Account"
+    },
+    "accounting": {
+      "en": "Accounting"
+    },
+    "action": {
+      "en": "Action"
+    },
+    "action_in_cards": {
+      "en": "Action In Cards"
+    },
+    "action_in_dance": {
+      "en": "Action In Dance"
+    },
+    "action_in_sport": {
+      "en": "Action In Sport"
+    },
+    "activity": {
+      "en": "Activity"
+    },
+    "actor": {
+      "en": "Actor"
+    },
+    "address": {
+      "en": "Address"
+    },
+    "administrative_division": {
+      "en": "Administrative Division"
+    },
+    "advertisement": {
+      "en": "Advertisement"
+    },
+    "advocate": {
+      "en": "Advocate"
+    },
+    "aeronautics": {
+      "en": "Aeronautics"
+    },
+    "affinity_group": {
+      "en": "Affinity Group"
+    },
+    "african": {
+      "en": "African"
+    },
+    "african_language": {
+      "en": "African Language"
+    },
+    "agent": {
+      "en": "Agent"
+    },
+    "agreement": {
+      "en": "Agreement"
+    },
+    "agricultural_labourer": {
+      "en": "Agricultural Labourer"
+    },
+    "agriculture": {
+      "en": "Agriculture"
+    },
+    "air_force": {
+      "en": "Air Force"
+    },
+    "air_force_officer": {
+      "en": "Air Force Officer"
+    },
+    "aircraft": {
+      "en": "Aircraft"
+    },
+    "aircraft_part": {
+      "en": "Aircraft Part"
+    },
+    "alchemy": {
+      "en": "Alchemy"
+    },
+    "alcohol": {
+      "en": "Alcohol"
+    },
+    "alcoholic": {
+      "en": "Alcoholic"
+    },
+    "alga": {
+      "en": "Alga"
+    },
+    "alternative_medicine": {
+      "en": "Alternative Medicine"
+    },
+    "american_civil_war": {
+      "en": "American Civil War"
+    },
+    "american_football": {
+      "en": "American Football"
+    },
+    "american_football_player": {
+      "en": "American Football Player"
+    },
+    "amerindian": {
+      "en": "Amerindian"
+    },
+    "amerindian_language": {
+      "en": "Amerindian Language"
+    },
+    "amount": {
+      "en": "Amount"
+    },
+    "amphibian": {
+      "en": "Amphibian"
+    },
+    "analgesic": {
+      "en": "Analgesic"
+    },
+    "analyst": {
+      "en": "Analyst"
+    },
+    "anatomical_joint": {
+      "en": "Anatomical Joint"
+    },
+    "anatomy": {
+      "en": "Anatomy"
+    },
+    "ancient_greek_history": {
+      "en": "Ancient Greek History"
+    },
+    "ancient_history": {
+      "en": "Ancient History"
+    },
+    "anger": {
+      "en": "Anger"
+    },
+    "angle": {
+      "en": "Angle"
+    },
+    "angling": {
+      "en": "Angling"
+    },
+    "animal": {
+      "en": "Animal"
+    },
+    "animal_behaviour": {
+      "en": "Animal Behaviour"
+    },
+    "animal_call": {
+      "en": "Animal Call"
+    },
+    "animal_disease": {
+      "en": "Animal Disease"
+    },
+    "animal_facility": {
+      "en": "Animal Facility"
+    },
+    "animal_feed": {
+      "en": "Animal Feed"
+    },
+    "animal_group": {
+      "en": "Animal Group"
+    },
+    "animal_handler": {
+      "en": "Animal Handler"
+    },
+    "animal_material": {
+      "en": "Animal Material"
+    },
+    "anniversary": {
+      "en": "Anniversary"
+    },
+    "antelope": {
+      "en": "Antelope"
+    },
+    "anthropology": {
+      "en": "Anthropology"
+    },
+    "antibiotic": {
+      "en": "Antibiotic"
+    },
+    "appearance": {
+      "en": "Appearance"
+    },
+    "appendage": {
+      "en": "Appendage"
+    },
+    "apple": {
+      "en": "Apple"
+    },
+    "appliance": {
+      "en": "Appliance"
+    },
+    "aquatic_bird": {
+      "en": "Aquatic Bird"
+    },
+    "aquatic_mammal": {
+      "en": "Aquatic Mammal"
+    },
+    "aquatic_plant": {
+      "en": "Aquatic Plant"
+    },
+    "arachnid": {
+      "en": "Arachnid"
+    },
+    "archaeology": {
+      "en": "Archaeology"
+    },
+    "archery": {
+      "en": "Archery"
+    },
+    "architect": {
+      "en": "Architect"
+    },
+    "architectural_feature": {
+      "en": "Architectural Feature"
+    },
+    "architecture": {
+      "en": "Architecture"
+    },
+    "area": {
+      "en": "Area"
+    },
+    "armour": {
+      "en": "Armour"
+    },
+    "arrangement": {
+      "en": "Arrangement"
+    },
+    "art": {
+      "en": "Art"
+    },
+    "artefact": {
+      "en": "Artefact"
+    },
+    "artefacts": {
+      "en": "Artefacts"
+    },
+    "article": {
+      "en": "Article"
+    },
+    "artist": {
+      "en": "Artist"
+    },
+    "artistic_group": {
+      "en": "Artistic Group"
+    },
+    "artistic_style": {
+      "en": "Artistic Style"
+    },
+    "arts_and_humanities": {
+      "en": "Arts And Humanities"
+    },
+    "asian": {
+      "en": "Asian"
+    },
+    "aspect": {
+      "en": "Aspect"
+    },
+    "assessment": {
+      "en": "Assessment"
+    },
+    "asset": {
+      "en": "Asset"
+    },
+    "assistant": {
+      "en": "Assistant"
+    },
+    "astrological_person": {
+      "en": "Astrological Person"
+    },
+    "astrology": {
+      "en": "Astrology"
+    },
+    "astronomer": {
+      "en": "Astronomer"
+    },
+    "astronomical_object": {
+      "en": "Astronomical Object"
+    },
+    "astronomical_phenomenon": {
+      "en": "Astronomical Phenomenon"
+    },
+    "astronomy": {
+      "en": "Astronomy"
+    },
+    "athletics": {
+      "en": "Athletics"
+    },
+    "attack": {
+      "en": "Attack"
+    },
+    "attendant": {
+      "en": "Attendant"
+    },
+    "attractive_female": {
+      "en": "Attractive Female"
+    },
+    "attribute": {
+      "en": "Attribute"
+    },
+    "audio": {
+      "en": "Audio"
+    },
+    "audiovisual_equipment": {
+      "en": "Audiovisual Equipment"
+    },
+    "australasian": {
+      "en": "Australasian"
+    },
+    "australian_rules": {
+      "en": "Australian Rules"
+    },
+    "australian_rules_football": {
+      "en": "Australian Rules Football"
+    },
+    "austronesian": {
+      "en": "Austronesian"
+    },
+    "aviation": {
+      "en": "Aviation"
+    },
+    "aviator": {
+      "en": "Aviator"
+    },
+    "award": {
+      "en": "Award"
+    },
+    "bacterium": {
+      "en": "Bacterium"
+    },
+    "bad_person": {
+      "en": "Bad Person"
+    },
+    "bad_practice": {
+      "en": "Bad Practice"
+    },
+    "bag": {
+      "en": "Bag"
+    },
+    "ball": {
+      "en": "Ball"
+    },
+    "ball_delivery": {
+      "en": "Ball Delivery"
+    },
+    "ball_kick": {
+      "en": "Ball Kick"
+    },
+    "ballet": {
+      "en": "Ballet"
+    },
+    "bar": {
+      "en": "Bar"
+    },
+    "barrier": {
+      "en": "Barrier"
+    },
+    "baseball": {
+      "en": "Baseball"
+    },
+    "baseball_player": {
+      "en": "Baseball Player"
+    },
+    "basketball": {
+      "en": "Basketball"
+    },
+    "beam": {
+      "en": "Beam"
+    },
+    "bean": {
+      "en": "Bean"
+    },
+    "bed": {
+      "en": "Bed"
+    },
+    "bee-keeping": {
+      "en": "Bee-Keeping"
+    },
+    "beer": {
+      "en": "Beer"
+    },
+    "beetle": {
+      "en": "Beetle"
+    },
+    "behaviour": {
+      "en": "Behaviour"
+    },
+    "belief": {
+      "en": "Belief"
+    },
+    "bell-ringing": {
+      "en": "Bell-Ringing"
+    },
+    "bellringing": {
+      "en": "Bellringing"
+    },
+    "biblical": {
+      "en": "Biblical"
+    },
+    "biblical_character": {
+      "en": "Biblical Character"
+    },
+    "billiards": {
+      "en": "Billiards"
+    },
+    "biochemistry": {
+      "en": "Biochemistry"
+    },
+    "biological_process": {
+      "en": "Biological Process"
+    },
+    "biology": {
+      "en": "Biology"
+    },
+    "bird": {
+      "en": "Bird"
+    },
+    "bird_of_prey": {
+      "en": "Bird Of Prey"
+    },
+    "biscuit": {
+      "en": "Biscuit"
+    },
+    "block": {
+      "en": "Block"
+    },
+    "blockage": {
+      "en": "Blockage"
+    },
+    "blow": {
+      "en": "Blow"
+    },
+    "board": {
+      "en": "Board"
+    },
+    "boat": {
+      "en": "Boat"
+    },
+    "boat_part": {
+      "en": "Boat Part"
+    },
+    "bodily_fluid": {
+      "en": "Bodily Fluid"
+    },
+    "bodily_function": {
+      "en": "Bodily Function"
+    },
+    "body": {
+      "en": "Body"
+    },
+    "body_cavity": {
+      "en": "Body Cavity"
+    },
+    "body_of_water": {
+      "en": "Body Of Water"
+    },
+    "body_part": {
+      "en": "Body Part"
+    },
+    "body_passage": {
+      "en": "Body Passage"
+    },
+    "body_segment": {
+      "en": "Body Segment"
+    },
+    "bone": {
+      "en": "Bone"
+    },
+    "bony_fish": {
+      "en": "Bony Fish"
+    },
+    "book": {
+      "en": "Book"
+    },
+    "book_of_bible": {
+      "en": "Book Of Bible"
+    },
+    "bookbinding": {
+      "en": "Bookbinding"
+    },
+    "botany": {
+      "en": "Botany"
+    },
+    "boundary": {
+      "en": "Boundary"
+    },
+    "bowling": {
+      "en": "Bowling"
+    },
+    "bowls": {
+      "en": "Bowls"
+    },
+    "box": {
+      "en": "Box"
+    },
+    "boxing": {
+      "en": "Boxing"
+    },
+    "bread": {
+      "en": "Bread"
+    },
+    "breed": {
+      "en": "Breed"
+    },
+    "brewing": {
+      "en": "Brewing"
+    },
+    "bridge": {
+      "en": "Bridge"
+    },
+    "british_law": {
+      "en": "British Law"
+    },
+    "british_prime_minister": {
+      "en": "British Prime Minister"
+    },
+    "broadcast": {
+      "en": "Broadcast"
+    },
+    "broadcast_frequency": {
+      "en": "Broadcast Frequency"
+    },
+    "broadcaster": {
+      "en": "Broadcaster"
+    },
+    "broadcasting": {
+      "en": "Broadcasting"
+    },
+    "buddhism": {
+      "en": "Buddhism"
+    },
+    "bug": {
+      "en": "Bug"
+    },
+    "building": {
+      "en": "Building"
+    },
+    "building_material": {
+      "en": "Building Material"
+    },
+    "building_part": {
+      "en": "Building Part"
+    },
+    "bullfighting": {
+      "en": "Bullfighting"
+    },
+    "business": {
+      "en": "Business"
+    },
+    "business_department": {
+      "en": "Business Department"
+    },
+    "butterfly": {
+      "en": "Butterfly"
+    },
+    "buttocks": {
+      "en": "Buttocks"
+    },
+    "cake": {
+      "en": "Cake"
+    },
+    "calculation": {
+      "en": "Calculation"
+    },
+    "camera": {
+      "en": "Camera"
+    },
+    "campaign": {
+      "en": "Campaign"
+    },
+    "camping": {
+      "en": "Camping"
+    },
+    "canadian_football": {
+      "en": "Canadian Football"
+    },
+    "canals": {
+      "en": "Canals"
+    },
+    "candidate": {
+      "en": "Candidate"
+    },
+    "canid": {
+      "en": "Canid"
+    },
+    "card_game": {
+      "en": "Card Game"
+    },
+    "card_hand": {
+      "en": "Card Hand"
+    },
+    "cardinal_number": {
+      "en": "Cardinal Number"
+    },
+    "cards": {
+      "en": "Cards"
+    },
+    "cargo": {
+      "en": "Cargo"
+    },
+    "carpentry": {
+      "en": "Carpentry"
+    },
+    "carpet": {
+      "en": "Carpet"
+    },
+    "carriage-building": {
+      "en": "Carriage-Building"
+    },
+    "casing": {
+      "en": "Casing"
+    },
+    "cat": {
+      "en": "Cat"
+    },
+    "category": {
+      "en": "Category"
+    },
+    "cause": {
+      "en": "Cause"
+    },
+    "celebrity": {
+      "en": "Celebrity"
+    },
+    "cell": {
+      "en": "Cell"
+    },
+    "cell_part": {
+      "en": "Cell Part"
+    },
+    "ceramic": {
+      "en": "Ceramic"
+    },
+    "cereal": {
+      "en": "Cereal"
+    },
+    "ceremony": {
+      "en": "Ceremony"
+    },
+    "change": {
+      "en": "Change"
+    },
+    "character": {
+      "en": "Character"
+    },
+    "characteristic": {
+      "en": "Characteristic"
+    },
+    "cheese": {
+      "en": "Cheese"
+    },
+    "cheese-making": {
+      "en": "Cheese-Making"
+    },
+    "chemical": {
+      "en": "Chemical"
+    },
+    "chemical_process": {
+      "en": "Chemical Process"
+    },
+    "chemical_salt": {
+      "en": "Chemical Salt"
+    },
+    "chemistry": {
+      "en": "Chemistry"
+    },
+    "chess": {
+      "en": "Chess"
+    },
+    "christian": {
+      "en": "Christian"
+    },
+    "christian_church": {
+      "en": "Christian Church"
+    },
+    "christian_science": {
+      "en": "Christian Science"
+    },
+    "christian_theology": {
+      "en": "Christian Theology"
+    },
+    "christianity": {
+      "en": "Christianity"
+    },
+    "church_architecture": {
+      "en": "Church Architecture"
+    },
+    "church_part": {
+      "en": "Church Part"
+    },
+    "cigarette": {
+      "en": "Cigarette"
+    },
+    "cinema": {
+      "en": "Cinema"
+    },
+    "city": {
+      "en": "City"
+    },
+    "city_district": {
+      "en": "City District"
+    },
+    "civil_engineering": {
+      "en": "Civil Engineering"
+    },
+    "class": {
+      "en": "Class"
+    },
+    "clean": {
+      "en": "Clean"
+    },
+    "client": {
+      "en": "Client"
+    },
+    "climbing": {
+      "en": "Climbing"
+    },
+    "clockmaking": {
+      "en": "Clockmaking"
+    },
+    "clothing": {
+      "en": "Clothing"
+    },
+    "cloud": {
+      "en": "Cloud"
+    },
+    "coat": {
+      "en": "Coat"
+    },
+    "coating": {
+      "en": "Coating"
+    },
+    "code_word": {
+      "en": "Code Word"
+    },
+    "coffee": {
+      "en": "Coffee"
+    },
+    "cognitive_process": {
+      "en": "Cognitive Process"
+    },
+    "coin": {
+      "en": "Coin"
+    },
+    "collection": {
+      "en": "Collection"
+    },
+    "colour": {
+      "en": "Colour"
+    },
+    "commerce": {
+      "en": "Commerce"
+    },
+    "commercial_fishing": {
+      "en": "Commercial Fishing"
+    },
+    "commercial_practice": {
+      "en": "Commercial Practice"
+    },
+    "commercial_product": {
+      "en": "Commercial Product"
+    },
+    "commotion": {
+      "en": "Commotion"
+    },
+    "communication": {
+      "en": "Communication"
+    },
+    "communicative_style": {
+      "en": "Communicative Style"
+    },
+    "compartment": {
+      "en": "Compartment"
+    },
+    "competition": {
+      "en": "Competition"
+    },
+    "complementary_medicine": {
+      "en": "Complementary Medicine"
+    },
+    "component": {
+      "en": "Component"
+    },
+    "compositae_plant": {
+      "en": "Compositae Plant"
+    },
+    "composite_thing": {
+      "en": "Composite Thing"
+    },
+    "computer": {
+      "en": "Computer"
+    },
+    "computer_activity": {
+      "en": "Computer Activity"
+    },
+    "computer_circuit": {
+      "en": "Computer Circuit"
+    },
+    "computer_graphic": {
+      "en": "Computer Graphic"
+    },
+    "computer_language": {
+      "en": "Computer Language"
+    },
+    "computer_operation": {
+      "en": "Computer Operation"
+    },
+    "computer_program": {
+      "en": "Computer Program"
+    },
+    "computer_user": {
+      "en": "Computer User"
+    },
+    "computing": {
+      "en": "Computing"
+    },
+    "computing_unit": {
+      "en": "Computing Unit"
+    },
+    "condition": {
+      "en": "Condition"
+    },
+    "conductor": {
+      "en": "Conductor"
+    },
+    "conduit": {
+      "en": "Conduit"
+    },
+    "confectionery": {
+      "en": "Confectionery"
+    },
+    "conflict": {
+      "en": "Conflict"
+    },
+    "conifer": {
+      "en": "Conifer"
+    },
+    "connection": {
+      "en": "Connection"
+    },
+    "constellation": {
+      "en": "Constellation"
+    },
+    "construction_worker": {
+      "en": "Construction Worker"
+    },
+    "container": {
+      "en": "Container"
+    },
+    "contents": {
+      "en": "Contents"
+    },
+    "contest": {
+      "en": "Contest"
+    },
+    "control": {
+      "en": "Control"
+    },
+    "conveyance": {
+      "en": "Conveyance"
+    },
+    "cooking": {
+      "en": "Cooking"
+    },
+    "cooking_vessel": {
+      "en": "Cooking Vessel"
+    },
+    "cord": {
+      "en": "Cord"
+    },
+    "cosmetic": {
+      "en": "Cosmetic"
+    },
+    "cosmetics": {
+      "en": "Cosmetics"
+    },
+    "council": {
+      "en": "Council"
+    },
+    "count": {
+      "en": "Count"
+    },
+    "country": {
+      "en": "Country"
+    },
+    "country_dweller": {
+      "en": "Country Dweller"
+    },
+    "courier": {
+      "en": "Courier"
+    },
+    "course_of_action": {
+      "en": "Course Of Action"
+    },
+    "court": {
+      "en": "Court"
+    },
+    "covering": {
+      "en": "Covering"
+    },
+    "cow": {
+      "en": "Cow"
+    },
+    "craft": {
+      "en": "Craft"
+    },
+    "creative_activity": {
+      "en": "Creative Activity"
+    },
+    "creative_work": {
+      "en": "Creative Work"
+    },
+    "cricket": {
+      "en": "Cricket"
+    },
+    "cricketer": {
+      "en": "Cricketer"
+    },
+    "crime": {
+      "en": "Crime"
+    },
+    "criminal": {
+      "en": "Criminal"
+    },
+    "criminal_practice": {
+      "en": "Criminal Practice"
+    },
+    "criticism": {
+      "en": "Criticism"
+    },
+    "croquet": {
+      "en": "Croquet"
+    },
+    "cruciferae_plant": {
+      "en": "Cruciferae Plant"
+    },
+    "crustacean": {
+      "en": "Crustacean"
+    },
+    "crystal": {
+      "en": "Crystal"
+    },
+    "crystallography": {
+      "en": "Crystallography"
+    },
+    "curling": {
+      "en": "Curling"
+    },
+    "currency": {
+      "en": "Currency"
+    },
+    "curve": {
+      "en": "Curve"
+    },
+    "cycle": {
+      "en": "Cycle"
+    },
+    "cycling": {
+      "en": "Cycling"
+    },
+    "cyprinid": {
+      "en": "Cyprinid"
+    },
+    "dairy_product": {
+      "en": "Dairy Product"
+    },
+    "damage": {
+      "en": "Damage"
+    },
+    "damaged_tissue": {
+      "en": "Damaged Tissue"
+    },
+    "dance": {
+      "en": "Dance"
+    },
+    "dancer": {
+      "en": "Dancer"
+    },
+    "danger": {
+      "en": "Danger"
+    },
+    "darts": {
+      "en": "Darts"
+    },
+    "data": {
+      "en": "Data"
+    },
+    "day": {
+      "en": "Day"
+    },
+    "death": {
+      "en": "Death"
+    },
+    "deception": {
+      "en": "Deception"
+    },
+    "decoration": {
+      "en": "Decoration"
+    },
+    "decrease": {
+      "en": "Decrease"
+    },
+    "deer": {
+      "en": "Deer"
+    },
+    "deity": {
+      "en": "Deity"
+    },
+    "dentistry": {
+      "en": "Dentistry"
+    },
+    "departure": {
+      "en": "Departure"
+    },
+    "deposit": {
+      "en": "Deposit"
+    },
+    "depression": {
+      "en": "Depression"
+    },
+    "desire": {
+      "en": "Desire"
+    },
+    "dessert": {
+      "en": "Dessert"
+    },
+    "destruction": {
+      "en": "Destruction"
+    },
+    "device": {
+      "en": "Device"
+    },
+    "diagram": {
+      "en": "Diagram"
+    },
+    "dialogue": {
+      "en": "Dialogue"
+    },
+    "difference": {
+      "en": "Difference"
+    },
+    "difficulty": {
+      "en": "Difficulty"
+    },
+    "dinosaur": {
+      "en": "Dinosaur"
+    },
+    "direction": {
+      "en": "Direction"
+    },
+    "discontentment": {
+      "en": "Discontentment"
+    },
+    "dish": {
+      "en": "Dish"
+    },
+    "dislike": {
+      "en": "Dislike"
+    },
+    "disliked_person": {
+      "en": "Disliked Person"
+    },
+    "disliked_thing": {
+      "en": "Disliked Thing"
+    },
+    "disliked_woman": {
+      "en": "Disliked Woman"
+    },
+    "dismissal": {
+      "en": "Dismissal"
+    },
+    "disorder": {
+      "en": "Disorder"
+    },
+    "display": {
+      "en": "Display"
+    },
+    "display_board": {
+      "en": "Display Board"
+    },
+    "dissenter": {
+      "en": "Dissenter"
+    },
+    "distress": {
+      "en": "Distress"
+    },
+    "district": {
+      "en": "District"
+    },
+    "dock": {
+      "en": "Dock"
+    },
+    "doctor": {
+      "en": "Doctor"
+    },
+    "doctrine": {
+      "en": "Doctrine"
+    },
+    "document": {
+      "en": "Document"
+    },
+    "dog": {
+      "en": "Dog"
+    },
+    "domestic_fowl": {
+      "en": "Domestic Fowl"
+    },
+    "drama": {
+      "en": "Drama"
+    },
+    "dramatist": {
+      "en": "Dramatist"
+    },
+    "draught": {
+      "en": "Draught"
+    },
+    "drawing": {
+      "en": "Drawing"
+    },
+    "dress": {
+      "en": "Dress"
+    },
+    "drink": {
+      "en": "Drink"
+    },
+    "drinker": {
+      "en": "Drinker"
+    },
+    "drinking_vessel": {
+      "en": "Drinking Vessel"
+    },
+    "drug": {
+      "en": "Drug"
+    },
+    "drum": {
+      "en": "Drum"
+    },
+    "dyeing": {
+      "en": "Dyeing"
+    },
+    "early_modern_history": {
+      "en": "Early Modern History"
+    },
+    "eater": {
+      "en": "Eater"
+    },
+    "ecclesiastical": {
+      "en": "Ecclesiastical"
+    },
+    "ecology": {
+      "en": "Ecology"
+    },
+    "economic_system": {
+      "en": "Economic System"
+    },
+    "economics": {
+      "en": "Economics"
+    },
+    "education": {
+      "en": "Education"
+    },
+    "educational_activity": {
+      "en": "Educational Activity"
+    },
+    "effect": {
+      "en": "Effect"
+    },
+    "egyptian_history": {
+      "en": "Egyptian History"
+    },
+    "egyptian_mythology": {
+      "en": "Egyptian Mythology"
+    },
+    "electoral": {
+      "en": "Electoral"
+    },
+    "electrical": {
+      "en": "Electrical"
+    },
+    "electrical_circuit": {
+      "en": "Electrical Circuit"
+    },
+    "electrical_device": {
+      "en": "Electrical Device"
+    },
+    "electrical_engineering": {
+      "en": "Electrical Engineering"
+    },
+    "electronic_device": {
+      "en": "Electronic Device"
+    },
+    "electronics": {
+      "en": "Electronics"
+    },
+    "element": {
+      "en": "Element"
+    },
+    "elevation": {
+      "en": "Elevation"
+    },
+    "emblem": {
+      "en": "Emblem"
+    },
+    "embryology": {
+      "en": "Embryology"
+    },
+    "emotional_outburst": {
+      "en": "Emotional Outburst"
+    },
+    "enclosure": {
+      "en": "Enclosure"
+    },
+    "end": {
+      "en": "End"
+    },
+    "energy": {
+      "en": "Energy"
+    },
+    "energy_unit": {
+      "en": "Energy Unit"
+    },
+    "engine": {
+      "en": "Engine"
+    },
+    "engineering": {
+      "en": "Engineering"
+    },
+    "english": {
+      "en": "English"
+    },
+    "english_civil_war": {
+      "en": "English Civil War"
+    },
+    "english_county": {
+      "en": "English County"
+    },
+    "english_law": {
+      "en": "English Law"
+    },
+    "english_person": {
+      "en": "English Person"
+    },
+    "enthusiast": {
+      "en": "Enthusiast"
+    },
+    "entomology": {
+      "en": "Entomology"
+    },
+    "entrance": {
+      "en": "Entrance"
+    },
+    "environment": {
+      "en": "Environment"
+    },
+    "enzyme": {
+      "en": "Enzyme"
+    },
+    "epoch": {
+      "en": "Epoch"
+    },
+    "equipment": {
+      "en": "Equipment"
+    },
+    "era": {
+      "en": "Era"
+    },
+    "establishment": {
+      "en": "Establishment"
+    },
+    "estate": {
+      "en": "Estate"
+    },
+    "ester": {
+      "en": "Ester"
+    },
+    "ethnic_group": {
+      "en": "Ethnic Group"
+    },
+    "european": {
+      "en": "European"
+    },
+    "event": {
+      "en": "Event"
+    },
+    "evolutionary_process": {
+      "en": "Evolutionary Process"
+    },
+    "excavation": {
+      "en": "Excavation"
+    },
+    "excitement": {
+      "en": "Excitement"
+    },
+    "excrement": {
+      "en": "Excrement"
+    },
+    "exercise": {
+      "en": "Exercise"
+    },
+    "exhibition": {
+      "en": "Exhibition"
+    },
+    "experience": {
+      "en": "Experience"
+    },
+    "expert": {
+      "en": "Expert"
+    },
+    "explorer": {
+      "en": "Explorer"
+    },
+    "explosive": {
+      "en": "Explosive"
+    },
+    "extent": {
+      "en": "Extent"
+    },
+    "eye_part": {
+      "en": "Eye Part"
+    },
+    "fabric": {
+      "en": "Fabric"
+    },
+    "facial_expression": {
+      "en": "Facial Expression"
+    },
+    "facility": {
+      "en": "Facility"
+    },
+    "fact": {
+      "en": "Fact"
+    },
+    "faction": {
+      "en": "Faction"
+    },
+    "factory": {
+      "en": "Factory"
+    },
+    "faculty": {
+      "en": "Faculty"
+    },
+    "failure": {
+      "en": "Failure"
+    },
+    "falconry": {
+      "en": "Falconry"
+    },
+    "falsehood": {
+      "en": "Falsehood"
+    },
+    "farm": {
+      "en": "Farm"
+    },
+    "farmer": {
+      "en": "Farmer"
+    },
+    "farming": {
+      "en": "Farming"
+    },
+    "farming_practice": {
+      "en": "Farming Practice"
+    },
+    "fashion": {
+      "en": "Fashion"
+    },
+    "fastening": {
+      "en": "Fastening"
+    },
+    "fat": {
+      "en": "Fat"
+    },
+    "fear": {
+      "en": "Fear"
+    },
+    "fearlessness": {
+      "en": "Fearlessness"
+    },
+    "feather": {
+      "en": "Feather"
+    },
+    "feeling": {
+      "en": "Feeling"
+    },
+    "felid": {
+      "en": "Felid"
+    },
+    "female": {
+      "en": "Female"
+    },
+    "female_genitals": {
+      "en": "Female Genitals"
+    },
+    "female_sexual_partner": {
+      "en": "Female Sexual Partner"
+    },
+    "fencing": {
+      "en": "Fencing"
+    },
+    "fern": {
+      "en": "Fern"
+    },
+    "festival": {
+      "en": "Festival"
+    },
+    "fibre": {
+      "en": "Fibre"
+    },
+    "fictional_character": {
+      "en": "Fictional Character"
+    },
+    "field": {
+      "en": "Field"
+    },
+    "film": {
+      "en": "Film"
+    },
+    "film-maker": {
+      "en": "Film-Maker"
+    },
+    "film_shot": {
+      "en": "Film Shot"
+    },
+    "finance": {
+      "en": "Finance"
+    },
+    "financial_institution": {
+      "en": "Financial Institution"
+    },
+    "financial_instrument": {
+      "en": "Financial Instrument"
+    },
+    "financial_scheme": {
+      "en": "Financial Scheme"
+    },
+    "fire": {
+      "en": "Fire"
+    },
+    "fire_service": {
+      "en": "Fire Service"
+    },
+    "first_world_war": {
+      "en": "First World War"
+    },
+    "fish": {
+      "en": "Fish"
+    },
+    "fishing": {
+      "en": "Fishing"
+    },
+    "flag": {
+      "en": "Flag"
+    },
+    "flow": {
+      "en": "Flow"
+    },
+    "fly": {
+      "en": "Fly"
+    },
+    "food": {
+      "en": "Food"
+    },
+    "footwear": {
+      "en": "Footwear"
+    },
+    "force": {
+      "en": "Force"
+    },
+    "forest": {
+      "en": "Forest"
+    },
+    "forestry": {
+      "en": "Forestry"
+    },
+    "form_of_address": {
+      "en": "Form Of Address"
+    },
+    "formal_subject": {
+      "en": "Formal Subject"
+    },
+    "formula": {
+      "en": "Formula"
+    },
+    "fraction": {
+      "en": "Fraction"
+    },
+    "fragment": {
+      "en": "Fragment"
+    },
+    "framework": {
+      "en": "Framework"
+    },
+    "freedom": {
+      "en": "Freedom"
+    },
+    "freemasonry": {
+      "en": "Freemasonry"
+    },
+    "french_revolution": {
+      "en": "French Revolution"
+    },
+    "friend": {
+      "en": "Friend"
+    },
+    "fruit": {
+      "en": "Fruit"
+    },
+    "fuel": {
+      "en": "Fuel"
+    },
+    "fund": {
+      "en": "Fund"
+    },
+    "fundamental_thing": {
+      "en": "Fundamental Thing"
+    },
+    "fungus": {
+      "en": "Fungus"
+    },
+    "fur": {
+      "en": "Fur"
+    },
+    "furniture": {
+      "en": "Furniture"
+    },
+    "gait": {
+      "en": "Gait"
+    },
+    "gambling": {
+      "en": "Gambling"
+    },
+    "game": {
+      "en": "Game"
+    },
+    "game_bird": {
+      "en": "Game Bird"
+    },
+    "game_equipment": {
+      "en": "Game Equipment"
+    },
+    "games": {
+      "en": "Games"
+    },
+    "gaming": {
+      "en": "Gaming"
+    },
+    "gang_member": {
+      "en": "Gang Member"
+    },
+    "gap": {
+      "en": "Gap"
+    },
+    "garden": {
+      "en": "Garden"
+    },
+    "garment": {
+      "en": "Garment"
+    },
+    "garment_part": {
+      "en": "Garment Part"
+    },
+    "garment_size": {
+      "en": "Garment Size"
+    },
+    "gas": {
+      "en": "Gas"
+    },
+    "gem": {
+      "en": "Gem"
+    },
+    "gene": {
+      "en": "Gene"
+    },
+    "genetic_process": {
+      "en": "Genetic Process"
+    },
+    "genetics": {
+      "en": "Genetics"
+    },
+    "geographic_region": {
+      "en": "Geographic Region"
+    },
+    "geography": {
+      "en": "Geography"
+    },
+    "geological_feature": {
+      "en": "Geological Feature"
+    },
+    "geological_process": {
+      "en": "Geological Process"
+    },
+    "geology": {
+      "en": "Geology"
+    },
+    "geometry": {
+      "en": "Geometry"
+    },
+    "german": {
+      "en": "German"
+    },
+    "germanic": {
+      "en": "Germanic"
+    },
+    "gesture": {
+      "en": "Gesture"
+    },
+    "gift": {
+      "en": "Gift"
+    },
+    "glass": {
+      "en": "Glass"
+    },
+    "glassmaking": {
+      "en": "Glassmaking"
+    },
+    "golf": {
+      "en": "Golf"
+    },
+    "goods_vehicles": {
+      "en": "Goods Vehicles"
+    },
+    "government_organization": {
+      "en": "Government Organization"
+    },
+    "grain": {
+      "en": "Grain"
+    },
+    "grammar": {
+      "en": "Grammar"
+    },
+    "grape": {
+      "en": "Grape"
+    },
+    "grass": {
+      "en": "Grass"
+    },
+    "greek_history": {
+      "en": "Greek History"
+    },
+    "greek_mythology": {
+      "en": "Greek Mythology"
+    },
+    "group": {
+      "en": "Group"
+    },
+    "guard": {
+      "en": "Guard"
+    },
+    "guiding": {
+      "en": "Guiding"
+    },
+    "gun": {
+      "en": "Gun"
+    },
+    "gymnastics": {
+      "en": "Gymnastics"
+    },
+    "hair": {
+      "en": "Hair"
+    },
+    "hairdressing": {
+      "en": "Hairdressing"
+    },
+    "hairstyle": {
+      "en": "Hairstyle"
+    },
+    "handwriting": {
+      "en": "Handwriting"
+    },
+    "happiness": {
+      "en": "Happiness"
+    },
+    "harm": {
+      "en": "Harm"
+    },
+    "hat-making": {
+      "en": "Hat-Making"
+    },
+    "headgear": {
+      "en": "Headgear"
+    },
+    "help": {
+      "en": "Help"
+    },
+    "heraldic_image": {
+      "en": "Heraldic Image"
+    },
+    "heraldry": {
+      "en": "Heraldry"
+    },
+    "herb": {
+      "en": "Herb"
+    },
+    "herbaceous_plant": {
+      "en": "Herbaceous Plant"
+    },
+    "hindu": {
+      "en": "Hindu"
+    },
+    "hinduism": {
+      "en": "Hinduism"
+    },
+    "historian": {
+      "en": "Historian"
+    },
+    "history": {
+      "en": "History"
+    },
+    "hockey": {
+      "en": "Hockey"
+    },
+    "hole": {
+      "en": "Hole"
+    },
+    "hominid": {
+      "en": "Hominid"
+    },
+    "honour": {
+      "en": "Honour"
+    },
+    "hormone": {
+      "en": "Hormone"
+    },
+    "horology": {
+      "en": "Horology"
+    },
+    "horse": {
+      "en": "Horse"
+    },
+    "horse_racing": {
+      "en": "Horse Racing"
+    },
+    "horticulture": {
+      "en": "Horticulture"
+    },
+    "hotel": {
+      "en": "Hotel"
+    },
+    "hotels": {
+      "en": "Hotels"
+    },
+    "housing": {
+      "en": "Housing"
+    },
+    "humanity": {
+      "en": "Humanity"
+    },
+    "hunting": {
+      "en": "Hunting"
+    },
+    "ice": {
+      "en": "Ice"
+    },
+    "ice_cream": {
+      "en": "Ice Cream"
+    },
+    "ice_hockey": {
+      "en": "Ice Hockey"
+    },
+    "ichthyology": {
+      "en": "Ichthyology"
+    },
+    "idea": {
+      "en": "Idea"
+    },
+    "identifier": {
+      "en": "Identifier"
+    },
+    "ideology": {
+      "en": "Ideology"
+    },
+    "illness": {
+      "en": "Illness"
+    },
+    "illumination": {
+      "en": "Illumination"
+    },
+    "image": {
+      "en": "Image"
+    },
+    "implement": {
+      "en": "Implement"
+    },
+    "importance": {
+      "en": "Importance"
+    },
+    "incompetent_person": {
+      "en": "Incompetent Person"
+    },
+    "increase": {
+      "en": "Increase"
+    },
+    "indentation": {
+      "en": "Indentation"
+    },
+    "indian": {
+      "en": "Indian"
+    },
+    "indic": {
+      "en": "Indic"
+    },
+    "industrial_process": {
+      "en": "Industrial Process"
+    },
+    "industrialist": {
+      "en": "Industrialist"
+    },
+    "industry": {
+      "en": "Industry"
+    },
+    "inflammation": {
+      "en": "Inflammation"
+    },
+    "information": {
+      "en": "Information"
+    },
+    "ingredient": {
+      "en": "Ingredient"
+    },
+    "inhabitant": {
+      "en": "Inhabitant"
+    },
+    "insect": {
+      "en": "Insect"
+    },
+    "instrument": {
+      "en": "Instrument"
+    },
+    "instrument_part": {
+      "en": "Instrument Part"
+    },
+    "intelligence": {
+      "en": "Intelligence"
+    },
+    "interval": {
+      "en": "Interval"
+    },
+    "inventor": {
+      "en": "Inventor"
+    },
+    "invertebrate": {
+      "en": "Invertebrate"
+    },
+    "investigation": {
+      "en": "Investigation"
+    },
+    "investor": {
+      "en": "Investor"
+    },
+    "irish_mythology": {
+      "en": "Irish Mythology"
+    },
+    "islam": {
+      "en": "Islam"
+    },
+    "island": {
+      "en": "Island"
+    },
+    "island_group": {
+      "en": "Island Group"
+    },
+    "item": {
+      "en": "Item"
+    },
+    "jacket": {
+      "en": "Jacket"
+    },
+    "jainism": {
+      "en": "Jainism"
+    },
+    "jazz": {
+      "en": "Jazz"
+    },
+    "jazz_musician": {
+      "en": "Jazz Musician"
+    },
+    "jew": {
+      "en": "Jew"
+    },
+    "jewellery": {
+      "en": "Jewellery"
+    },
+    "job": {
+      "en": "Job"
+    },
+    "joining": {
+      "en": "Joining"
+    },
+    "joint": {
+      "en": "Joint"
+    },
+    "joke": {
+      "en": "Joke"
+    },
+    "journalism": {
+      "en": "Journalism"
+    },
+    "journey": {
+      "en": "Journey"
+    },
+    "judaism": {
+      "en": "Judaism"
+    },
+    "junction": {
+      "en": "Junction"
+    },
+    "killing": {
+      "en": "Killing"
+    },
+    "kitchen_utensil": {
+      "en": "Kitchen Utensil"
+    },
+    "knife": {
+      "en": "Knife"
+    },
+    "knitting": {
+      "en": "Knitting"
+    },
+    "knot": {
+      "en": "Knot"
+    },
+    "knowledge": {
+      "en": "Knowledge"
+    },
+    "label": {
+      "en": "Label"
+    },
+    "labiate_plant": {
+      "en": "Labiate Plant"
+    },
+    "labourer": {
+      "en": "Labourer"
+    },
+    "lack": {
+      "en": "Lack"
+    },
+    "lake": {
+      "en": "Lake"
+    },
+    "language": {
+      "en": "Language"
+    },
+    "large_amount": {
+      "en": "Large Amount"
+    },
+    "larva": {
+      "en": "Larva"
+    },
+    "lavatory": {
+      "en": "Lavatory"
+    },
+    "law": {
+      "en": "Law"
+    },
+    "lawyer": {
+      "en": "Lawyer"
+    },
+    "leader": {
+      "en": "Leader"
+    },
+    "leather": {
+      "en": "Leather"
+    },
+    "leave": {
+      "en": "Leave"
+    },
+    "legal_clause": {
+      "en": "Legal Clause"
+    },
+    "legal_party": {
+      "en": "Legal Party"
+    },
+    "legal_proceeding": {
+      "en": "Legal Proceeding"
+    },
+    "legislation": {
+      "en": "Legislation"
+    },
+    "legislature": {
+      "en": "Legislature"
+    },
+    "leguminous_plant": {
+      "en": "Leguminous Plant"
+    },
+    "length": {
+      "en": "Length"
+    },
+    "letter": {
+      "en": "Letter"
+    },
+    "letter_of_alphabet": {
+      "en": "Letter Of Alphabet"
+    },
+    "level": {
+      "en": "Level"
+    },
+    "light": {
+      "en": "Light"
+    },
+    "liked_person": {
+      "en": "Liked Person"
+    },
+    "liked_thing": {
+      "en": "Liked Thing"
+    },
+    "liking": {
+      "en": "Liking"
+    },
+    "liliaceae_plant": {
+      "en": "Liliaceae Plant"
+    },
+    "line": {
+      "en": "Line"
+    },
+    "line_of_text": {
+      "en": "Line Of Text"
+    },
+    "linear_unit": {
+      "en": "Linear Unit"
+    },
+    "linen": {
+      "en": "Linen"
+    },
+    "linguistic_process": {
+      "en": "Linguistic Process"
+    },
+    "linguistics": {
+      "en": "Linguistics"
+    },
+    "liqueur": {
+      "en": "Liqueur"
+    },
+    "liquid": {
+      "en": "Liquid"
+    },
+    "liquid_measure": {
+      "en": "Liquid Measure"
+    },
+    "list": {
+      "en": "List"
+    },
+    "literature": {
+      "en": "Literature"
+    },
+    "lizard": {
+      "en": "Lizard"
+    },
+    "location": {
+      "en": "Location"
+    },
+    "logic": {
+      "en": "Logic"
+    },
+    "look": {
+      "en": "Look"
+    },
+    "lover": {
+      "en": "Lover"
+    },
+    "lower_plant": {
+      "en": "Lower Plant"
+    },
+    "lump": {
+      "en": "Lump"
+    },
+    "magazine": {
+      "en": "Magazine"
+    },
+    "maker": {
+      "en": "Maker"
+    },
+    "male": {
+      "en": "Male"
+    },
+    "male_genitals": {
+      "en": "Male Genitals"
+    },
+    "male_homosexual": {
+      "en": "Male Homosexual"
+    },
+    "malformation": {
+      "en": "Malformation"
+    },
+    "mammal": {
+      "en": "Mammal"
+    },
+    "manager": {
+      "en": "Manager"
+    },
+    "manner": {
+      "en": "Manner"
+    },
+    "map": {
+      "en": "Map"
+    },
+    "marked_line": {
+      "en": "Marked Line"
+    },
+    "market": {
+      "en": "Market"
+    },
+    "marketing": {
+      "en": "Marketing"
+    },
+    "marking": {
+      "en": "Marking"
+    },
+    "marriage": {
+      "en": "Marriage"
+    },
+    "marsh": {
+      "en": "Marsh"
+    },
+    "marsupial": {
+      "en": "Marsupial"
+    },
+    "martial_arts": {
+      "en": "Martial Arts"
+    },
+    "mass": {
+      "en": "Mass"
+    },
+    "material": {
+      "en": "Material"
+    },
+    "mathematical_set": {
+      "en": "Mathematical Set"
+    },
+    "mathematician": {
+      "en": "Mathematician"
+    },
+    "mathematics": {
+      "en": "Mathematics"
+    },
+    "meal": {
+      "en": "Meal"
+    },
+    "meaning": {
+      "en": "Meaning"
+    },
+    "measure": {
+      "en": "Measure"
+    },
+    "measurement": {
+      "en": "Measurement"
+    },
+    "meat": {
+      "en": "Meat"
+    },
+    "mechanical_action": {
+      "en": "Mechanical Action"
+    },
+    "mechanical_part": {
+      "en": "Mechanical Part"
+    },
+    "mechanics": {
+      "en": "Mechanics"
+    },
+    "mechanism": {
+      "en": "Mechanism"
+    },
+    "medal": {
+      "en": "Medal"
+    },
+    "medical_apparatus": {
+      "en": "Medical Apparatus"
+    },
+    "medical_care": {
+      "en": "Medical Care"
+    },
+    "medical_drug": {
+      "en": "Medical Drug"
+    },
+    "medical_institution": {
+      "en": "Medical Institution"
+    },
+    "medical_practitioner": {
+      "en": "Medical Practitioner"
+    },
+    "medical_procedure": {
+      "en": "Medical Procedure"
+    },
+    "medicine": {
+      "en": "Medicine"
+    },
+    "medieval_history": {
+      "en": "Medieval History"
+    },
+    "medium": {
+      "en": "Medium"
+    },
+    "meeting": {
+      "en": "Meeting"
+    },
+    "member_of_clergy": {
+      "en": "Member Of Clergy"
+    },
+    "member_of_order": {
+      "en": "Member Of Order"
+    },
+    "member_of_people": {
+      "en": "Member Of People"
+    },
+    "member_of_society": {
+      "en": "Member Of Society"
+    },
+    "member_of_subculture": {
+      "en": "Member Of Subculture"
+    },
+    "membrane": {
+      "en": "Membrane"
+    },
+    "mental_attitude": {
+      "en": "Mental Attitude"
+    },
+    "mental_illness": {
+      "en": "Mental Illness"
+    },
+    "mental_sufferer": {
+      "en": "Mental Sufferer"
+    },
+    "merchandise": {
+      "en": "Merchandise"
+    },
+    "message": {
+      "en": "Message"
+    },
+    "metal": {
+      "en": "Metal"
+    },
+    "metallurgy": {
+      "en": "Metallurgy"
+    },
+    "meteorology": {
+      "en": "Meteorology"
+    },
+    "method": {
+      "en": "Method"
+    },
+    "metrical_unit": {
+      "en": "Metrical Unit"
+    },
+    "microbiology": {
+      "en": "Microbiology"
+    },
+    "microorganism": {
+      "en": "Microorganism"
+    },
+    "migrant": {
+      "en": "Migrant"
+    },
+    "military": {
+      "en": "Military"
+    },
+    "military_history": {
+      "en": "Military History"
+    },
+    "military_installation": {
+      "en": "Military Installation"
+    },
+    "military_leader": {
+      "en": "Military Leader"
+    },
+    "military_officer": {
+      "en": "Military Officer"
+    },
+    "military_practice": {
+      "en": "Military Practice"
+    },
+    "military_unit": {
+      "en": "Military Unit"
+    },
+    "mineral": {
+      "en": "Mineral"
+    },
+    "mineralogy": {
+      "en": "Mineralogy"
+    },
+    "mining": {
+      "en": "Mining"
+    },
+    "mishap": {
+      "en": "Mishap"
+    },
+    "missile": {
+      "en": "Missile"
+    },
+    "mistake": {
+      "en": "Mistake"
+    },
+    "mollusc": {
+      "en": "Mollusc"
+    },
+    "monarch": {
+      "en": "Monarch"
+    },
+    "monastic": {
+      "en": "Monastic"
+    },
+    "monetary_unit": {
+      "en": "Monetary Unit"
+    },
+    "money": {
+      "en": "Money"
+    },
+    "month": {
+      "en": "Month"
+    },
+    "moth": {
+      "en": "Moth"
+    },
+    "mother": {
+      "en": "Mother"
+    },
+    "motor_racing": {
+      "en": "Motor Racing"
+    },
+    "motor_vehicle": {
+      "en": "Motor Vehicle"
+    },
+    "motoring": {
+      "en": "Motoring"
+    },
+    "motorsports": {
+      "en": "Motorsports"
+    },
+    "mountain": {
+      "en": "Mountain"
+    },
+    "mountaineering": {
+      "en": "Mountaineering"
+    },
+    "movement": {
+      "en": "Movement"
+    },
+    "muscle": {
+      "en": "Muscle"
+    },
+    "music": {
+      "en": "Music"
+    },
+    "music_symbol": {
+      "en": "Music Symbol"
+    },
+    "musical_direction": {
+      "en": "Musical Direction"
+    },
+    "musical_note": {
+      "en": "Musical Note"
+    },
+    "musical_phrase": {
+      "en": "Musical Phrase"
+    },
+    "musical_scale": {
+      "en": "Musical Scale"
+    },
+    "musical_sound": {
+      "en": "Musical Sound"
+    },
+    "musician": {
+      "en": "Musician"
+    },
+    "muslim": {
+      "en": "Muslim"
+    },
+    "mustelid": {
+      "en": "Mustelid"
+    },
+    "mycology": {
+      "en": "Mycology"
+    },
+    "mythical_being": {
+      "en": "Mythical Being"
+    },
+    "mythical_character": {
+      "en": "Mythical Character"
+    },
+    "mythical_event": {
+      "en": "Mythical Event"
+    },
+    "mythology": {
+      "en": "Mythology"
+    },
+    "name": {
+      "en": "Name"
+    },
+    "napoleonic_wars": {
+      "en": "Napoleonic Wars"
+    },
+    "narcotic": {
+      "en": "Narcotic"
+    },
+    "narcotics": {
+      "en": "Narcotics"
+    },
+    "nation": {
+      "en": "Nation"
+    },
+    "natural_feature": {
+      "en": "Natural Feature"
+    },
+    "natural_phenomenon": {
+      "en": "Natural Phenomenon"
+    },
+    "nautical": {
+      "en": "Nautical"
+    },
+    "naval": {
+      "en": "Naval"
+    },
+    "naval_officer": {
+      "en": "Naval Officer"
+    },
+    "needlework": {
+      "en": "Needlework"
+    },
+    "negative_aspect": {
+      "en": "Negative Aspect"
+    },
+    "negative_condition": {
+      "en": "Negative Condition"
+    },
+    "nerve": {
+      "en": "Nerve"
+    },
+    "network": {
+      "en": "Network"
+    },
+    "neural_structure": {
+      "en": "Neural Structure"
+    },
+    "newspaper": {
+      "en": "Newspaper"
+    },
+    "noble": {
+      "en": "Noble"
+    },
+    "nonsense": {
+      "en": "Nonsense"
+    },
+    "north_american": {
+      "en": "North American"
+    },
+    "notebook": {
+      "en": "Notebook"
+    },
+    "nucleic_compound": {
+      "en": "Nucleic Compound"
+    },
+    "numbered_group": {
+      "en": "Numbered Group"
+    },
+    "numeric_value": {
+      "en": "Numeric Value"
+    },
+    "numismatics": {
+      "en": "Numismatics"
+    },
+    "nut": {
+      "en": "Nut"
+    },
+    "object": {
+      "en": "Object"
+    },
+    "occult": {
+      "en": "Occult"
+    },
+    "occultist": {
+      "en": "Occultist"
+    },
+    "oceanography": {
+      "en": "Oceanography"
+    },
+    "odour": {
+      "en": "Odour"
+    },
+    "office": {
+      "en": "Office"
+    },
+    "office_worker": {
+      "en": "Office Worker"
+    },
+    "official": {
+      "en": "Official"
+    },
+    "oil": {
+      "en": "Oil"
+    },
+    "oil_industry": {
+      "en": "Oil Industry"
+    },
+    "old_person": {
+      "en": "Old Person"
+    },
+    "ophthalmology": {
+      "en": "Ophthalmology"
+    },
+    "opinion": {
+      "en": "Opinion"
+    },
+    "opportunity": {
+      "en": "Opportunity"
+    },
+    "optical_device": {
+      "en": "Optical Device"
+    },
+    "optics": {
+      "en": "Optics"
+    },
+    "order": {
+      "en": "Order"
+    },
+    "organ": {
+      "en": "Organ"
+    },
+    "organic_compound": {
+      "en": "Organic Compound"
+    },
+    "organism": {
+      "en": "Organism"
+    },
+    "organization": {
+      "en": "Organization"
+    },
+    "ornithology": {
+      "en": "Ornithology"
+    },
+    "page": {
+      "en": "Page"
+    },
+    "pain": {
+      "en": "Pain"
+    },
+    "painting": {
+      "en": "Painting"
+    },
+    "palaeontology": {
+      "en": "Palaeontology"
+    },
+    "palm": {
+      "en": "Palm"
+    },
+    "palmistry": {
+      "en": "Palmistry"
+    },
+    "paper": {
+      "en": "Paper"
+    },
+    "parapsychology": {
+      "en": "Parapsychology"
+    },
+    "parliament": {
+      "en": "Parliament"
+    },
+    "part": {
+      "en": "Part"
+    },
+    "part_of_speech": {
+      "en": "Part Of Speech"
+    },
+    "participant": {
+      "en": "Participant"
+    },
+    "particle": {
+      "en": "Particle"
+    },
+    "party": {
+      "en": "Party"
+    },
+    "passerine": {
+      "en": "Passerine"
+    },
+    "pasta": {
+      "en": "Pasta"
+    },
+    "pathology": {
+      "en": "Pathology"
+    },
+    "pattern": {
+      "en": "Pattern"
+    },
+    "payment": {
+      "en": "Payment"
+    },
+    "penal": {
+      "en": "Penal"
+    },
+    "penal_institution": {
+      "en": "Penal Institution"
+    },
+    "people": {
+      "en": "People"
+    },
+    "percoid": {
+      "en": "Percoid"
+    },
+    "performance": {
+      "en": "Performance"
+    },
+    "performer": {
+      "en": "Performer"
+    },
+    "performing_group": {
+      "en": "Performing Group"
+    },
+    "period": {
+      "en": "Period"
+    },
+    "permission": {
+      "en": "Permission"
+    },
+    "permit": {
+      "en": "Permit"
+    },
+    "person": {
+      "en": "Person"
+    },
+    "personal_attribute": {
+      "en": "Personal Attribute"
+    },
+    "pesticide": {
+      "en": "Pesticide"
+    },
+    "pharmaceutics": {
+      "en": "Pharmaceutics"
+    },
+    "pharmacology": {
+      "en": "Pharmacology"
+    },
+    "philately": {
+      "en": "Philately"
+    },
+    "philosopher": {
+      "en": "Philosopher"
+    },
+    "philosophical_doctrine": {
+      "en": "Philosophical Doctrine"
+    },
+    "philosophy": {
+      "en": "Philosophy"
+    },
+    "phonetics": {
+      "en": "Phonetics"
+    },
+    "photograph": {
+      "en": "Photograph"
+    },
+    "photography": {
+      "en": "Photography"
+    },
+    "phrase": {
+      "en": "Phrase"
+    },
+    "physical_action": {
+      "en": "Physical Action"
+    },
+    "physical_property": {
+      "en": "Physical Property"
+    },
+    "physics": {
+      "en": "Physics"
+    },
+    "physiological_attack": {
+      "en": "Physiological Attack"
+    },
+    "physiological_state": {
+      "en": "Physiological State"
+    },
+    "physiology": {
+      "en": "Physiology"
+    },
+    "piece_of_cloth": {
+      "en": "Piece Of Cloth"
+    },
+    "piece_of_music": {
+      "en": "Piece Of Music"
+    },
+    "pigeon": {
+      "en": "Pigeon"
+    },
+    "pigment": {
+      "en": "Pigment"
+    },
+    "pin": {
+      "en": "Pin"
+    },
+    "place_of_worship": {
+      "en": "Place Of Worship"
+    },
+    "plan": {
+      "en": "Plan"
+    },
+    "plane": {
+      "en": "Plane"
+    },
+    "plant": {
+      "en": "Plant"
+    },
+    "plant_disease": {
+      "en": "Plant Disease"
+    },
+    "plant_part": {
+      "en": "Plant Part"
+    },
+    "platform": {
+      "en": "Platform"
+    },
+    "play": {
+      "en": "Play"
+    },
+    "playing_area": {
+      "en": "Playing Area"
+    },
+    "playing_card": {
+      "en": "Playing Card"
+    },
+    "playing_period": {
+      "en": "Playing Period"
+    },
+    "plumbing": {
+      "en": "Plumbing"
+    },
+    "poem": {
+      "en": "Poem"
+    },
+    "point_in_time": {
+      "en": "Point In Time"
+    },
+    "poison": {
+      "en": "Poison"
+    },
+    "police": {
+      "en": "Police"
+    },
+    "police_force": {
+      "en": "Police Force"
+    },
+    "police_officer": {
+      "en": "Police Officer"
+    },
+    "political_doctrine": {
+      "en": "Political Doctrine"
+    },
+    "political_economy": {
+      "en": "Political Economy"
+    },
+    "political_movement": {
+      "en": "Political Movement"
+    },
+    "political_supporter": {
+      "en": "Political Supporter"
+    },
+    "political_system": {
+      "en": "Political System"
+    },
+    "politician": {
+      "en": "Politician"
+    },
+    "politics": {
+      "en": "Politics"
+    },
+    "pool": {
+      "en": "Pool"
+    },
+    "poor_person": {
+      "en": "Poor Person"
+    },
+    "popular_music": {
+      "en": "Popular Music"
+    },
+    "popular_musician": {
+      "en": "Popular Musician"
+    },
+    "positive_condition": {
+      "en": "Positive Condition"
+    },
+    "post": {
+      "en": "Post"
+    },
+    "postal": {
+      "en": "Postal"
+    },
+    "posture": {
+      "en": "Posture"
+    },
+    "pottery": {
+      "en": "Pottery"
+    },
+    "power": {
+      "en": "Power"
+    },
+    "practice": {
+      "en": "Practice"
+    },
+    "prayer": {
+      "en": "Prayer"
+    },
+    "prejudice": {
+      "en": "Prejudice"
+    },
+    "price": {
+      "en": "Price"
+    },
+    "primate": {
+      "en": "Primate"
+    },
+    "printing": {
+      "en": "Printing"
+    },
+    "printing_process": {
+      "en": "Printing Process"
+    },
+    "prisoner": {
+      "en": "Prisoner"
+    },
+    "process": {
+      "en": "Process"
+    },
+    "professional_work": {
+      "en": "Professional Work"
+    },
+    "professions": {
+      "en": "Professions"
+    },
+    "profit": {
+      "en": "Profit"
+    },
+    "proposition": {
+      "en": "Proposition"
+    },
+    "prosody": {
+      "en": "Prosody"
+    },
+    "prostitute": {
+      "en": "Prostitute"
+    },
+    "protection": {
+      "en": "Protection"
+    },
+    "protein": {
+      "en": "Protein"
+    },
+    "protest": {
+      "en": "Protest"
+    },
+    "protrusion": {
+      "en": "Protrusion"
+    },
+    "psychiatry": {
+      "en": "Psychiatry"
+    },
+    "psychoanalysis": {
+      "en": "Psychoanalysis"
+    },
+    "psychological_phenomenon": {
+      "en": "Psychological Phenomenon"
+    },
+    "psychological_state": {
+      "en": "Psychological State"
+    },
+    "psychology": {
+      "en": "Psychology"
+    },
+    "publishing": {
+      "en": "Publishing"
+    },
+    "punishment": {
+      "en": "Punishment"
+    },
+    "qualification": {
+      "en": "Qualification"
+    },
+    "race": {
+      "en": "Race"
+    },
+    "racial_term": {
+      "en": "Racial Term"
+    },
+    "racing": {
+      "en": "Racing"
+    },
+    "radiation": {
+      "en": "Radiation"
+    },
+    "radio": {
+      "en": "Radio"
+    },
+    "railway_track": {
+      "en": "Railway Track"
+    },
+    "railway_vehicle": {
+      "en": "Railway Vehicle"
+    },
+    "railways": {
+      "en": "Railways"
+    },
+    "rank": {
+      "en": "Rank"
+    },
+    "ranunculus": {
+      "en": "Ranunculus"
+    },
+    "rate": {
+      "en": "Rate"
+    },
+    "ratio": {
+      "en": "Ratio"
+    },
+    "reasoning": {
+      "en": "Reasoning"
+    },
+    "recording": {
+      "en": "Recording"
+    },
+    "recreation": {
+      "en": "Recreation"
+    },
+    "recreational_facility": {
+      "en": "Recreational Facility"
+    },
+    "region": {
+      "en": "Region"
+    },
+    "regulation": {
+      "en": "Regulation"
+    },
+    "relation": {
+      "en": "Relation"
+    },
+    "relationship": {
+      "en": "Relationship"
+    },
+    "relationships": {
+      "en": "Relationships"
+    },
+    "relative": {
+      "en": "Relative"
+    },
+    "religion": {
+      "en": "Religion"
+    },
+    "religionist": {
+      "en": "Religionist"
+    },
+    "religious_doctrine": {
+      "en": "Religious Doctrine"
+    },
+    "religious_group": {
+      "en": "Religious Group"
+    },
+    "religious_practice": {
+      "en": "Religious Practice"
+    },
+    "repository": {
+      "en": "Repository"
+    },
+    "representation": {
+      "en": "Representation"
+    },
+    "reptile": {
+      "en": "Reptile"
+    },
+    "request": {
+      "en": "Request"
+    },
+    "resin": {
+      "en": "Resin"
+    },
+    "responsibility": {
+      "en": "Responsibility"
+    },
+    "restaurant": {
+      "en": "Restaurant"
+    },
+    "restaurants": {
+      "en": "Restaurants"
+    },
+    "retail": {
+      "en": "Retail"
+    },
+    "revolutionary": {
+      "en": "Revolutionary"
+    },
+    "rhetoric": {
+      "en": "Rhetoric"
+    },
+    "rhetorical_device": {
+      "en": "Rhetorical Device"
+    },
+    "rhythm": {
+      "en": "Rhythm"
+    },
+    "rich_person": {
+      "en": "Rich Person"
+    },
+    "riding": {
+      "en": "Riding"
+    },
+    "riding_equipment": {
+      "en": "Riding Equipment"
+    },
+    "right": {
+      "en": "Right"
+    },
+    "river": {
+      "en": "River"
+    },
+    "road": {
+      "en": "Road"
+    },
+    "roads": {
+      "en": "Roads"
+    },
+    "robe": {
+      "en": "Robe"
+    },
+    "rock": {
+      "en": "Rock"
+    },
+    "rod": {
+      "en": "Rod"
+    },
+    "rodent": {
+      "en": "Rodent"
+    },
+    "role": {
+      "en": "Role"
+    },
+    "roman_catholic_church": {
+      "en": "Roman Catholic Church"
+    },
+    "roman_history": {
+      "en": "Roman History"
+    },
+    "roman_mythology": {
+      "en": "Roman Mythology"
+    },
+    "room": {
+      "en": "Room"
+    },
+    "rope": {
+      "en": "Rope"
+    },
+    "rosaceae_plant": {
+      "en": "Rosaceae Plant"
+    },
+    "route": {
+      "en": "Route"
+    },
+    "rowing": {
+      "en": "Rowing"
+    },
+    "royal": {
+      "en": "Royal"
+    },
+    "royalty": {
+      "en": "Royalty"
+    },
+    "rugby": {
+      "en": "Rugby"
+    },
+    "ruler": {
+      "en": "Ruler"
+    },
+    "sacred_object": {
+      "en": "Sacred Object"
+    },
+    "sacred_text": {
+      "en": "Sacred Text"
+    },
+    "sadness": {
+      "en": "Sadness"
+    },
+    "sail": {
+      "en": "Sail"
+    },
+    "sailing": {
+      "en": "Sailing"
+    },
+    "sailor": {
+      "en": "Sailor"
+    },
+    "salmon": {
+      "en": "Salmon"
+    },
+    "sauce": {
+      "en": "Sauce"
+    },
+    "sausage": {
+      "en": "Sausage"
+    },
+    "savoury": {
+      "en": "Savoury"
+    },
+    "scandinavian_mythology": {
+      "en": "Scandinavian Mythology"
+    },
+    "scholar": {
+      "en": "Scholar"
+    },
+    "school": {
+      "en": "School"
+    },
+    "science": {
+      "en": "Science"
+    },
+    "science_fiction": {
+      "en": "Science Fiction"
+    },
+    "scientific_principle": {
+      "en": "Scientific Principle"
+    },
+    "scientific_procedure": {
+      "en": "Scientific Procedure"
+    },
+    "scientist": {
+      "en": "Scientist"
+    },
+    "score": {
+      "en": "Score"
+    },
+    "scots_law": {
+      "en": "Scots Law"
+    },
+    "scottish_region": {
+      "en": "Scottish Region"
+    },
+    "scouting": {
+      "en": "Scouting"
+    },
+    "scrophulariaceae_plant": {
+      "en": "Scrophulariaceae Plant"
+    },
+    "sculpture": {
+      "en": "Sculpture"
+    },
+    "sea_area": {
+      "en": "Sea Area"
+    },
+    "seafood": {
+      "en": "Seafood"
+    },
+    "season": {
+      "en": "Season"
+    },
+    "seat": {
+      "en": "Seat"
+    },
+    "second_world_war": {
+      "en": "Second World War"
+    },
+    "sedative": {
+      "en": "Sedative"
+    },
+    "semite": {
+      "en": "Semite"
+    },
+    "sensation": {
+      "en": "Sensation"
+    },
+    "separation": {
+      "en": "Separation"
+    },
+    "series": {
+      "en": "Series"
+    },
+    "servant": {
+      "en": "Servant"
+    },
+    "service": {
+      "en": "Service"
+    },
+    "settlement": {
+      "en": "Settlement"
+    },
+    "sex": {
+      "en": "Sex"
+    },
+    "sex_act": {
+      "en": "Sex Act"
+    },
+    "sexual_intercourse": {
+      "en": "Sexual Intercourse"
+    },
+    "sexual_partner": {
+      "en": "Sexual Partner"
+    },
+    "sexual_practice": {
+      "en": "Sexual Practice"
+    },
+    "shape": {
+      "en": "Shape"
+    },
+    "shark": {
+      "en": "Shark"
+    },
+    "sheep": {
+      "en": "Sheep"
+    },
+    "sheep-shearing": {
+      "en": "Sheep-Shearing"
+    },
+    "shelter": {
+      "en": "Shelter"
+    },
+    "shinto": {
+      "en": "Shinto"
+    },
+    "shipbuilding": {
+      "en": "Shipbuilding"
+    },
+    "shirt": {
+      "en": "Shirt"
+    },
+    "shoe_part": {
+      "en": "Shoe Part"
+    },
+    "shoemaking": {
+      "en": "Shoemaking"
+    },
+    "shrub": {
+      "en": "Shrub"
+    },
+    "side": {
+      "en": "Side"
+    },
+    "sign": {
+      "en": "Sign"
+    },
+    "signal": {
+      "en": "Signal"
+    },
+    "signalling_device": {
+      "en": "Signalling Device"
+    },
+    "sikhism": {
+      "en": "Sikhism"
+    },
+    "similar_thing": {
+      "en": "Similar Thing"
+    },
+    "singer": {
+      "en": "Singer"
+    },
+    "sino-tibetan": {
+      "en": "Sino-Tibetan"
+    },
+    "situation": {
+      "en": "Situation"
+    },
+    "skateboarding": {
+      "en": "Skateboarding"
+    },
+    "skating": {
+      "en": "Skating"
+    },
+    "skiing": {
+      "en": "Skiing"
+    },
+    "skill": {
+      "en": "Skill"
+    },
+    "skin_condition": {
+      "en": "Skin Condition"
+    },
+    "slope": {
+      "en": "Slope"
+    },
+    "small_amount": {
+      "en": "Small Amount"
+    },
+    "smoking": {
+      "en": "Smoking"
+    },
+    "snake": {
+      "en": "Snake"
+    },
+    "snooker": {
+      "en": "Snooker"
+    },
+    "snowboarding": {
+      "en": "Snowboarding"
+    },
+    "soccer": {
+      "en": "Soccer"
+    },
+    "soccer_player": {
+      "en": "Soccer Player"
+    },
+    "social_event": {
+      "en": "Social Event"
+    },
+    "social_group": {
+      "en": "Social Group"
+    },
+    "social_sciences": {
+      "en": "Social Sciences"
+    },
+    "sociologist": {
+      "en": "Sociologist"
+    },
+    "sociology": {
+      "en": "Sociology"
+    },
+    "socket": {
+      "en": "Socket"
+    },
+    "software_function": {
+      "en": "Software Function"
+    },
+    "soil": {
+      "en": "Soil"
+    },
+    "soil_science": {
+      "en": "Soil Science"
+    },
+    "soldier": {
+      "en": "Soldier"
+    },
+    "solid": {
+      "en": "Solid"
+    },
+    "song": {
+      "en": "Song"
+    },
+    "sound": {
+      "en": "Sound"
+    },
+    "soup": {
+      "en": "Soup"
+    },
+    "source": {
+      "en": "Source"
+    },
+    "space": {
+      "en": "Space"
+    },
+    "spacecraft": {
+      "en": "Spacecraft"
+    },
+    "speaker": {
+      "en": "Speaker"
+    },
+    "specified_type": {
+      "en": "Specified Type"
+    },
+    "spectator": {
+      "en": "Spectator"
+    },
+    "speech": {
+      "en": "Speech"
+    },
+    "speech_sound": {
+      "en": "Speech Sound"
+    },
+    "sphere_of_activity": {
+      "en": "Sphere Of Activity"
+    },
+    "spice": {
+      "en": "Spice"
+    },
+    "spiritual_force": {
+      "en": "Spiritual Force"
+    },
+    "sport": {
+      "en": "Sport"
+    },
+    "sport_equipment": {
+      "en": "Sport Equipment"
+    },
+    "sports_player": {
+      "en": "Sports Player"
+    },
+    "squash": {
+      "en": "Squash"
+    },
+    "star": {
+      "en": "Star"
+    },
+    "start": {
+      "en": "Start"
+    },
+    "state": {
+      "en": "State"
+    },
+    "statement": {
+      "en": "Statement"
+    },
+    "statistics": {
+      "en": "Statistics"
+    },
+    "status": {
+      "en": "Status"
+    },
+    "stem": {
+      "en": "Stem"
+    },
+    "stew": {
+      "en": "Stew"
+    },
+    "stitch": {
+      "en": "Stitch"
+    },
+    "stock_exchange": {
+      "en": "Stock Exchange"
+    },
+    "stock_market": {
+      "en": "Stock Market"
+    },
+    "stone": {
+      "en": "Stone"
+    },
+    "storage_device": {
+      "en": "Storage Device"
+    },
+    "store": {
+      "en": "Store"
+    },
+    "storeroom": {
+      "en": "Storeroom"
+    },
+    "storm": {
+      "en": "Storm"
+    },
+    "story": {
+      "en": "Story"
+    },
+    "stratum": {
+      "en": "Stratum"
+    },
+    "stringed_instrument": {
+      "en": "Stringed Instrument"
+    },
+    "stroke": {
+      "en": "Stroke"
+    },
+    "structure": {
+      "en": "Structure"
+    },
+    "student": {
+      "en": "Student"
+    },
+    "style": {
+      "en": "Style"
+    },
+    "subordinate": {
+      "en": "Subordinate"
+    },
+    "substance": {
+      "en": "Substance"
+    },
+    "success": {
+      "en": "Success"
+    },
+    "succulent": {
+      "en": "Succulent"
+    },
+    "sufferer": {
+      "en": "Sufferer"
+    },
+    "sumo": {
+      "en": "Sumo"
+    },
+    "supernaturalism": {
+      "en": "Supernaturalism"
+    },
+    "support": {
+      "en": "Support"
+    },
+    "suppression": {
+      "en": "Suppression"
+    },
+    "surfing": {
+      "en": "Surfing"
+    },
+    "surgery": {
+      "en": "Surgery"
+    },
+    "surgical_operation": {
+      "en": "Surgical Operation"
+    },
+    "surveying": {
+      "en": "Surveying"
+    },
+    "sweet": {
+      "en": "Sweet"
+    },
+    "swimming": {
+      "en": "Swimming"
+    },
+    "swindler": {
+      "en": "Swindler"
+    },
+    "swine": {
+      "en": "Swine"
+    },
+    "symbol": {
+      "en": "Symbol"
+    },
+    "syntactic_feature": {
+      "en": "Syntactic Feature"
+    },
+    "system": {
+      "en": "System"
+    },
+    "table": {
+      "en": "Table"
+    },
+    "tablet": {
+      "en": "Tablet"
+    },
+    "task": {
+      "en": "Task"
+    },
+    "tax": {
+      "en": "Tax"
+    },
+    "taxonomic_animal_group": {
+      "en": "Taxonomic Animal Group"
+    },
+    "tea": {
+      "en": "Tea"
+    },
+    "teacher": {
+      "en": "Teacher"
+    },
+    "teaching_system": {
+      "en": "Teaching System"
+    },
+    "team": {
+      "en": "Team"
+    },
+    "team_player": {
+      "en": "Team Player"
+    },
+    "team_sports": {
+      "en": "Team Sports"
+    },
+    "technical_practice": {
+      "en": "Technical Practice"
+    },
+    "technical_standard": {
+      "en": "Technical Standard"
+    },
+    "technical_system": {
+      "en": "Technical System"
+    },
+    "technician": {
+      "en": "Technician"
+    },
+    "technology": {
+      "en": "Technology"
+    },
+    "telecommunications": {
+      "en": "Telecommunications"
+    },
+    "telephone": {
+      "en": "Telephone"
+    },
+    "television": {
+      "en": "Television"
+    },
+    "temperature": {
+      "en": "Temperature"
+    },
+    "tennis": {
+      "en": "Tennis"
+    },
+    "test": {
+      "en": "Test"
+    },
+    "text": {
+      "en": "Text"
+    },
+    "textiles": {
+      "en": "Textiles"
+    },
+    "theatre": {
+      "en": "Theatre"
+    },
+    "theatre_part": {
+      "en": "Theatre Part"
+    },
+    "theology": {
+      "en": "Theology"
+    },
+    "theory": {
+      "en": "Theory"
+    },
+    "thief": {
+      "en": "Thief"
+    },
+    "timber": {
+      "en": "Timber"
+    },
+    "time_of_day": {
+      "en": "Time Of Day"
+    },
+    "time_of_life": {
+      "en": "Time Of Life"
+    },
+    "time_unit": {
+      "en": "Time Unit"
+    },
+    "timepiece": {
+      "en": "Timepiece"
+    },
+    "tissue": {
+      "en": "Tissue"
+    },
+    "title": {
+      "en": "Title"
+    },
+    "toiletry": {
+      "en": "Toiletry"
+    },
+    "tone": {
+      "en": "Tone"
+    },
+    "tools": {
+      "en": "Tools"
+    },
+    "tooth": {
+      "en": "Tooth"
+    },
+    "topic": {
+      "en": "Topic"
+    },
+    "tower": {
+      "en": "Tower"
+    },
+    "toy": {
+      "en": "Toy"
+    },
+    "track": {
+      "en": "Track"
+    },
+    "trade_union": {
+      "en": "Trade Union"
+    },
+    "trade_unionism": {
+      "en": "Trade Unionism"
+    },
+    "trader": {
+      "en": "Trader"
+    },
+    "transaction": {
+      "en": "Transaction"
+    },
+    "transmission": {
+      "en": "Transmission"
+    },
+    "transport": {
+      "en": "Transport"
+    },
+    "transportation_system": {
+      "en": "Transportation System"
+    },
+    "traveller": {
+      "en": "Traveller"
+    },
+    "tree": {
+      "en": "Tree"
+    },
+    "trousers": {
+      "en": "Trousers"
+    },
+    "tumour": {
+      "en": "Tumour"
+    },
+    "typography": {
+      "en": "Typography"
+    },
+    "umbellifer": {
+      "en": "Umbellifer"
+    },
+    "underwear": {
+      "en": "Underwear"
+    },
+    "ungulate": {
+      "en": "Ungulate"
+    },
+    "unit_of_measurement": {
+      "en": "Unit Of Measurement"
+    },
+    "university": {
+      "en": "University"
+    },
+    "unspecified_thing": {
+      "en": "Unspecified Thing"
+    },
+    "us_law": {
+      "en": "Us Law"
+    },
+    "us_president": {
+      "en": "Us President"
+    },
+    "us_state": {
+      "en": "Us State"
+    },
+    "utterance": {
+      "en": "Utterance"
+    },
+    "variety": {
+      "en": "Variety"
+    },
+    "vegetable": {
+      "en": "Vegetable"
+    },
+    "vegetation": {
+      "en": "Vegetation"
+    },
+    "vehicle": {
+      "en": "Vehicle"
+    },
+    "vehicle_part": {
+      "en": "Vehicle Part"
+    },
+    "velocity": {
+      "en": "Velocity"
+    },
+    "verb_form": {
+      "en": "Verb Form"
+    },
+    "verse_unit": {
+      "en": "Verse Unit"
+    },
+    "vessel": {
+      "en": "Vessel"
+    },
+    "veterinary": {
+      "en": "Veterinary"
+    },
+    "veterinary_medicine": {
+      "en": "Veterinary Medicine"
+    },
+    "video": {
+      "en": "Video"
+    },
+    "view": {
+      "en": "View"
+    },
+    "virus": {
+      "en": "Virus"
+    },
+    "visual_phenomenon": {
+      "en": "Visual Phenomenon"
+    },
+    "vote": {
+      "en": "Vote"
+    },
+    "wading_bird": {
+      "en": "Wading Bird"
+    },
+    "wage": {
+      "en": "Wage"
+    },
+    "wagon": {
+      "en": "Wagon"
+    },
+    "waiter": {
+      "en": "Waiter"
+    },
+    "wall": {
+      "en": "Wall"
+    },
+    "war_of_american_independence": {
+      "en": "War Of American Independence"
+    },
+    "waste_matter": {
+      "en": "Waste Matter"
+    },
+    "watchmaking": {
+      "en": "Watchmaking"
+    },
+    "water": {
+      "en": "Water"
+    },
+    "water_sport": {
+      "en": "Water Sport"
+    },
+    "watercourse": {
+      "en": "Watercourse"
+    },
+    "way_of_life": {
+      "en": "Way Of Life"
+    },
+    "weapon": {
+      "en": "Weapon"
+    },
+    "weapons": {
+      "en": "Weapons"
+    },
+    "weather": {
+      "en": "Weather"
+    },
+    "website": {
+      "en": "Website"
+    },
+    "weight_unit": {
+      "en": "Weight Unit"
+    },
+    "weightlifting": {
+      "en": "Weightlifting"
+    },
+    "wheel": {
+      "en": "Wheel"
+    },
+    "wheeled_vehicle": {
+      "en": "Wheeled Vehicle"
+    },
+    "wife": {
+      "en": "Wife"
+    },
+    "wind": {
+      "en": "Wind"
+    },
+    "wind_instrument": {
+      "en": "Wind Instrument"
+    },
+    "window": {
+      "en": "Window"
+    },
+    "wine": {
+      "en": "Wine"
+    },
+    "winemaking": {
+      "en": "Winemaking"
+    },
+    "wood": {
+      "en": "Wood"
+    },
+    "woodworking": {
+      "en": "Woodworking"
+    },
+    "wool": {
+      "en": "Wool"
+    },
+    "word": {
+      "en": "Word"
+    },
+    "work": {
+      "en": "Work"
+    },
+    "worker": {
+      "en": "Worker"
+    },
+    "working_period": {
+      "en": "Working Period"
+    },
+    "worm": {
+      "en": "Worm"
+    },
+    "wrestling": {
+      "en": "Wrestling"
+    },
+    "writer": {
+      "en": "Writer"
+    },
+    "wrongdoing": {
+      "en": "Wrongdoing"
+    },
+    "yoga": {
+      "en": "Yoga"
+    },
+    "young_person": {
+      "en": "Young Person"
+    },
+    "zoology": {
+      "en": "Zoology"
+    }
+  }
+}

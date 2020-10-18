@@ -200,5 +200,20 @@ class OxfordClient(
     fun words(word: String): RetrieveEntry? {
         return this.words(WordQuery(q = word))
     }
+
+    /**
+     * /domains/{source_lang}:
+     * Lists available domains in a monolingual dataset
+     */
+    fun domainMonolingual(query: DomainMonolingualQuery): RetrieveDomainMonolingual? {
+        return parse(httpClient.execute(query))
+    }
+
+    /**
+     * @see OxfordClient.domainMonolingual
+     */
+    fun domainMonolingual(): RetrieveDomainMonolingual? {
+        return this.domainMonolingual(DomainMonolingualQuery())
+    }
 }
 

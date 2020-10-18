@@ -100,4 +100,13 @@ class OxfordContractTest {
 
         assertThat(retrieveEntry).isNotNull
     }
+
+    @Test
+    fun domains() {
+        val json = clazz.getResource("/__files/domainsMonolingual.json").readText()
+
+        val retrieveDomain = jacksonObjectMapper().readValue(json, RetrieveDomainMonolingual::class.java)
+
+        assertThat(retrieveDomain).isNotNull
+    }
 }
