@@ -1,6 +1,8 @@
 package com.github.sparkmuse
 
 import com.github.sparkmuse.entity.*
+import com.github.sparkmuse.entity.utility.RetrieveDomain
+import com.github.sparkmuse.entity.utility.RetrieveField
 import com.github.sparkmuse.internal.HttpClient
 import com.github.sparkmuse.internal.parse
 import com.github.sparkmuse.query.*
@@ -9,6 +11,8 @@ import com.github.sparkmuse.query.search.SearchThesaurusQuery
 import com.github.sparkmuse.query.search.SearchTranslationsQuery
 import com.github.sparkmuse.query.utility.DomainBilingualQuery
 import com.github.sparkmuse.query.utility.DomainMonolingualQuery
+import com.github.sparkmuse.query.utility.FieldEndpointQuery
+import com.github.sparkmuse.query.utility.FieldQuery
 
 class OxfordClient(
     val appId: String,
@@ -216,6 +220,22 @@ class OxfordClient(
      * Lists available domains in a bilingual dataset
      */
     fun domain(query: DomainBilingualQuery): RetrieveDomain? {
+        return parse(httpClient.execute(query))
+    }
+
+    /**
+     * /fields:
+     * Lists all available fields
+     */
+    fun field(query: FieldQuery): RetrieveField? {
+        return parse(httpClient.execute(query))
+    }
+
+    /**
+     * /fields/{endpoint}:
+     * Lists available fields for specific endpoint
+     */
+    fun field(query: FieldEndpointQuery): RetrieveField? {
         return parse(httpClient.execute(query))
     }
 }

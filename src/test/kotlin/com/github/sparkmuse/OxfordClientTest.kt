@@ -7,6 +7,8 @@ import com.github.sparkmuse.query.LanguageMonolingual
 import com.github.sparkmuse.query.LanguageMonolingual.English_gb
 import com.github.sparkmuse.query.utility.DomainBilingualQuery
 import com.github.sparkmuse.query.utility.DomainMonolingualQuery
+import com.github.sparkmuse.query.utility.FieldEndpointQuery
+import com.github.sparkmuse.query.utility.FieldQuery
 import com.github.sparkmuse.wiremock.Wiremock
 import com.github.sparkmuse.wiremock.WiremockExtension
 import com.github.tomakehurst.wiremock.WireMockServer
@@ -215,6 +217,38 @@ class OxfordClientTest {
         )
 
         val results = oxfordClient.domain(DomainBilingualQuery(English, Spanish))
+
+        assertThat(results).isNotNull
+    }
+
+    @Test
+    fun field() {
+        wiremock.stubFor(
+            get(urlPathMatching("/fields"))
+                .willReturn(
+                    aResponse()
+                        .withStatus(200)
+                        .withBodyFile("utility/fields.json")
+                )
+        )
+
+        val results = oxfordClient.field(FieldQuery())
+
+        assertThat(results).isNotNull
+    }
+
+    @Test
+    fun `field for specific endpoint`() {
+        wiremock.stubFor(
+            get(urlPathMatching("/fields/entries"))
+                .willReturn(
+                    aResponse()
+                        .withStatus(200)
+                        .withBodyFile("utility/fields.json")
+                )
+        )
+
+        val results = oxfordClient.field(FieldEndpointQuery("entries"))
 
         assertThat(results).isNotNull
     }

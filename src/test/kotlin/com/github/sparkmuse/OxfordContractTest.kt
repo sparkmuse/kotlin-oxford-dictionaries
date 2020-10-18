@@ -2,6 +2,8 @@ package com.github.sparkmuse
 
 import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
 import com.github.sparkmuse.entity.*
+import com.github.sparkmuse.entity.utility.RetrieveDomain
+import com.github.sparkmuse.entity.utility.RetrieveField
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.DisplayName
 import org.junit.jupiter.api.Test
@@ -108,5 +110,14 @@ class OxfordContractTest {
         val retrieveDomain = jacksonObjectMapper().readValue(json, RetrieveDomain::class.java)
 
         assertThat(retrieveDomain).isNotNull
+    }
+
+    @Test
+    fun fields() {
+        val json = clazz.getResource("/__files/utility/fields.json").readText()
+
+        val retrieveField = jacksonObjectMapper().readValue(json, RetrieveField::class.java)
+
+        assertThat(retrieveField).isNotNull
     }
 }
