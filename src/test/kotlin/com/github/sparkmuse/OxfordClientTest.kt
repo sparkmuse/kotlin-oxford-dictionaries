@@ -162,4 +162,21 @@ class OxfordClientTest {
 
         assertThat(results).isNotNull
     }
+
+    @Test
+    fun domainMonolingual() {
+
+        wiremock.stubFor(
+            get(urlPathMatching("/domains/en-gb"))
+                .willReturn(
+                    aResponse()
+                        .withStatus(200)
+                        .withBodyFile("domainsMonolingual.json")
+                )
+        )
+
+        val results = oxfordClient.domainMonolingual()
+
+        assertThat(results).isNotNull
+    }
 }
