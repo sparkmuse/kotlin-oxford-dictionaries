@@ -23,7 +23,7 @@ As we support more endpoints they will be added to the list bellow:
 | /api/v2/search/thesaurus/{source_lang}                                           	|      ✅     	|
 | __Utility__                                                                      	|            	|
 | /api/v2/domains/{source_lang}:                                                   	|      ✅     	|
-| /api/v2/domains/{source_lang_domains}/{target_lang_domains}:                     	|      ❌     	|
+| /api/v2/domains/{source_lang_domains}/{target_lang_domains}:                     	|      ✅     	|
 | /api/v2/fields:                                                                  	|      ❌     	|
 | /api/v2/fields/{endpoint}:                                                       	|      ❌     	|
 | /api/v2/filters:                                                                 	|      ❌     	|

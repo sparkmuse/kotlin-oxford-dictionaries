@@ -7,6 +7,8 @@ import com.github.sparkmuse.query.*
 import com.github.sparkmuse.query.search.SearchQuery
 import com.github.sparkmuse.query.search.SearchThesaurusQuery
 import com.github.sparkmuse.query.search.SearchTranslationsQuery
+import com.github.sparkmuse.query.utility.DomainBilingualQuery
+import com.github.sparkmuse.query.utility.DomainMonolingualQuery
 
 class OxfordClient(
     val appId: String,
@@ -205,15 +207,16 @@ class OxfordClient(
      * /domains/{source_lang}:
      * Lists available domains in a monolingual dataset
      */
-    fun domainMonolingual(query: DomainMonolingualQuery): RetrieveDomainMonolingual? {
+    fun domain(query: DomainMonolingualQuery): RetrieveDomain? {
         return parse(httpClient.execute(query))
     }
 
     /**
-     * @see OxfordClient.domainMonolingual
+     * /domains/{source_lang_domains}/{target_lang_domains}:
+     * Lists available domains in a bilingual dataset
      */
-    fun domainMonolingual(): RetrieveDomainMonolingual? {
-        return this.domainMonolingual(DomainMonolingualQuery())
+    fun domain(query: DomainBilingualQuery): RetrieveDomain? {
+        return parse(httpClient.execute(query))
     }
 }
 

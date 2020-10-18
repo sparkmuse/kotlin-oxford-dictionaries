@@ -1,5 +1,12 @@
 package com.github.sparkmuse
 
+import com.github.sparkmuse.query.LanguageBilingual
+import com.github.sparkmuse.query.LanguageBilingual.English
+import com.github.sparkmuse.query.LanguageBilingual.Spanish
+import com.github.sparkmuse.query.LanguageMonolingual
+import com.github.sparkmuse.query.LanguageMonolingual.English_gb
+import com.github.sparkmuse.query.utility.DomainBilingualQuery
+import com.github.sparkmuse.query.utility.DomainMonolingualQuery
 import com.github.sparkmuse.wiremock.Wiremock
 import com.github.sparkmuse.wiremock.WiremockExtension
 import com.github.tomakehurst.wiremock.WireMockServer
@@ -165,17 +172,32 @@ class OxfordClientTest {
 
     @Test
     fun domainMonolingual() {
-
         wiremock.stubFor(
             get(urlPathMatching("/domains/en-gb"))
                 .willReturn(
                     aResponse()
                         .withStatus(200)
-                        .withBodyFile("domainsMonolingual.json")
+                        .withBodyFile("utility/domains.json")
                 )
         )
 
-        val results = oxfordClient.domainMonolingual()
+        val results = oxfordClient.domain(DomainMonolingualQuery(English_gb))
+
+        assertThat(results).isNotNull
+    }
+
+    @Test
+    fun domainBilingual() {
+        wiremock.stubFor(
+            get(urlPathMatching("/domains/en/es"))
+                .willReturn(
+                    aResponse()
+                        .withStatus(200)
+                        .withBodyFile("utility/domains.json")
+                )
+        )
+
+        val results = oxfordClient.domain(DomainBilingualQuery(English, Spanish))
 
         assertThat(results).isNotNull
     }
