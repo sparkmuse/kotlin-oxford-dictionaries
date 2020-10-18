@@ -93,21 +93,6 @@ data class RelatedEntry(
     val text: String
 )
 
-data class ThesaurusLink(
-
-    /**
-     * Identifier of a word
-     */
-    @JsonProperty("entry_id")
-    val entryId: String,
-
-    /**
-     * Identifier of a sense
-     */
-    @JsonProperty("sense_id")
-    val senseId: String
-)
-
 data class Construction(
 
     /**
@@ -139,35 +124,4 @@ data class Construction(
      * The construction text
      */
     val text: String
-)
-
-data class Inflection(
-
-    val domains: List<Domain> = listOf(),
-    val grammaticalFeatures: List<GrammaticalFeature> = listOf(),
-    val inflectedForm: String,
-    val lexicalCategory: LexicalCategory?,
-    val pronunciations: List<Pronunciation> = listOf(),
-    val regions: List<Region> = listOf(),
-    val registers: List<Register> = listOf()
-)
-
-data class CrossReference(
-
-    /**
-     * The word id of the co-occurrence
-     */
-    val id: String,
-
-    /**
-     * The word of the co-occurrence
-     */
-    val text: String,
-
-    /**
-     * The type of relation between the two words.
-     * Possible values are 'close match', 'related', 'see also', 'variant spelling', and 'abbreviation' in case of crossreferences,
-     * or 'pre', 'post' in case of collocates.
-     */
-    val type: String
 )

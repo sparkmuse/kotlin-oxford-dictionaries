@@ -1,5 +1,7 @@
 package com.github.sparkmuse.entity
 
+import com.fasterxml.jackson.annotation.JsonProperty
+
 data class GrammaticalFeature(
     val id: String = "",
     val text: String = "",
@@ -430,4 +432,49 @@ data class LexicalEntry(
      * Various words that are used interchangeably depending on the context, e.g 'a' and 'an' (Optional)
      */
     val variantForms: List<VariantForm> = listOf()
+)
+
+data class CrossReference(
+
+    /**
+     * The word id of the co-occurrence
+     */
+    val id: String,
+
+    /**
+     * The word of the co-occurrence
+     */
+    val text: String,
+
+    /**
+     * The type of relation between the two words.
+     * Possible values are 'close match', 'related', 'see also', 'variant spelling', and 'abbreviation' in case of crossreferences,
+     * or 'pre', 'post' in case of collocates.
+     */
+    val type: String
+)
+
+data class ThesaurusLink(
+
+    /**
+     * Identifier of a word
+     */
+    @JsonProperty("entry_id")
+    val entryId: String,
+
+    /**
+     * Identifier of a sense
+     */
+    @JsonProperty("sense_id")
+    val senseId: String
+)
+
+data class Inflection(
+    val domains: List<Domain> = listOf(),
+    val grammaticalFeatures: List<GrammaticalFeature> = listOf(),
+    val inflectedForm: String = "",
+    val lexicalCategory: LexicalCategory = LexicalCategory(),
+    val pronunciations: List<Pronunciation> = listOf(),
+    val regions: List<Region> = listOf(),
+    val registers: List<Register> = listOf()
 )

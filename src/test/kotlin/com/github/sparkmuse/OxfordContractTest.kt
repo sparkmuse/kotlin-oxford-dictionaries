@@ -1,10 +1,7 @@
 package com.github.sparkmuse
 
 import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
-import com.github.sparkmuse.entity.RetrieveEntry
-import com.github.sparkmuse.entity.Lemmatron
-import com.github.sparkmuse.entity.Thesaurus
-import com.github.sparkmuse.entity.WordList
+import com.github.sparkmuse.entity.*
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.DisplayName
 import org.junit.jupiter.api.Test
@@ -12,10 +9,12 @@ import org.junit.jupiter.api.Test
 @DisplayName("correctly deserializes")
 class OxfordContractTest {
 
+    private val clazz = OxfordContractTest::class.java
+
     @Test
     fun entries() {
 
-        val json = OxfordContractTest::class.java.getResource("/__files/entries.json").readText()
+        val json = clazz.getResource("/__files/entries.json").readText()
 
         val retrieveEntry = jacksonObjectMapper().readValue(json, RetrieveEntry::class.java)
 
@@ -25,7 +24,7 @@ class OxfordContractTest {
     @Test
     fun lemmas() {
 
-        val json = OxfordContractTest::class.java.getResource("/__files/lemmas.json").readText()
+        val json = clazz.getResource("/__files/lemmas.json").readText()
 
         val lemmatron = jacksonObjectMapper().readValue(json, Lemmatron::class.java)
 
@@ -35,7 +34,7 @@ class OxfordContractTest {
     @Test
     fun `search translations`() {
 
-        val json = OxfordContractTest::class.java.getResource("/__files/search_translations.json").readText()
+        val json = clazz.getResource("/__files/search_translations.json").readText()
 
         val wordlist = jacksonObjectMapper().readValue(json, WordList::class.java)
 
@@ -45,7 +44,7 @@ class OxfordContractTest {
     @Test
     fun search() {
 
-        val json = OxfordContractTest::class.java.getResource("/__files/search.json").readText()
+        val json = clazz.getResource("/__files/search.json").readText()
 
         val wordlist = jacksonObjectMapper().readValue(json, WordList::class.java)
 
@@ -55,7 +54,7 @@ class OxfordContractTest {
     @Test
     fun `search thesaurus`() {
 
-        val json = OxfordContractTest::class.java.getResource("/__files/search_thesaurus.json").readText()
+        val json = clazz.getResource("/__files/search_thesaurus.json").readText()
 
         val thesaurusWordList = jacksonObjectMapper().readValue(json, WordList::class.java)
 
@@ -65,10 +64,20 @@ class OxfordContractTest {
     @Test
     fun thesaurus() {
 
-        val json = OxfordContractTest::class.java.getResource("/__files/thesaurus.json").readText()
+        val json = clazz.getResource("/__files/thesaurus.json").readText()
 
         val thesaurusWordList = jacksonObjectMapper().readValue(json, Thesaurus::class.java)
 
         assertThat(thesaurusWordList).isNotNull
+    }
+
+    @Test
+    fun translations() {
+
+        val json = clazz.getResource("/__files/translations.json").readText()
+
+        val translation = jacksonObjectMapper().readValue(json, RetrieveTranslation::class.java)
+
+        assertThat(translation).isNotNull
     }
 }
