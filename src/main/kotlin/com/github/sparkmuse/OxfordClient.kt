@@ -298,5 +298,13 @@ class OxfordClient(
     fun registers(query: RegisterBilingualQuery): RetrieveRegister? {
         return parse(httpClient.execute(query))
     }
+
+    /**
+     * /languages:
+     * Returns the names of Dictionaries in the API
+     */
+    fun languages(query: LanguageQuery): RetrieveLanguage? {
+        return parse(httpClient.execute(query))
+    }
 }
 

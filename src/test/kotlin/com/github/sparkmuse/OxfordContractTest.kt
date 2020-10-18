@@ -155,4 +155,13 @@ class OxfordContractTest {
 
         assertThat(retrieveRegister).isNotNull
     }
+
+    @Test
+    fun languages() {
+        val json = clazz.getResource("/__files/utility/languages.json").readText()
+
+        val language = jacksonObjectMapper().readValue(json, RetrieveLanguage::class.java)
+
+        assertThat(language).isNotNull
+    }
 }

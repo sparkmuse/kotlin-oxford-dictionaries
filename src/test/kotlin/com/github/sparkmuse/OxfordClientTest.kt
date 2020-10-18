@@ -377,4 +377,20 @@ class OxfordClientTest {
 
         assertThat(results).isNotNull
     }
+
+    @Test
+    fun languages() {
+        wiremock.stubFor(
+            get(urlPathMatching("/languages"))
+                .willReturn(
+                    aResponse()
+                        .withStatus(200)
+                        .withBodyFile("utility/languages.json")
+                )
+        )
+
+        val results = oxfordClient.languages(LanguageQuery(English, Spanish))
+
+        assertThat(results).isNotNull
+    }
 }
