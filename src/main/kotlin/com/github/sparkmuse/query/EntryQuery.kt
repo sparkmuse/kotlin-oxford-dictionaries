@@ -25,7 +25,7 @@ class EntryQuery(
     /**
      * Selection filter: a comma-separated list of grammatical features ids to match on (default: all features).
      * The available grammatical features for a given language (or language pair) can be obtained from
-     * the /grammaticalfeatures/ endpoint. TODO: Not sure what this endpoint is
+     * the /grammaticalfeatures/ endpoint.
      *
      * The filter keeps all the entries in the response whose grammaticalFeatures "id" matches the values in
      * the grammaticalFeatures parameter.
@@ -35,7 +35,7 @@ class EntryQuery(
     /**
      * Selection filter: a comma-separated list of lexical categories ids to match on (default: all categories).
      * The available lexical categories for a given language (or language pair) can be obtained from
-     * the /lexicalcategories/ endpoint. TODO: Not sure what this endpoint is
+     * the /lexicalcategories/ endpoint.
      *
      * The filter keeps all the entries in the response whose lexicalCategory "id" matches the values in the
      * lexicalCategory parameter.
@@ -45,7 +45,6 @@ class EntryQuery(
     /**
      * Selection filter: a comma-separated list of domains ids to match on (default: all domains).
      * The available domains for a given language (or language pair) can be obtained from the /domains/ endpoint.
-     * TODO: Not sure what this endpoint is
      *
      * The filter keeps all the senses and subsenses in the response whose domains "id" matches the values in the
      * domains parameter.
@@ -55,7 +54,6 @@ class EntryQuery(
     /**
      * Selection filter: a comma-separated list of registers ids to match on (default: all registers).
      * The available registers for a given language (or language pair) can be obtained from the /registers/ endpoint.
-     * TODO: Not sure what this endpoint is
      *
      * The filter keeps all the senses and subsenses in the response whose registers "id" matches the values in the
      * registers parameter.

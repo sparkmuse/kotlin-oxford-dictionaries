@@ -15,7 +15,7 @@ class LemmaQuery(
     /**
      * Selection filter: a comma-separated list of grammatical features ids to match on (default: all features).
      * The available grammatical features for a given language (or language pair) can be obtained from
-     * the /grammaticalfeatures/ endpoint. TODO: Not sure what this endpoint is
+     * the /grammaticalfeatures/ endpoint.
      *
      * The filter keeps all the entries in the response whose grammaticalFeatures "id" matches the values in
      * the grammaticalFeatures parameter.
@@ -25,7 +25,7 @@ class LemmaQuery(
     /**
      * Selection filter: a comma-separated list of lexical categories ids to match on (default: all categories).
      * The available lexical categories for a given language (or language pair) can be obtained from
-     * the /lexicalcategories/ endpoint. TODO: Not sure what this endpoint is
+     * the /lexicalcategories/ endpoint.
      *
      * The filter keeps all the entries in the response whose lexicalCategory "id" matches the values in the
      * lexicalCategory parameter.
