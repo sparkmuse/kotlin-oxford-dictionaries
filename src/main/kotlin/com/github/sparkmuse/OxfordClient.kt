@@ -2,7 +2,6 @@ package com.github.sparkmuse
 
 import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
 import com.github.sparkmuse.entity.*
-import com.github.sparkmuse.entity.utility.*
 import com.github.sparkmuse.query.*
 import com.github.sparkmuse.query.search.SearchQuery
 import com.github.sparkmuse.query.search.SearchThesaurusQuery

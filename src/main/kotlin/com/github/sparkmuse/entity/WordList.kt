@@ -1,53 +1,24 @@
 package com.github.sparkmuse.entity
 
+/**
+ * Use this to retrieve possible headword matches for a given string of text. The results are calculated using
+ * headword matching, fuzzy matching, and lemmatization.
+ *
+ * https://developer.oxforddictionaries.com/documentation#!/Search/get_search_source_lang
+ * https://developer.oxforddictionaries.com/documentation/glossary
+ *
+ */
 data class WordList(
-
-    /**
-     *  Additional Information provided by OUP (Optional)
-     */
     val metadata: Map<String, String> = mapOf(),
-
-    /**
-     *  A list of found words (Optional)
-     */
     val results: List<Result> = listOf()
 ) {
-
     data class Result(
-
-        /**
-         * The identifier of a word
-         */
         val id: String = "",
-
-        /**
-         * Label (Optional)
-         */
         val label: String = "",
-
-        /**
-         * MatchString (Optional)
-         */
         val matchString: String = "",
-
-        /**
-         * MatchType (Optional)
-         */
         val matchType: String = "",
-
-        /**
-         * Name of region. (Optional)
-         */
         val region: String = "",
-
-        /**
-         * Score (Optional)
-         */
         val score: Double = 0.0,
-
-        /**
-         * A given written or spoken realisation of an entry, lowercased. (Deprecated, Optional)
-         */
         val word: String = ""
     )
 }

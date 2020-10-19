@@ -1,5 +1,14 @@
 package com.github.sparkmuse.entity
 
+/**
+ * Use this to retrieve sentences extracted from a corpus of real-world language, including news and blog content.
+ * This is available for English and Spanish. For English, the sentences are linked to the correct sense of the word
+ * in the dictionary. In Spanish, they are linked at the headword level.
+ *
+ * https://developer.oxforddictionaries.com/documentation#!/Sentences/get_sentences_source_lang_word_id
+ * https://developer.oxforddictionaries.com/documentation/glossary
+ *
+ */
 data class SentencesResults(
     val metadata: Map<String, String> = mapOf(),
     val results: List<Result> = listOf()

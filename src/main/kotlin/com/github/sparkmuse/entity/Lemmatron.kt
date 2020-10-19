@@ -1,73 +1,28 @@
 package com.github.sparkmuse.entity
 
+/**
+ * Lemma is a general term for any headword, phrase, or other form that can be looked up.
+ * E.g. ‘act’, ‘acting’, ‘act up’, ‘get one’s act together’ are all lemmas.
+ *
+ * https://developer.oxforddictionaries.com/documentation#!/Lemmas/get_lemmas_source_lang_word_id
+ * https://developer.oxforddictionaries.com/documentation/glossary
+ */
 data class Lemmatron(
-
-    /**
-     *  Additional Information provided by OUP (Optional)
-     */
     val metadata: Map<String, String> = mapOf(),
-
-    /**
-     * A list of inflections matching a given word (Optional)
-     */
     val results: List<HeadwordLemmatron> = listOf()
 ) {
-
     data class HeadwordLemmatron(
-
-        /**
-         * The identifier of a word
-         */
         val id: String = "",
-
-        /**
-         * IANA language code
-         * https://www.iana.org/assignments/language-subtag-registry/language-subtag-registry
-         */
         val language: String = "",
-
-        /**
-         * A grouping of various senses in a specific language, and a lexical category that relates to a word
-         */
         val lexicalEntries: List<LemmatronLexicalEntry> = listOf(),
-
-        /**
-         * The json object type. Could be 'headword', 'inflection' or 'phrase' (Optional)
-         */
         val type: String = "",
-
-        /**
-         * A given written or spoken realisation of an entry, lowercased. (Deprecated, Optional)
-         */
         val word: String = ""
     ) {
         data class LemmatronLexicalEntry(
-
-            /**
-             * GrammaticalFeatures (Optional)
-             */
             val grammaticalFeatures: List<GrammaticalFeature> = listOf(),
-
-            /**
-             * The canonical form of words for which the entry is an inflection
-             */
             val inflectionOf: List<Inflection> = listOf(),
-
-            /**
-             * IANA language code
-             * https://www.iana.org/assignments/language-subtag-registry/language-subtag-registry
-             */
             val language: String = "",
-
-            /**
-             * A linguistic category of words (or more precisely lexical items), generally defined by the syntactic or
-             * morphological behaviour of the lexical item in question, such as noun or verb
-             */
             val lexicalCategory: LexicalCategory = LexicalCategory(),
-
-            /**
-             *  A given written or spoken realisation of an entry
-             */
             val text: String
         ) {
             data class Inflection(

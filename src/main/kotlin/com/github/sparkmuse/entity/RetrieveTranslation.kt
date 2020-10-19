@@ -1,45 +1,23 @@
 package com.github.sparkmuse.entity
 
+/**
+ * Use this to return translations for a given word. In the event that a word in the dataset does not have a direct
+ * translation, the response will be a definition in the target language.
+ *
+ * https://developer.oxforddictionaries.com/documentation#!/Translations/get_translations_source_lang_translate_target_lang_translate_word_id
+ * https://developer.oxforddictionaries.com/documentation/glossary
+ *
+ */
 data class RetrieveTranslation(
-    /**
-     *  Additional Information provided by OUP (Optional)
-     */
     val metadata: Map<String, String> = mapOf(),
-
-    /**
-     *  A list of bilingual entries and all the data related to them (Optional)
-     */
     val results: List<BilingualHeadwordEntry> = listOf()
 ) {
     data class BilingualHeadwordEntry(
-        /**
-         * The identifier of a word
-         */
         val id: String = "",
-
-        /**
-         *  IANA language code
-         */
         val language: String = "",
-
-        /**
-         * A grouping of various senses containing translations in a specific language, and a lexical category that relates to a word
-         */
         val lexicalEntries: List<BilingualLexicalEntry> = listOf(),
-
-        /**
-         * Pronunciation
-         */
         val pronunciations: List<Pronunciation> = listOf(),
-
-        /**
-         *  The json object type. Could be 'headword', 'inflection' or 'phrase'
-         */
         val type: String = "",
-
-        /**
-         * A given written or spoken realisation of an entry, lowercased
-         */
         val word: String = ""
     ) {
         data class BilingualLexicalEntry(
@@ -94,6 +72,15 @@ data class RetrieveTranslation(
                     val translations: List<Translation> = listOf(),
                     val variantForms: List<VariantForm> = listOf()
                 ) {
+                    data class AntonymSynonym(
+                        val id: String = "",
+                        val domains: List<Domain> = listOf(),
+                        val language: String = "",
+                        val regions: List<Region> = listOf(),
+                        val registers: List<Register> = listOf(),
+                        val text: String = ""
+                    )
+
                     data class Construction(
                         val domains: List<Domain> = listOf(),
                         val examples: List<List<String>> = listOf(),
@@ -117,31 +104,31 @@ data class RetrieveTranslation(
                         val text: String = "",
                         val translations: List<Translation> = listOf()
                     )
+
+                    data class Translation(
+                        val collocations: List<CrossReference> = listOf(),
+                        val domains: List<Domain> = listOf(),
+                        val grammaticalFeatures: List<GrammaticalFeature> = listOf(),
+                        val language: String = "",
+                        val notes: List<CategorizedText> = listOf(),
+                        val regions: List<Region> = listOf(),
+                        val registers: List<Register> = listOf(),
+                        val text: String = "",
+                        val toneGroups: List<ToneGroup> = listOf(),
+                        val type: String = ""
+                    ) {
+                        data class ToneGroup(
+                            val tones: List<Tone> = listOf()
+                        ) {
+                            data class Tone(
+                                val type: String = "",
+                                val value: String = ""
+                            )
+                        }
+                    }
                 }
             }
         }
     }
 }
 
-data class Translation(
-    val collocations: List<CrossReference> = listOf(),
-    val domains: List<Domain> = listOf(),
-    val grammaticalFeatures: List<GrammaticalFeature> = listOf(),
-    val language: String = "",
-    val notes: List<CategorizedText> = listOf(),
-    val regions: List<Region> = listOf(),
-    val registers: List<Register> = listOf(),
-    val text: String = "",
-    val toneGroups: List<ToneGroup> = listOf(),
-    val type: String = ""
-) {
-
-    data class ToneGroup(
-        val tones: List<Tone> = listOf()
-    ) {
-        data class Tone(
-            val type: String = "",
-            val value: String = ""
-        )
-    }
-}
