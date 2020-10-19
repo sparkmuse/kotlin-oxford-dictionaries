@@ -10,20 +10,15 @@ class InflectionQueryTest {
 
     @TestWithFixture
     fun `parameters gets all query parameters as a map`(query: InflectionQuery) {
-
-        val expected = mapOf(
-            "strictMatch" to query.strictMatch.toString()
-        )
-
-        val actual = query.parameters()
-
-        assertThat(actual).containsExactlyInAnyOrderEntriesOf(expected)
+        val expected = "strictMatch=${query.strictMatch}"
+        val actual = query.queryParams
+        assertThat(actual).isEqualTo(expected)
     }
 
     @Test
     fun pathFragment() {
         val query = InflectionQuery(word = "ace", sourceLanguage = English_gb)
-        val actual = query.pathFragment()
+        val actual = query.pathFragment
         assertThat(actual).isEqualTo("inflections/en-gb/ace")
     }
 }

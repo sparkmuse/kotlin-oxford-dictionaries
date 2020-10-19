@@ -73,25 +73,21 @@ class TranslationQuery(
 
     ) : Query {
 
-    /**
-     * Get gets the parameters of the call as a map of strings
-     */
-    override fun parameters(): Map<String, String> {
-        return mapOf(
-            "strictMatch" to strictMatch.toString(),
-            "fields" to fields.joinToString(","),
-            "grammaticalFeatures" to grammaticalFeatures.joinToString(","),
-            "lexicalCategory" to lexicalCategory.joinToString(","),
-            "domains" to domains.joinToString(","),
-            "registers" to registers.joinToString(","),
-        ).filterValues { it.isNotEmpty() };
-    }
+    override val queryParams: String
+        get() {
+            return mapOf(
+                "fields" to fields.joinWithComma(),
+                "grammaticalFeatures" to grammaticalFeatures.joinWithComma(),
+                "lexicalCategory" to lexicalCategory.joinWithComma(),
+                "domains" to domains.joinWithComma(),
+                "registers" to registers.joinWithComma(),
+                "strictMatch" to strictMatch.toString()
+            )
+                .filterValues { it.isNotEmpty() }
+                .joinWithAmpersand()
+        }
 
-    /**
-     * Get the url path fragment for the call
-     */
-    override fun pathFragment(): String {
-        return "translations/${sourceLanguage.value}/${targetLanguage.value}/${word}"
-    }
+    override val pathFragment: String
+        get() = "translations/${sourceLanguage.value}/${targetLanguage.value}/${word}"
 }
 

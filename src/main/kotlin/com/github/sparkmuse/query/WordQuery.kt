@@ -62,25 +62,20 @@ class WordQuery(
 
     ) : Query {
 
+    override val queryParams: String
+        get() {
+            return mapOf(
+                "q" to q,
+                "fields" to fields.joinWithComma(),
+                "grammaticalFeatures" to grammaticalFeatures.joinWithComma(),
+                "lexicalCategory" to lexicalCategory.joinWithComma(),
+                "domains" to domains.joinWithComma(),
+                "registers" to registers.joinWithComma(),
+            )
+                .filterValues { it.isNotEmpty() }
+                .joinWithAmpersand()
+        }
 
-    /**
-     * Get gets the parameters of the call as a map of strings
-     */
-    override fun parameters(): Map<String, String> {
-        return mapOf(
-            "q" to q,
-            "fields" to fields.joinToString(","),
-            "grammaticalFeatures" to grammaticalFeatures.joinToString(","),
-            "lexicalCategory" to lexicalCategory.joinToString(","),
-            "domains" to domains.joinToString(","),
-            "registers" to registers.joinToString(","),
-        ).filterValues { it.isNotEmpty() };
-    }
-
-    /**
-     * Get the url path fragment for the call
-     */
-    override fun pathFragment(): String {
-        return "words/${sourceLanguage.value}"
-    }
+    override val pathFragment: String
+        get() = "words/${sourceLanguage.value}"
 }

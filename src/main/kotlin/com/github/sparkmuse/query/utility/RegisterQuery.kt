@@ -16,19 +16,10 @@ class RegisterMonolingualQuery(
 
     ) : Query {
 
-    /**
-     * Get gets the parameters of the call as a map of strings
-     */
-    override fun parameters(): Map<String, String> {
-        return mapOf()
-    }
+    override val queryParams: String get() = ""
 
-    /**
-     * Get the url path fragment for the call
-     */
-    override fun pathFragment(): String {
-        return "registers/${sourceLanguage.value}"
-    }
+    override val pathFragment: String
+        get() = "registers/${sourceLanguage.value}"
 }
 
 /**
@@ -48,17 +39,8 @@ class RegisterBilingualQuery(
 
     ) : Query {
 
-    /**
-     * Get gets the parameters of the call as a map of strings
-     */
-    override fun parameters(): Map<String, String> {
-        return mapOf()
-    }
+    override val queryParams: String get() = ""
 
-    /**
-     * Get the url path fragment for the call
-     */
-    override fun pathFragment(): String {
-        return "registers/${sourceLanguage.value}/${targetLanguage.value}"
-    }
+    override val pathFragment: String
+        get() = "registers/${sourceLanguage.value}/${targetLanguage.value}"
 }

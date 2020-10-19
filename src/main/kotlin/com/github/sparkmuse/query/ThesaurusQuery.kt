@@ -27,25 +27,21 @@ class ThesaurusQuery(
 
 ) : Query {
 
-    /**
-     * Get gets the parameters of the call as a map of strings
-     */
-    override fun parameters(): Map<String, String> {
-        return mapOf(
-            "fields" to fields.joinToString(","),
-            "strictMatch" to strictMatch.toString(),
-        ).filterValues { it.isNotEmpty() }
-    }
+    override val queryParams: String
+        get() {
+            return mapOf(
+                "fields" to fields.joinWithComma(),
+                "strictMatch" to strictMatch.toString()
+            )
+                .filterValues { it.isNotEmpty() }
+                .joinWithAmpersand()
+        }
 
-    /**
-     * Get the url path fragment for the call
-     */
-    override fun pathFragment(): String {
-        return "thesaurus/${sourceLanguage.value}/$word"
-    }
+    override val pathFragment: String
+        get() = "thesaurus/${sourceLanguage.value}/$word"
 
     enum class DataField {
-        synonyms, antonyms
+        antonyms, synonyms
     }
 }
 

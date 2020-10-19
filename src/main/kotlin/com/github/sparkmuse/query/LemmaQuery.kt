@@ -34,21 +34,17 @@ class LemmaQuery(
 
 ) : Query {
 
-    /**
-     * Get gets the parameters of the call as a map of strings
-     */
-    override fun parameters(): Map<String, String> {
-        return mapOf(
-            "grammaticalFeatures" to grammaticalFeatures.joinToString(","),
-            "lexicalCategory" to lexicalCategory.joinToString(","),
-        ).filterValues { it.isNotEmpty() };
-    }
+    override val queryParams: String
+        get() {
+            return mapOf(
+                "grammaticalFeatures" to grammaticalFeatures.joinWithComma(),
+                "lexicalCategory" to lexicalCategory.joinWithComma(),
+            )
+                .filterValues { it.isNotEmpty() }
+                .joinWithAmpersand()
+        }
 
-    /**
-     * Get the url path fragment for the call
-     */
-    override fun pathFragment(): String {
-        return "lemmas/${sourceLanguage.value}/$word"
-    }
+    override val pathFragment: String
+        get() = "lemmas/${sourceLanguage.value}/$word"
 }
 

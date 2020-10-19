@@ -18,13 +18,13 @@ class FieldQueryTest {
     inner class Field {
         @TestWithFixture
         fun `parameters gets always empty map`(query: FieldQuery) {
-            assertThat(query.parameters()).isEmpty()
+            assertThat(query.queryParams).isEmpty()
         }
 
         @Test
         fun pathFragment() {
             val query = FieldQuery()
-            val actual = query.pathFragment()
+            val actual = query.pathFragment
             assertThat(actual).isEqualTo("fields")
         }
     }
@@ -34,13 +34,13 @@ class FieldQueryTest {
 
         @TestWithFixture
         fun `parameters gets always empty map`(query: FieldEndpointQuery) {
-            assertThat(query.parameters()).isEmpty()
+            assertThat(query.queryParams).isEmpty()
         }
 
         @Test
         fun pathFragment() {
             val query = FieldEndpointQuery("entities")
-            val actual = query.pathFragment()
+            val actual = query.pathFragment
             assertThat(actual).isEqualTo("fields/entities")
         }
     }

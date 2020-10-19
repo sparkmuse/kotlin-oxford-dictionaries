@@ -20,20 +20,9 @@ class InflectionQuery(
 
 ) : Query {
 
+    override val pathFragment: String
+        get() = "inflections/${sourceLanguage.value}/$word"
 
-    /**
-     * Get gets the parameters of the call as a map of strings
-     */
-    override fun parameters(): Map<String, String> {
-        return mapOf(
-            "strictMatch" to strictMatch.toString(),
-        ).filterValues { it.isNotEmpty() };
-    }
-
-    /**
-     * Get the url path fragment for the call
-     */
-    override fun pathFragment(): String {
-        return "inflections/${sourceLanguage.value}/$word"
-    }
+    override val queryParams: String
+        get() = "strictMatch=$strictMatch"
 }

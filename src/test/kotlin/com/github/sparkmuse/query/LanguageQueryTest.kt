@@ -14,24 +14,24 @@ class LanguageQueryTest {
         val expected = mapOf(
             "sourceLanguage" to query.sourceLanguage?.value,
             "targetLanguage" to query.targetLanguage?.value
-        )
+        ).joinWithAmpersand()
 
-        val actual = query.parameters()
+        val actual = query.queryParams
 
-        assertThat(actual).containsExactlyInAnyOrderEntriesOf(expected)
+        assertThat(actual).isEqualTo(expected)
     }
 
     @Test
     fun `parameters gets NON empty query parameters`() {
         val entryQuery = LanguageQuery()
-        val actual = entryQuery.parameters()
+        val actual = entryQuery.queryParams
         assertThat(actual).isEmpty()
     }
 
     @Test
     fun pathFragment() {
         val query = LanguageQuery()
-        val actual = query.pathFragment()
+        val actual = query.pathFragment
         assertThat(actual).isEqualTo("languages")
     }
 }

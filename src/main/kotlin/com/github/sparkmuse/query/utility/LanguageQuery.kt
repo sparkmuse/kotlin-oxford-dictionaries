@@ -1,8 +1,8 @@
 package com.github.sparkmuse.query.utility
 
 import com.github.sparkmuse.query.LanguageBilingual
-import com.github.sparkmuse.query.LanguageMonolingual
 import com.github.sparkmuse.query.Query
+import com.github.sparkmuse.query.joinWithAmpersand
 
 /**
  * Returns the names of Dictionaries in the AP
@@ -23,20 +23,16 @@ class LanguageQuery(
 
     constructor() : this(null, null)
 
-    /**
-     * Get gets the parameters of the call as a map of strings
-     */
-    override fun parameters(): Map<String, String> {
-        return mapOf(
-            "sourceLanguage" to (sourceLanguage?.value ?: ""),
-            "targetLanguage" to (targetLanguage?.value ?: ""),
-        ).filterValues { it.isNotEmpty() }
-    }
+    override val queryParams: String
+        get() {
+            return mapOf(
+                "sourceLanguage" to (sourceLanguage?.value ?: ""),
+                "targetLanguage" to (targetLanguage?.value ?: ""),
+            )
+                .filterValues { it.isNotEmpty() }
+                .joinWithAmpersand()
+        }
 
-    /**
-     * Get the url path fragment for the call
-     */
-    override fun pathFragment(): String {
-        return "languages"
-    }
+    override val pathFragment: String
+        get() = "languages"
 }

@@ -18,13 +18,13 @@ class LexicalCategoryQueryTest {
     inner class Monolingual {
         @TestWithFixture
         fun `parameters gets always empty map`(query: LexicalCategoryMonolingualQuery) {
-            assertThat(query.parameters()).isEmpty()
+            assertThat(query.queryParams).isEmpty()
         }
 
         @Test
         fun pathFragment() {
             val query = LexicalCategoryMonolingualQuery(English_gb)
-            val actual = query.pathFragment()
+            val actual = query.pathFragment
             assertThat(actual).isEqualTo("lexicalCategories/en-gb")
         }
     }
@@ -34,13 +34,13 @@ class LexicalCategoryQueryTest {
 
         @TestWithFixture
         fun `parameters gets always empty map`(query: LexicalCategoryBilingualQuery) {
-            assertThat(query.parameters()).isEmpty()
+            assertThat(query.queryParams).isEmpty()
         }
 
         @Test
         fun pathFragment() {
             val query = LexicalCategoryBilingualQuery(English, Spanish)
-            val actual = query.pathFragment()
+            val actual = query.pathFragment
             assertThat(actual).isEqualTo("lexicalCategories/en/es")
         }
     }

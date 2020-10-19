@@ -12,17 +12,17 @@ class SentenceQueryTest {
 
         val expected = mapOf(
             "strictMatch" to query.strictMatch.toString()
-        )
+        ).joinWithAmpersand()
 
-        val actual = query.parameters()
+        val actual = query.queryParams
 
-        assertThat(actual).containsExactlyInAnyOrderEntriesOf(expected)
+        assertThat(actual).isEqualTo(expected)
     }
 
     @Test
     fun pathFragment() {
         val query = SentenceQuery(word = "ace", sourceLanguage = English)
-        val actual = query.pathFragment()
+        val actual = query.pathFragment
         assertThat(actual).isEqualTo("sentences/en/ace")
     }
 }

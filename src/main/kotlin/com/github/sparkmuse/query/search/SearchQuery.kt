@@ -1,8 +1,8 @@
 package com.github.sparkmuse.query.search
 
-import com.github.sparkmuse.query.LanguageBilingual
 import com.github.sparkmuse.query.LanguageMonolingual
 import com.github.sparkmuse.query.Query
+import com.github.sparkmuse.query.joinWithAmpersand
 
 class SearchQuery(
 
@@ -33,23 +33,19 @@ class SearchQuery(
 
 ) : Query {
 
-    /**
-     * Get gets the parameters of the call as a map of strings
-     */
-    override fun parameters(): Map<String, String> {
-        return mapOf(
-            "q" to q,
-            "prefix" to prefix.toString(),
-            "limit" to limit.toString(),
-            "offset" to offset.toString(),
-        ).filterValues { it.isNotEmpty() };
-    }
+    override val queryParams: String
+        get() {
+            return mapOf(
+                "q" to q,
+                "prefix" to prefix.toString(),
+                "limit" to limit.toString(),
+                "offset" to offset.toString(),
+            )
+                .filterValues { it.isNotEmpty() }
+                .joinWithAmpersand()
+        }
 
-    /**
-     * Get the url path fragment for the call
-     */
-    override fun pathFragment(): String {
-        return "search/${sourceLanguage.value}"
-    }
+    override val pathFragment: String
+        get() = "search/${sourceLanguage.value}"
 }
 

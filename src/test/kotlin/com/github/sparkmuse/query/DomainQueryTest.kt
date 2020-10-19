@@ -16,13 +16,13 @@ class DomainQueryTest {
     inner class Monolingual {
         @TestWithFixture
         fun `parameters gets always empty map`(query: DomainMonolingualQuery) {
-            assertThat(query.parameters()).isEmpty()
+            assertThat(query.queryParams).isEmpty()
         }
 
         @Test
         fun pathFragment() {
             val query = DomainMonolingualQuery(English_gb)
-            val actual = query.pathFragment()
+            val actual = query.pathFragment
             assertThat(actual).isEqualTo("domains/en-gb")
         }
     }
@@ -32,13 +32,13 @@ class DomainQueryTest {
 
         @TestWithFixture
         fun `parameters gets always empty map`(query: DomainBilingualQuery) {
-            assertThat(query.parameters()).isEmpty()
+            assertThat(query.queryParams).isEmpty()
         }
 
         @Test
         fun pathFragment() {
             val query = DomainBilingualQuery(English, Spanish)
-            val actual = query.pathFragment()
+            val actual = query.pathFragment
             assertThat(actual).isEqualTo("domains/en/es")
         }
     }

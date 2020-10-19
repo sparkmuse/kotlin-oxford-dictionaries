@@ -1,6 +1,5 @@
 package com.github.sparkmuse.query
 
-import com.github.nylle.javafixture.Fixture
 import com.github.nylle.javafixture.annotations.fixture.TestWithFixture
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test
@@ -11,13 +10,13 @@ class LemmaQueryTest {
     fun `parameters gets all query parameters as a map`(query: LemmaQuery) {
 
         val expected = mapOf(
-            "grammaticalFeatures" to query.grammaticalFeatures.joinToString(","),
-            "lexicalCategory" to query.lexicalCategory.joinToString(","),
-        )
+            "grammaticalFeatures" to query.grammaticalFeatures.joinWithComma(),
+            "lexicalCategory" to query.lexicalCategory.joinWithComma(),
+        ).joinWithAmpersand()
 
-        val actual = query.parameters()
+        val actual = query.queryParams
 
-        assertThat(actual).containsExactlyEntriesOf(expected)
+        assertThat(actual).isEqualTo(expected)
     }
 
     @Test
@@ -25,16 +24,16 @@ class LemmaQueryTest {
 
         val entryQuery = LemmaQuery("ace", grammaticalFeatures = listOf("abbreviation"))
 
-        val actual = entryQuery.parameters()
+        val actual = entryQuery.queryParams
 
-        val expected = mapOf("grammaticalFeatures" to "abbreviation")
-        assertThat(actual).containsExactlyEntriesOf(expected)
+        val expected = mapOf("grammaticalFeatures" to "abbreviation").joinWithAmpersand()
+        assertThat(actual).isEqualTo(expected)
     }
 
     @Test
     fun pathFragment() {
         val query = LemmaQuery("ace", LanguageMonolingual.English_gb)
-        val actual = query.pathFragment()
+        val actual = query.pathFragment
         assertThat(actual).isEqualTo("lemmas/en-gb/ace")
     }
 }

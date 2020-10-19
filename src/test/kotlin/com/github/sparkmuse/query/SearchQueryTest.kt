@@ -21,17 +21,17 @@ class SearchQueryTest {
                 "prefix" to query.prefix.toString(),
                 "limit" to query.limit.toString(),
                 "offset" to query.offset.toString(),
-            )
+            ).joinWithAmpersand()
 
-            val actual = query.parameters()
+            val actual = query.queryParams
 
-            assertThat(actual).containsExactlyEntriesOf(expected)
+            assertThat(actual).isEqualTo(expected)
         }
 
         @Test
         fun pathFragment() {
             val query = SearchTranslationsQuery("ace", LanguageBilingual.English, LanguageBilingual.Spanish)
-            val actual = query.pathFragment()
+            val actual = query.pathFragment
             assertThat(actual).isEqualTo("search/translations/en/es")
         }
     }
@@ -47,17 +47,17 @@ class SearchQueryTest {
                 "prefix" to query.prefix.toString(),
                 "limit" to query.limit.toString(),
                 "offset" to query.offset.toString(),
-            )
+            ).joinWithAmpersand()
 
-            val actual = query.parameters()
+            val actual = query.queryParams
 
-            assertThat(actual).containsExactlyEntriesOf(expected)
+            assertThat(actual).isEqualTo(expected)
         }
 
         @Test
         fun pathFragment() {
             val query = SearchQuery("ace", LanguageMonolingual.English_gb)
-            val actual = query.pathFragment()
+            val actual = query.pathFragment
             assertThat(actual).isEqualTo("search/en-gb")
         }
     }
@@ -73,17 +73,17 @@ class SearchQueryTest {
                 "prefix" to query.prefix.toString(),
                 "limit" to query.limit.toString(),
                 "offset" to query.offset.toString(),
-            )
+            ).joinWithAmpersand()
 
-            val actual = query.parameters()
+            val actual = query.queryParams
 
-            assertThat(actual).containsExactlyEntriesOf(expected)
+            assertThat(actual).isEqualTo(expected)
         }
 
         @Test
         fun pathFragment() {
             val query = SearchThesaurusQuery("ace", LanguageThesaurus.English)
-            val actual = query.pathFragment()
+            val actual = query.pathFragment
             assertThat(actual).isEqualTo("search/thesaurus/en")
         }
     }

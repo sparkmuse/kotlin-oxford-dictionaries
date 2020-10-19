@@ -11,17 +11,17 @@ class TranslationQueryTest {
     fun `parameters gets all query parameters as a map`(query: TranslationQuery) {
 
         val expected = mapOf(
-            "fields" to query.fields.joinToString(","),
-            "grammaticalFeatures" to query.grammaticalFeatures.joinToString(","),
-            "lexicalCategory" to query.lexicalCategory.joinToString(","),
-            "domains" to query.domains.joinToString(","),
-            "registers" to query.registers.joinToString(","),
+            "fields" to query.fields.joinWithComma(),
+            "grammaticalFeatures" to query.grammaticalFeatures.joinWithComma(),
+            "lexicalCategory" to query.lexicalCategory.joinWithComma(),
+            "domains" to query.domains.joinWithComma(),
+            "registers" to query.registers.joinWithComma(),
             "strictMatch" to query.strictMatch.toString()
-        )
+        ).joinWithAmpersand()
 
-        val actual = query.parameters()
+        val actual = query.queryParams
 
-        assertThat(actual).containsExactlyInAnyOrderEntriesOf(expected)
+        assertThat(actual).isEqualTo(expected)
     }
 
     @Test
@@ -29,19 +29,19 @@ class TranslationQueryTest {
 
         val entryQuery = TranslationQuery(word = "ace")
 
-        val actual = entryQuery.parameters()
+        val actual = entryQuery.queryParams
 
         val expected = mapOf(
             "strictMatch" to entryQuery.strictMatch.toString()
-        )
+        ).joinWithAmpersand()
 
-        assertThat(actual).containsExactlyEntriesOf(expected)
+        assertThat(actual).isEqualTo(expected)
     }
 
     @Test
     fun pathFragment() {
         val query = TranslationQuery(word = "ace", sourceLanguage = English, targetLanguage = Spanish)
-        val actual = query.pathFragment()
+        val actual = query.pathFragment
         assertThat(actual).isEqualTo("translations/en/es/ace")
     }
 }

@@ -286,12 +286,6 @@ class OxfordClient(
     class OxfordClientException(message: String) : Exception(message)
 
     private fun createUri(query: Query): URI {
-
-        val queryParams = query
-            .parameters()
-            .entries
-            .joinToString(separator = "&")
-
-        return URI("$baseUrl//${query.pathFragment()}?$queryParams").normalize()
+        return URI("$baseUrl//${query.pathFragment}?${query.queryParams}").normalize()
     }
 }

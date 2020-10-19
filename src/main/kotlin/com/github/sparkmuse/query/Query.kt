@@ -1,8 +1,23 @@
 package com.github.sparkmuse.query
 
 interface Query {
-    fun parameters(): Map<String, String>
-    fun pathFragment(): String
+    /**
+     * Get the url path fragment for the call
+     */
+    val pathFragment: String
+
+    /**
+     * Get gets the parameters of the call as a map of strings
+     */
+    val queryParams: String
+}
+
+internal fun <T> Iterable<T>.joinWithComma(): String {
+    return joinToString(",")
+}
+
+internal fun <K, V> Map<K, V>.joinWithAmpersand(): String {
+    return entries.joinToString("&")
 }
 
 /**

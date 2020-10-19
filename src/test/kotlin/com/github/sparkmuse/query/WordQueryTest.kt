@@ -7,21 +7,21 @@ import org.junit.jupiter.api.Test
 
 class WordQueryTest {
 
-    @TestWithFixture
+    @TestWithFixture(minCollectionSize = 1, maxCollectionSize = 1)
     fun `parameters gets all query parameters as a map`(query: WordQuery) {
 
         val expected = mapOf(
             "q" to query.q,
-            "fields" to query.fields.joinToString(","),
-            "grammaticalFeatures" to query.grammaticalFeatures.joinToString(","),
-            "lexicalCategory" to query.lexicalCategory.joinToString(","),
-            "domains" to query.domains.joinToString(","),
-            "registers" to query.registers.joinToString(","),
-        )
+            "fields" to query.fields.joinWithComma(),
+            "grammaticalFeatures" to query.grammaticalFeatures.joinWithComma(),
+            "lexicalCategory" to query.lexicalCategory.joinWithComma(),
+            "domains" to query.domains.joinWithComma(),
+            "registers" to query.registers.joinWithComma(),
+        ).joinWithAmpersand()
 
-        val actual = query.parameters()
+        val actual = query.queryParams
 
-        assertThat(actual).containsExactlyEntriesOf(expected)
+        assertThat(actual).isEqualTo(expected)
     }
 
     @Test
@@ -29,19 +29,19 @@ class WordQueryTest {
 
         val wordQuery = WordQuery(q = "ace")
 
-        val actual = wordQuery.parameters()
+        val actual = wordQuery.queryParams
 
         val expected = mapOf(
             "q" to wordQuery.q
-        )
+        ).joinWithAmpersand()
 
-        assertThat(actual).containsExactlyEntriesOf(expected)
+        assertThat(actual).isEqualTo(expected)
     }
 
     @Test
     fun pathFragment() {
         val query = WordQuery(q = "ace", sourceLanguage = English_gb)
-        val actual = query.pathFragment()
+        val actual = query.pathFragment
         assertThat(actual).isEqualTo("words/en-gb")
     }
 }

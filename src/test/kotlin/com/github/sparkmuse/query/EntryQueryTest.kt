@@ -10,17 +10,17 @@ class EntryQueryTest {
     fun `parameters gets all query parameters as a map`(query: EntryQuery) {
 
         val expected = mapOf(
-            "fields" to query.fields.joinToString(","),
-            "grammaticalFeatures" to query.grammaticalFeatures.joinToString(","),
-            "lexicalCategory" to query.lexicalCategory.joinToString(","),
-            "domains" to query.domains.joinToString(","),
-            "registers" to query.registers.joinToString(","),
+            "fields" to query.fields.joinWithComma(),
+            "grammaticalFeatures" to query.grammaticalFeatures.joinWithComma(),
+            "lexicalCategory" to query.lexicalCategory.joinWithComma(),
+            "domains" to query.domains.joinWithComma(),
+            "registers" to query.registers.joinWithComma(),
             "strictMatch" to query.strictMatch.toString()
-        )
+        ).joinWithAmpersand()
 
-        val actual = query.parameters()
+        val actual = query.queryParams
 
-        assertThat(actual).containsExactlyEntriesOf(expected)
+        assertThat(actual).isEqualTo(expected)
     }
 
     @Test
@@ -28,19 +28,19 @@ class EntryQueryTest {
 
         val entryQuery = EntryQuery("ace")
 
-        val actual = entryQuery.parameters()
+        val actual = entryQuery.queryParams
 
         val expected = mapOf(
             "strictMatch" to entryQuery.strictMatch.toString()
-        )
+        ).joinWithAmpersand()
 
-        assertThat(actual).containsExactlyEntriesOf(expected)
+        assertThat(actual).isEqualTo(expected)
     }
 
     @Test
     fun pathFragment() {
         val query = EntryQuery("ace", LanguageMonolingual.English_gb)
-        val actual = query.pathFragment()
+        val actual = query.pathFragment
         assertThat(actual).isEqualTo("entries/en-gb/ace")
     }
 }

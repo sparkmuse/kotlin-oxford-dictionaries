@@ -7,19 +7,10 @@ import com.github.sparkmuse.query.Query
  */
 class FilterQuery : Query {
 
-    /**
-     * Get gets the parameters of the call as a map of strings
-     */
-    override fun parameters(): Map<String, String> {
-        return mapOf()
-    }
+    override val queryParams: String get() = ""
 
-    /**
-     * Get the url path fragment for the call
-     */
-    override fun pathFragment(): String {
-        return "filters"
-    }
+    override val pathFragment: String
+        get() = "filters"
 }
 
 /**
@@ -34,17 +25,8 @@ class FilterEndpointQuery(
 
 ) : Query {
 
-    /**
-     * Get gets the parameters of the call as a map of strings
-     */
-    override fun parameters(): Map<String, String> {
-        return mapOf()
-    }
+    override val queryParams: String get() = ""
 
-    /**
-     * Get the url path fragment for the call
-     */
-    override fun pathFragment(): String {
-        return "filters/$endpoint"
-    }
+    override val pathFragment: String
+        get() = "filters/$endpoint"
 }

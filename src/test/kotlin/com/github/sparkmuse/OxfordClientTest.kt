@@ -281,7 +281,7 @@ class OxfordClientTest {
         val query = EntryQuery("ace")
 
         wiremock.stubFor(
-            get(urlPathMatching("/${query.pathFragment()}"))
+            get(urlPathMatching("/${query.pathFragment}"))
                 .withHeader("Accept", equalTo("application/json"))
                 .withHeader("app_id", equalTo(client.appId))
                 .withHeader("app_key", equalTo(client.appKey))
