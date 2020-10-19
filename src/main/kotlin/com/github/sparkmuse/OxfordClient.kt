@@ -44,6 +44,11 @@ class OxfordClient(
     fun entries(query: EntryQuery): RetrieveEntry = execute(query)
 
     /**
+     * @see OxfordClient.entries
+     */
+    fun entries(word: String): RetrieveEntry = entries(EntryQuery(word = word))
+
+    /**
      * /api/v2/lemmas/{source_lang}/{word_id}:
      *
      * Use this to check if a word exists in the dictionary, or what 'root' form it links to (e.g., swimming > swim).
@@ -181,61 +186,61 @@ class OxfordClient(
      * /domains/{source_lang}:
      * Lists available domains in a monolingual dataset
      */
-    fun domain(query: DomainMonolingualQuery): RetrieveDomain = execute(query)
+    fun domains(query: DomainMonolingualQuery): RetrieveDomain = execute(query)
 
     /**
      * /domains/{source_lang_domains}/{target_lang_domains}:
      * Lists available domains in a bilingual dataset
      */
-    fun domain(query: DomainBilingualQuery): RetrieveDomain = execute(query)
+    fun domains(query: DomainBilingualQuery): RetrieveDomain = execute(query)
 
     /**
      * /fields:
      * Lists all available fields
      */
-    fun field(query: FieldQuery): RetrieveField = execute(query)
+    fun fields(query: FieldQuery): RetrieveField = execute(query)
 
     /**
      * /fields/{endpoint}:
      * Lists available fields for specific endpoint
      */
-    fun field(query: FieldEndpointQuery): RetrieveField = execute(query)
+    fun fields(query: FieldEndpointQuery): RetrieveField = execute(query)
 
     /**
      * /filters:
      * Lists all available filters
      */
-    fun filter(query: FilterQuery): RetrieveFilter = execute(query)
+    fun filters(query: FilterQuery): RetrieveFilter = execute(query)
 
     /**
      * /filters/{endpoint}:
      * Lists available filters for specific endpoint
      */
-    fun filter(query: FilterEndpointQuery): RetrieveFilter = execute(query)
+    fun filters(query: FilterEndpointQuery): RetrieveFilter = execute(query)
 
     /**
      * /grammaticalFeatures/{source_lang}:
      * Lists available grammatical features in a monolingual dataset
      */
-    fun grammaticalFeature(query: GrammaticalFeatureMonolingualQuery): RetrieveGrammaticalFeature = execute(query)
+    fun grammaticalFeatures(query: GrammaticalFeatureMonolingualQuery): RetrieveGrammaticalFeature = execute(query)
 
     /**
      * /grammaticalFeatures/{source_lang_grammatical}/{target_lang_grammatical}:
      * Lists available grammatical features in a bilingual dataset
      */
-    fun grammaticalFeature(query: GrammaticalFeatureBilingualQuery): RetrieveGrammaticalFeature = execute(query)
+    fun grammaticalFeatures(query: GrammaticalFeatureBilingualQuery): RetrieveGrammaticalFeature = execute(query)
 
     /**
      * /lexicalCategories/{source_lang}:
      * Lists available lexical categories in a monolingual dataset
      */
-    fun lexicalCategory(query: LexicalCategoryMonolingualQuery): RetrieveLexicalCategory = execute(query)
+    fun lexicalCategories(query: LexicalCategoryMonolingualQuery): RetrieveLexicalCategory = execute(query)
 
     /**
      * /lexicalCategories/{source_lang_grammatical}/{target_lang_grammatical}:
      * Lists available lexical categories in a bilingual dataset
      */
-    fun lexicalCategory(query: LexicalCategoryBilingualQuery): RetrieveLexicalCategory = execute(query)
+    fun lexicalCategories(query: LexicalCategoryBilingualQuery): RetrieveLexicalCategory = execute(query)
 
     /**
      * /registers/{source_lang}:
@@ -255,10 +260,6 @@ class OxfordClient(
      */
     fun languages(query: LanguageQuery): RetrieveLanguage = execute(query)
 
-    /**
-     * @see OxfordClient.entries
-     */
-    fun entries(word: String): RetrieveEntry = entries(EntryQuery(word = word))
 
     internal inline fun <reified T> execute(query: Query): T {
 

@@ -139,7 +139,7 @@ class OxfordClientTest {
             get(urlPathMatching("/domains/en-gb"))
                 .willReturn(aResponse().withStatus(200).withBodyFile("utility/domains.json"))
         )
-        val results = oxfordClient.domain(DomainMonolingualQuery(English_gb))
+        val results = oxfordClient.domains(DomainMonolingualQuery(English_gb))
         assertThat(results).isNotNull
     }
 
@@ -149,7 +149,7 @@ class OxfordClientTest {
             get(urlPathMatching("/domains/en/es"))
                 .willReturn(aResponse().withStatus(200).withBodyFile("utility/domains.json"))
         )
-        val results = oxfordClient.domain(DomainBilingualQuery(LanguageBilingual.English, LanguageBilingual.Spanish))
+        val results = oxfordClient.domains(DomainBilingualQuery(LanguageBilingual.English, LanguageBilingual.Spanish))
         assertThat(results).isNotNull
     }
 
@@ -159,7 +159,7 @@ class OxfordClientTest {
             get(urlPathMatching("/fields"))
                 .willReturn(aResponse().withStatus(200).withBodyFile("utility/fields.json"))
         )
-        val results = oxfordClient.field(FieldQuery())
+        val results = oxfordClient.fields(FieldQuery())
         assertThat(results).isNotNull
     }
 
@@ -169,7 +169,7 @@ class OxfordClientTest {
             get(urlPathMatching("/fields/entries"))
                 .willReturn(aResponse().withStatus(200).withBodyFile("utility/fields.json"))
         )
-        val results = oxfordClient.field(FieldEndpointQuery("entries"))
+        val results = oxfordClient.fields(FieldEndpointQuery("entries"))
         assertThat(results).isNotNull
     }
 
@@ -179,7 +179,7 @@ class OxfordClientTest {
             get(urlPathMatching("/filters"))
                 .willReturn(aResponse().withStatus(200).withBodyFile("utility/filters.json"))
         )
-        val results = oxfordClient.filter(FilterQuery())
+        val results = oxfordClient.filters(FilterQuery())
         assertThat(results).isNotNull
     }
 
@@ -189,7 +189,7 @@ class OxfordClientTest {
             get(urlPathMatching("/filters/entries"))
                 .willReturn(aResponse().withStatus(200).withBodyFile("utility/filters.json"))
         )
-        val results = oxfordClient.filter(FilterEndpointQuery("entries"))
+        val results = oxfordClient.filters(FilterEndpointQuery("entries"))
         assertThat(results).isNotNull
     }
 
@@ -199,7 +199,7 @@ class OxfordClientTest {
             get(urlPathMatching("/grammaticalFeatures/en-gb"))
                 .willReturn(aResponse().withStatus(200).withBodyFile("utility/grammatical_features.json"))
         )
-        val results = oxfordClient.grammaticalFeature(GrammaticalFeatureMonolingualQuery(English_gb))
+        val results = oxfordClient.grammaticalFeatures(GrammaticalFeatureMonolingualQuery(English_gb))
         assertThat(results).isNotNull
     }
 
@@ -209,7 +209,7 @@ class OxfordClientTest {
             get(urlPathMatching("/grammaticalFeatures/en/es"))
                 .willReturn(aResponse().withStatus(200).withBodyFile("utility/grammatical_features.json"))
         )
-        val results = oxfordClient.grammaticalFeature(
+        val results = oxfordClient.grammaticalFeatures(
             GrammaticalFeatureBilingualQuery(
                 LanguageBilingual.English,
                 LanguageBilingual.Spanish
@@ -224,7 +224,7 @@ class OxfordClientTest {
             get(urlPathMatching("/lexicalCategories/en-gb"))
                 .willReturn(aResponse().withStatus(200).withBodyFile("utility/lexical_categories.json"))
         )
-        val results = oxfordClient.lexicalCategory(LexicalCategoryMonolingualQuery(English_gb))
+        val results = oxfordClient.lexicalCategories(LexicalCategoryMonolingualQuery(English_gb))
         assertThat(results).isNotNull
     }
 
@@ -234,7 +234,7 @@ class OxfordClientTest {
             get(urlPathMatching("/lexicalCategories/en/es"))
                 .willReturn(aResponse().withStatus(200).withBodyFile("utility/lexical_categories.json"))
         )
-        val results = oxfordClient.lexicalCategory(
+        val results = oxfordClient.lexicalCategories(
             LexicalCategoryBilingualQuery(
                 LanguageBilingual.English,
                 LanguageBilingual.Spanish
