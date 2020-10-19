@@ -1,7 +1,7 @@
 package com.github.sparkmuse
 
-import com.github.sparkmuse.query.LanguageBilingual.English
-import com.github.sparkmuse.query.LanguageBilingual.Spanish
+import com.github.sparkmuse.query.EntryQuery
+import com.github.sparkmuse.query.LanguageBilingual
 import com.github.sparkmuse.query.LanguageMonolingual.English_gb
 import com.github.sparkmuse.query.utility.*
 import com.github.sparkmuse.wiremock.Wiremock
@@ -9,6 +9,7 @@ import com.github.sparkmuse.wiremock.WiremockExtension
 import com.github.tomakehurst.wiremock.WireMockServer
 import com.github.tomakehurst.wiremock.client.WireMock.*
 import org.assertj.core.api.Assertions.assertThat
+import org.assertj.core.api.Assertions.assertThatThrownBy
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.extension.ExtendWith
@@ -28,177 +29,107 @@ class OxfordClientTest {
 
     @Test
     fun `gets entries`() {
-
         wiremock.stubFor(
             get(urlPathMatching("/entries/en-gb/ace"))
                 .withQueryParam("strictMatch", equalTo("false"))
-                .willReturn(
-                    aResponse()
-                        .withStatus(200)
-                        .withBodyFile("entries.json")
-                )
+                .willReturn(aResponse().withStatus(200).withBodyFile("entries.json"))
         )
-
         val retrieveEntry = oxfordClient.entries("ace")
-
         assertThat(retrieveEntry).isNotNull
     }
 
     @Test
     fun `gets lemmas`() {
-
         wiremock.stubFor(
             get(urlPathMatching("/lemmas/en-gb/ace"))
-                .willReturn(
-                    aResponse()
-                        .withStatus(200)
-                        .withBodyFile("lemmas.json")
-                )
+                .willReturn(aResponse().withStatus(200).withBodyFile("lemmas.json"))
         )
-
         val retrieveEntry = oxfordClient.lemmas("ace")
-
         assertThat(retrieveEntry).isNotNull
     }
 
     @Test
     fun `gets search translations`() {
-
         wiremock.stubFor(
             get(urlPathMatching("/search/translations/en/es"))
-                .willReturn(
-                    aResponse()
-                        .withStatus(200)
-                        .withBodyFile("search/search_translations.json")
-                )
+                .willReturn(aResponse().withStatus(200).withBodyFile("search/search_translations.json"))
         )
-
         val retrieveEntry = oxfordClient.searchTranslations("ace")
-
         assertThat(retrieveEntry).isNotNull
     }
 
     @Test
     fun `gets search thesaurus`() {
-
         wiremock.stubFor(
             get(urlPathMatching("/search/translations/en/es"))
-                .willReturn(
-                    aResponse()
-                        .withStatus(200)
-                        .withBodyFile("search/search_thesaurus.json")
-                )
+                .willReturn(aResponse().withStatus(200).withBodyFile("search/search_thesaurus.json"))
         )
-
         val retrieveEntry = oxfordClient.searchTranslations("ace")
-
         assertThat(retrieveEntry).isNotNull
     }
 
     @Test
     fun `gets search`() {
-
         wiremock.stubFor(
             get(urlPathMatching("/search/en-gb"))
-                .willReturn(
-                    aResponse()
-                        .withStatus(200)
-                        .withBodyFile("search/search.json")
-                )
+                .willReturn(aResponse().withStatus(200).withBodyFile("search/search.json"))
         )
-
         val retrieveEntry = oxfordClient.search("ace")
-
         assertThat(retrieveEntry).isNotNull
     }
 
 
     @Test
     fun thesaurus() {
-
         wiremock.stubFor(
             get(urlPathMatching("/thesaurus/en/ace"))
-                .willReturn(
-                    aResponse()
-                        .withStatus(200)
-                        .withBodyFile("thesaurus.json")
-                )
+                .willReturn(aResponse().withStatus(200).withBodyFile("thesaurus.json"))
         )
-
         val retrieveEntry = oxfordClient.thesaurus("ace")
-
         assertThat(retrieveEntry).isNotNull
     }
 
     @Test
     fun translations() {
-
         wiremock.stubFor(
             get(urlPathMatching("/translations/en/es/ace"))
                 .withQueryParam("strictMatch", equalTo("false"))
-                .willReturn(
-                    aResponse()
-                        .withStatus(200)
-                        .withBodyFile("translations.json")
-                )
+                .willReturn(aResponse().withStatus(200).withBodyFile("translations.json"))
         )
-
         val translation = oxfordClient.translations("ace")
-
         assertThat(translation).isNotNull
     }
 
     @Test
     fun sentences() {
-
         wiremock.stubFor(
             get(urlPathMatching("/sentences/en/ace"))
                 .withQueryParam("strictMatch", equalTo("false"))
-                .willReturn(
-                    aResponse()
-                        .withStatus(200)
-                        .withBodyFile("sentences.json")
-                )
+                .willReturn(aResponse().withStatus(200).withBodyFile("sentences.json"))
         )
-
         val sentencesResults = oxfordClient.sentences("ace")
-
         assertThat(sentencesResults).isNotNull
     }
 
     @Test
     fun inflections() {
-
         wiremock.stubFor(
             get(urlPathMatching("/inflections/en-gb/ace"))
                 .withQueryParam("strictMatch", equalTo("false"))
-                .willReturn(
-                    aResponse()
-                        .withStatus(200)
-                        .withBodyFile("inflections.json")
-                )
+                .willReturn(aResponse().withStatus(200).withBodyFile("inflections.json"))
         )
-
         val inflection = oxfordClient.inflections("ace")
-
         assertThat(inflection).isNotNull
     }
 
     @Test
     fun words() {
-
         wiremock.stubFor(
             get(urlPathMatching("/words/en-gb"))
                 .withQueryParam("q", equalTo("ace"))
-                .willReturn(
-                    aResponse()
-                        .withStatus(200)
-                        .withBodyFile("entries.json")
-                )
+                .willReturn(aResponse().withStatus(200).withBodyFile("entries.json"))
         )
-
         val results = oxfordClient.words("ace")
-
         assertThat(results).isNotNull
     }
 
@@ -206,15 +137,9 @@ class OxfordClientTest {
     fun domainMonolingual() {
         wiremock.stubFor(
             get(urlPathMatching("/domains/en-gb"))
-                .willReturn(
-                    aResponse()
-                        .withStatus(200)
-                        .withBodyFile("utility/domains.json")
-                )
+                .willReturn(aResponse().withStatus(200).withBodyFile("utility/domains.json"))
         )
-
         val results = oxfordClient.domain(DomainMonolingualQuery(English_gb))
-
         assertThat(results).isNotNull
     }
 
@@ -222,15 +147,9 @@ class OxfordClientTest {
     fun domainBilingual() {
         wiremock.stubFor(
             get(urlPathMatching("/domains/en/es"))
-                .willReturn(
-                    aResponse()
-                        .withStatus(200)
-                        .withBodyFile("utility/domains.json")
-                )
+                .willReturn(aResponse().withStatus(200).withBodyFile("utility/domains.json"))
         )
-
-        val results = oxfordClient.domain(DomainBilingualQuery(English, Spanish))
-
+        val results = oxfordClient.domain(DomainBilingualQuery(LanguageBilingual.English, LanguageBilingual.Spanish))
         assertThat(results).isNotNull
     }
 
@@ -238,15 +157,9 @@ class OxfordClientTest {
     fun field() {
         wiremock.stubFor(
             get(urlPathMatching("/fields"))
-                .willReturn(
-                    aResponse()
-                        .withStatus(200)
-                        .withBodyFile("utility/fields.json")
-                )
+                .willReturn(aResponse().withStatus(200).withBodyFile("utility/fields.json"))
         )
-
         val results = oxfordClient.field(FieldQuery())
-
         assertThat(results).isNotNull
     }
 
@@ -254,15 +167,9 @@ class OxfordClientTest {
     fun `field for specific endpoint`() {
         wiremock.stubFor(
             get(urlPathMatching("/fields/entries"))
-                .willReturn(
-                    aResponse()
-                        .withStatus(200)
-                        .withBodyFile("utility/fields.json")
-                )
+                .willReturn(aResponse().withStatus(200).withBodyFile("utility/fields.json"))
         )
-
         val results = oxfordClient.field(FieldEndpointQuery("entries"))
-
         assertThat(results).isNotNull
     }
 
@@ -270,15 +177,9 @@ class OxfordClientTest {
     fun filter() {
         wiremock.stubFor(
             get(urlPathMatching("/filters"))
-                .willReturn(
-                    aResponse()
-                        .withStatus(200)
-                        .withBodyFile("utility/filters.json")
-                )
+                .willReturn(aResponse().withStatus(200).withBodyFile("utility/filters.json"))
         )
-
         val results = oxfordClient.filter(FilterQuery())
-
         assertThat(results).isNotNull
     }
 
@@ -286,15 +187,9 @@ class OxfordClientTest {
     fun `filter for specific endpoint`() {
         wiremock.stubFor(
             get(urlPathMatching("/filters/entries"))
-                .willReturn(
-                    aResponse()
-                        .withStatus(200)
-                        .withBodyFile("utility/filters.json")
-                )
+                .willReturn(aResponse().withStatus(200).withBodyFile("utility/filters.json"))
         )
-
         val results = oxfordClient.filter(FilterEndpointQuery("entries"))
-
         assertThat(results).isNotNull
     }
 
@@ -302,15 +197,9 @@ class OxfordClientTest {
     fun grammaticalFeaturesMonolingual() {
         wiremock.stubFor(
             get(urlPathMatching("/grammaticalFeatures/en-gb"))
-                .willReturn(
-                    aResponse()
-                        .withStatus(200)
-                        .withBodyFile("utility/grammatical_features.json")
-                )
+                .willReturn(aResponse().withStatus(200).withBodyFile("utility/grammatical_features.json"))
         )
-
         val results = oxfordClient.grammaticalFeature(GrammaticalFeatureMonolingualQuery(English_gb))
-
         assertThat(results).isNotNull
     }
 
@@ -318,15 +207,14 @@ class OxfordClientTest {
     fun grammaticalFeaturesBilingual() {
         wiremock.stubFor(
             get(urlPathMatching("/grammaticalFeatures/en/es"))
-                .willReturn(
-                    aResponse()
-                        .withStatus(200)
-                        .withBodyFile("utility/grammatical_features.json")
-                )
+                .willReturn(aResponse().withStatus(200).withBodyFile("utility/grammatical_features.json"))
         )
-
-        val results = oxfordClient.grammaticalFeature(GrammaticalFeatureBilingualQuery(English, Spanish))
-
+        val results = oxfordClient.grammaticalFeature(
+            GrammaticalFeatureBilingualQuery(
+                LanguageBilingual.English,
+                LanguageBilingual.Spanish
+            )
+        )
         assertThat(results).isNotNull
     }
 
@@ -334,15 +222,9 @@ class OxfordClientTest {
     fun lexicalCategoriesMonolingual() {
         wiremock.stubFor(
             get(urlPathMatching("/lexicalCategories/en-gb"))
-                .willReturn(
-                    aResponse()
-                        .withStatus(200)
-                        .withBodyFile("utility/lexical_categories.json")
-                )
+                .willReturn(aResponse().withStatus(200).withBodyFile("utility/lexical_categories.json"))
         )
-
         val results = oxfordClient.lexicalCategory(LexicalCategoryMonolingualQuery(English_gb))
-
         assertThat(results).isNotNull
     }
 
@@ -350,15 +232,14 @@ class OxfordClientTest {
     fun lexicalCategoriesBilingual() {
         wiremock.stubFor(
             get(urlPathMatching("/lexicalCategories/en/es"))
-                .willReturn(
-                    aResponse()
-                        .withStatus(200)
-                        .withBodyFile("utility/lexical_categories.json")
-                )
+                .willReturn(aResponse().withStatus(200).withBodyFile("utility/lexical_categories.json"))
         )
-
-        val results = oxfordClient.lexicalCategory(LexicalCategoryBilingualQuery(English, Spanish))
-
+        val results = oxfordClient.lexicalCategory(
+            LexicalCategoryBilingualQuery(
+                LanguageBilingual.English,
+                LanguageBilingual.Spanish
+            )
+        )
         assertThat(results).isNotNull
     }
 
@@ -366,15 +247,9 @@ class OxfordClientTest {
     fun registersMonolingual() {
         wiremock.stubFor(
             get(urlPathMatching("/registers/en-gb"))
-                .willReturn(
-                    aResponse()
-                        .withStatus(200)
-                        .withBodyFile("utility/registers.json")
-                )
+                .willReturn(aResponse().withStatus(200).withBodyFile("utility/registers.json"))
         )
-
         val results = oxfordClient.registers(RegisterMonolingualQuery(English_gb))
-
         assertThat(results).isNotNull
     }
 
@@ -382,15 +257,10 @@ class OxfordClientTest {
     fun registersBilingual() {
         wiremock.stubFor(
             get(urlPathMatching("/registers/en/es"))
-                .willReturn(
-                    aResponse()
-                        .withStatus(200)
-                        .withBodyFile("utility/registers.json")
-                )
+                .willReturn(aResponse().withStatus(200).withBodyFile("utility/registers.json"))
         )
-
-        val results = oxfordClient.registers(RegisterBilingualQuery(English, Spanish))
-
+        val results =
+            oxfordClient.registers(RegisterBilingualQuery(LanguageBilingual.English, LanguageBilingual.Spanish))
         assertThat(results).isNotNull
     }
 
@@ -398,15 +268,29 @@ class OxfordClientTest {
     fun languages() {
         wiremock.stubFor(
             get(urlPathMatching("/languages"))
-                .willReturn(
-                    aResponse()
-                        .withStatus(200)
-                        .withBodyFile("utility/languages.json")
-                )
+                .willReturn(aResponse().withStatus(200).withBodyFile("utility/languages.json"))
+        )
+        val results = oxfordClient.languages(LanguageQuery(LanguageBilingual.English, LanguageBilingual.Spanish))
+        assertThat(results).isNotNull
+    }
+
+    @Test
+    fun `throws exception when there is an error`() {
+
+        val client = OxfordClient("appId", "appKey", wiremock.baseUrl())
+        val query = EntryQuery("ace")
+
+        wiremock.stubFor(
+            get(urlPathMatching("/${query.pathFragment()}"))
+                .withHeader("Accept", equalTo("application/json"))
+                .withHeader("app_id", equalTo(client.appId))
+                .withHeader("app_key", equalTo(client.appKey))
+                .withQueryParam("strictMatch", equalTo("false"))
+                .willReturn(aResponse().withBody("Authentication failed").withStatus(403))
         )
 
-        val results = oxfordClient.languages(LanguageQuery(English, Spanish))
-
-        assertThat(results).isNotNull
+        assertThatThrownBy { client.execute(query) }
+            .isInstanceOf(OxfordClient.OxfordClientException::class.java)
+            .hasMessage("StatusCode: 403 Error: Authentication failed")
     }
 }
