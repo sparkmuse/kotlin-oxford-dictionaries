@@ -17,7 +17,7 @@ class LanguageQuery(
     /**
      * Language code of the target language in a bilingual dataset.
      */
-    val targetLanguage: LanguageBilingual?,
+    val targetLanguage: LanguageBilingual?
 
     ) : Query {
 
@@ -27,7 +27,7 @@ class LanguageQuery(
         get() {
             return mapOf(
                 "sourceLanguage" to (sourceLanguage?.value ?: ""),
-                "targetLanguage" to (targetLanguage?.value ?: ""),
+                "targetLanguage" to (targetLanguage?.value ?: "")
             )
                 .filterValues { it.isNotEmpty() }
                 .joinWithAmpersand()

@@ -38,7 +38,7 @@ class LemmaQuery(
         get() {
             return mapOf(
                 "grammaticalFeatures" to grammaticalFeatures.joinWithComma(),
-                "lexicalCategory" to lexicalCategory.joinWithComma(),
+                "lexicalCategory" to lexicalCategory.joinWithComma()
             )
                 .filterValues { it.isNotEmpty() }
                 .joinWithAmpersand()

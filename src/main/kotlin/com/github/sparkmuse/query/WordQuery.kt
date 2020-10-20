@@ -58,7 +58,7 @@ class WordQuery(
      * The filter keeps all the senses and subsenses in the response whose registers "id" matches the values in the
      * registers parameter.
      */
-    val registers: List<String> = listOf(),
+    val registers: List<String> = listOf()
 
     ) : Query {
 
@@ -70,7 +70,7 @@ class WordQuery(
                 "grammaticalFeatures" to grammaticalFeatures.joinWithComma(),
                 "lexicalCategory" to lexicalCategory.joinWithComma(),
                 "domains" to domains.joinWithComma(),
-                "registers" to registers.joinWithComma(),
+                "registers" to registers.joinWithComma()
             )
                 .filterValues { it.isNotEmpty() }
                 .joinWithAmpersand()

@@ -69,7 +69,7 @@ class TranslationQuery(
      * The filter keeps all the senses and subsenses in the response whose registers "id" matches the values in the
      * registers parameter.
      */
-    val registers: List<String> = listOf(),
+    val registers: List<String> = listOf()
 
     ) : Query {
 

@@ -12,7 +12,7 @@ class RegisterMonolingualQuery(
     /**
      * Language code of the source language in a monolingual dataset
      */
-    val sourceLanguage: LanguageMonolingual = LanguageMonolingual.English_gb,
+    val sourceLanguage: LanguageMonolingual = LanguageMonolingual.English_gb
 
     ) : Query {
 
@@ -35,7 +35,7 @@ class RegisterBilingualQuery(
     /**
      * Language code of the target language in a bilingual dataset.
      */
-    val targetLanguage: LanguageBilingual = LanguageBilingual.Spanish,
+    val targetLanguage: LanguageBilingual = LanguageBilingual.Spanish
 
     ) : Query {
 

@@ -13,7 +13,7 @@ import com.fasterxml.jackson.annotation.JsonProperty
 data class GrammaticalFeature(
     val id: String = "",
     val text: String = "",
-    val type: String = "",
+    val type: String = ""
 )
 
 data class LexicalCategory(

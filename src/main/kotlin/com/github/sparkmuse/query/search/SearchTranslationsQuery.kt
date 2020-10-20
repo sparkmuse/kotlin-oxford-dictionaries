@@ -44,7 +44,7 @@ class SearchTranslationsQuery(
                 "q" to q,
                 "prefix" to prefix.toString(),
                 "limit" to limit.toString(),
-                "offset" to offset.toString(),
+                "offset" to offset.toString()
             )
                 .filterValues { it.isNotEmpty() }
                 .joinWithAmpersand()

@@ -18,4 +18,4 @@ jobs:
         with:
           java-version: 1.8
       - name: Sonar Cloud
-        run:  mvn -B verify sonar:sonar -B -Pcoverage,sonar --file pom.xml
+        run:  mvn -B -V verify sonar:sonar -Pcoverage,sonar --file pom.xml
