@@ -191,14 +191,6 @@
                         <groupId>org.jetbrains.dokka</groupId>
                         <artifactId>dokka-maven-plugin</artifactId>
                         <version>1.4.10</version>
-                        <executions>
-                            <execution>
-                                <phase>pre-site</phase>
-                                <goals>
-                                    <goal>javadocJar</goal>
-                                </goals>
-                            </execution>
-                        </executions>
                         <configuration>
                             <dokkaPlugins>
                                 <plugin>
