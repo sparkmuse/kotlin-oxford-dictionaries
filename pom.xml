@@ -11,6 +11,7 @@
 
     <name>kotlin-oxford-dictionaries</name>
     <description>Kotlin client for the Oxford Dictionaries API.</description>
+    <url>https://github.com/sparkmuse/kotlin-oxford-dictionaries</url>
 
     <developers>
         <developer>
@@ -194,7 +195,7 @@
                             <execution>
                                 <phase>pre-site</phase>
                                 <goals>
-                                    <goal>dokka</goal>
+                                    <goal>javadocJar</goal>
                                 </goals>
                             </execution>
                         </executions>
