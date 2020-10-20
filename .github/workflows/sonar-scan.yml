@@ -1,7 +1,5 @@
 name: sonar-scan
 
-# Controls when the action will run. Triggers the workflow on push or pull request
-# events but only for the main branch
 on:
   push:
     branches: [ main ]
@@ -19,3 +17,5 @@ jobs:
           java-version: 11
       - name: Sonar Cloud
         run:  mvn -B -V verify sonar:sonar -Pcoverage,sonar --file pom.xml
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
