@@ -71,8 +71,8 @@
                 <sonar.exclusions>
                     **/entity/*
                 </sonar.exclusions>
-                <sonar.projectKey>${project.artifactId}</sonar.projectKey>
-                <sonar.java.source>${java.compiler}</sonar.java.source>
+                <sonar.projectKey>kotlin-oxford-dictionaries</sonar.projectKey>
+                <sonar.java.source>11</sonar.java.source>
             </properties>
         </profile>
     </profiles>
