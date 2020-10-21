@@ -6,7 +6,7 @@
 
     <artifactId>kotlin-oxford-dictionaries</artifactId>
     <groupId>com.github.sparkmuse</groupId>
-    <version>1.0.3</version>
+    <version>1.0.5</version>
     <packaging>jar</packaging>
 
     <name>kotlin-oxford-dictionaries</name>
@@ -171,7 +171,7 @@
             </properties>
         </profile>
         <profile>
-            <id>deploy</id>
+            <id>release</id>
             <build>
                 <plugins>
                     <plugin>
