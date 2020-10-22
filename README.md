@@ -2,6 +2,7 @@
 ![Build](https://github.com/sparkmuse/kotlin-oxford-dictionaries/workflows/Build/badge.svg)
 [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=kotlin-oxford-dictionaries&metric=coverage)](https://sonarcloud.io/dashboard?id=kotlin-oxford-dictionaries)
 [![Maven Central](https://img.shields.io/maven-central/v/com.github.sparkmuse/kotlin-oxford-dictionaries.svg)](https://maven-badges.herokuapp.com/maven-central/com.github.sparkmuse/kotlin-oxford-dictionaries)
+![GitHub](https://img.shields.io/github/license/sparkmuse/kotlin-oxford-dictionaries)
 
 Kotlin client for the Oxford Dictionaries API. 
 
