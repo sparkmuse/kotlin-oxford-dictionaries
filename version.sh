@@ -19,10 +19,10 @@ BUG="${ARRAY[2]}"
 NEW_VERSION=""
 # Increase the version accordingly
 if [ "$1" == "major" ]; then
-  NEW_VERSION="$((MAJOR + 1)).$MINOR.$BUG"
+  NEW_VERSION="$((MAJOR + 1)).0.0"
 
 elif [ "$1" == "minor" ]; then
-  NEW_VERSION="$MAJOR.$((MINOR + 1)).$BUG"
+  NEW_VERSION="$MAJOR.$((MINOR + 1)).0"
 
 elif [ "$1" == "bug" ]; then
   NEW_VERSION="$MAJOR.$MINOR.$((BUG + 1))"
@@ -52,7 +52,7 @@ if [ "$CHECK_LOCAL" != "" ]; then
 fi
 
 # Set the new version
-mvn versions:set -DnewVersion="$NEW_VERSION"
+mvn versions:set -DnewVersion="$NEW_VERSION" -DgenerateBackupPoms=false
 
 # Replace the version in the readme
 sed -i '' -e "s/${CURRENT_VERSION}/${NEW_VERSION}/g" README.md
