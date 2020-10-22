@@ -1,9 +1,13 @@
-# kotlin-oxford-dictionaries
-Kotlin client for the Oxford Dictionaries API
+# Kotlin Oxford Dictionaries
+![Build](https://github.com/sparkmuse/kotlin-oxford-dictionaries/workflows/Build/badge.svg)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=kotlin-oxford-dictionaries&metric=alert_status)](https://sonarcloud.io/dashboard?id=kotlin-oxford-dictionaries)
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=kotlin-oxford-dictionaries&metric=coverage)](https://sonarcloud.io/dashboard?id=kotlin-oxford-dictionaries)
+[![Maven Central](https://img.shields.io/maven-central/v/com.github.sparkmuse/kotlin-oxford-dictionaries.svg)](https://maven-badges.herokuapp.com/maven-central/com.github.sparkmuse/kotlin-oxford-dictionaries)
+Kotlin client for the Oxford Dictionaries API. 
 
 ## Supported endpoints
 
-As we support more endpoints they will be added to the list bellow:
+The API currently supports all endpoints.
 <details>
 <summary>endpoints</summary>
 <p>
@@ -39,9 +43,33 @@ As we support more endpoints they will be added to the list bellow:
 </p>
 </details>
 
+
+# Install
+
+All needed to start using the project is to add the dependency
+
+**Maven** 
+```xml
+<dependency>
+  <groupId>com.github.sparkmuse</groupId>
+  <artifactId>kotlin-oxford-dictionaries</artifactId>
+  <version>1.0.6</version>
+</dependency>
+```
+
+**Gradle Kotlin DSL**
+```shell script
+implementation("com.github.sparkmuse:kotlin-oxford-dictionaries:1.0.6")
+```
+
+**Gradle**
+```shell script
+implementation 'com.github.sparkmuse:kotlin-oxford-dictionaries:1.0.6'
+```
 # Examples
 
-Retrieve entries for the word 'ace'
+
+## Retrieve entries for the word 'ace' ##
 
 <details open>
 <summary>kotlin</summary>
@@ -84,6 +112,129 @@ void entries() {
     RetrieveEntry entries = oxfordClient.entries("ace");
 
     assertNotNull(entries);
+}
+```
+
+</p>
+</details>
+
+
+
+## Retrieve entries for the word 'ace' with complex query ##
+
+<details open>
+<summary>kotlin</summary>
+<p>
+
+```kotlin
+@Test
+fun `gets entries for the word 'ace' with complex query`() {
+
+    val appId = System.getenv("APP_ID")
+    val appKey = System.getenv("APP_KEY")
+    val baseUrl = "https://od-api.oxforddictionaries.com/api/v2"
+
+    val oxfordClient = OxfordClient(appId, appKey, baseUrl)
+
+    val query = EntryQuery(
+        word = "ace",
+        sourceLanguage = LanguageMonolingual.English_us,
+        fields = listOf(DataField.definitions),
+        lexicalCategory = listOf("noun"),
+        strictMatch = true
+    )
+
+    val entries = oxfordClient.entries(query)
+    assertNotNull(entries)
+}
+```
+
+</p>
+</details>
+
+<details>
+<summary>java</summary>
+<p>
+
+```java
+@Test
+@DisplayName("gets entries for the word 'ace' with complex query")
+void complexQueryEntries() {
+
+    String appId = System.getenv("APP_ID");
+    String appKey = System.getenv("APP_KEY");
+    String baseUrl = "https://od-api.oxforddictionaries.com/api/v2";
+
+    OxfordClient oxfordClient = new OxfordClient(appId, appKey, baseUrl);
+
+    EntryQuery query = new EntryQuery(
+            "ace",
+            LanguageMonolingual.English_us,
+            List.of(DataField.definitions),
+            List.of(),
+            List.of("noun"),
+            List.of(),
+            List.of(),
+            true);
+    RetrieveEntry entries = oxfordClient.entries(query);
+
+    assertNotNull(entries);
+}
+```
+
+</p>
+</details>
+
+
+
+## Retrieve grammatical features for 'en-us' language ## 
+
+<details open>
+<summary>kotlin</summary>
+<p>
+
+```kotlin
+@Test
+fun `gets grammatical features for 'en-us' language`() {
+
+    val appId = System.getenv("APP_ID")
+    val appKey = System.getenv("APP_KEY")
+    val baseUrl = "https://od-api.oxforddictionaries.com/api/v2"
+
+    val oxfordClient = OxfordClient(appId, appKey, baseUrl)
+
+    val query = GrammaticalFeatureMonolingualQuery(
+        sourceLanguage = LanguageMonolingual.English_us
+    )
+
+    val grammaticalFeature = oxfordClient.grammaticalFeatures(query)
+    assertNotNull(grammaticalFeature)
+}
+```
+
+</p>
+</details>
+
+<details>
+<summary>java</summary>
+<p>
+
+```java
+@Test
+@DisplayName("gets grammatical features for 'en-us' language")
+void grammaticalFeatures() {
+
+    String appId = System.getenv("APP_ID");
+    String appKey = System.getenv("APP_KEY");
+    String baseUrl = "https://od-api.oxforddictionaries.com/api/v2";
+
+    OxfordClient oxfordClient = new OxfordClient(appId, appKey, baseUrl);
+
+    GrammaticalFeatureMonolingualQuery query =
+            new GrammaticalFeatureMonolingualQuery(LanguageMonolingual.English_us);
+
+    RetrieveGrammaticalFeature grammaticalFeature = oxfordClient.grammaticalFeatures(query);
+    assertNotNull(grammaticalFeature);
 }
 ```
 
