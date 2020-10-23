@@ -1,6 +1,6 @@
 #!/usr/bin/bash
 
-echo "Updating versions..."
+echo "Syncing  versions..."
 
 if [ "$1" == "" ]; then
   echo "Use an option [major, minor, bug]"
