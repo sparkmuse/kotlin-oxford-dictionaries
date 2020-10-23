@@ -1,6 +1,7 @@
 # Kotlin Oxford Dictionaries
 ![Build](https://github.com/sparkmuse/kotlin-oxford-dictionaries/workflows/Build/badge.svg)
-[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=kotlin-oxford-dictionaries&metric=coverage)](https://sonarcloud.io/dashboard?id=kotlin-oxford-dictionaries)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=sparkmuse_kotlin-oxford-dictionaries&metric=alert_status)](https://sonarcloud.io/dashboard?id=sparkmuse_kotlin-oxford-dictionaries)
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=sparkmuse_kotlin-oxford-dictionaries&metric=coverage)](https://sonarcloud.io/dashboard?id=sparkmuse_kotlin-oxford-dictionaries)
 [![Maven Central](https://img.shields.io/maven-central/v/com.github.sparkmuse/kotlin-oxford-dictionaries.svg)](https://maven-badges.herokuapp.com/maven-central/com.github.sparkmuse/kotlin-oxford-dictionaries)
 ![GitHub](https://img.shields.io/github/license/sparkmuse/kotlin-oxford-dictionaries)
 

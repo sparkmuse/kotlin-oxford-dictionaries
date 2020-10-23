@@ -166,7 +166,7 @@
                 <sonar.exclusions>
                     **/entity/*
                 </sonar.exclusions>
-                <sonar.projectKey>kotlin-oxford-dictionaries</sonar.projectKey>
+                <sonar.projectKey>sparkmuse_kotlin-oxford-dictionaries</sonar.projectKey>
                 <sonar.java.source>11</sonar.java.source>
             </properties>
         </profile>
