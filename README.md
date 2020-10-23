@@ -7,6 +7,19 @@
 
 Kotlin client for the Oxford Dictionaries API. 
 
+This projects aims to facilitate the interaction with the Oxford Dictionaries API. A complete documentation for the 
+API can be reached at: [https://developer.oxforddictionaries.com/documentation](https://developer.oxforddictionaries.com/documentation).
+
+## Contents
+- [Kotlin Oxford Dictionaries](#kotlin-oxford-dictionaries)
+  * [Supported endpoints](#supported-endpoints)
+  * [Install](#install)
+  * [Authentication App Key and Id](#authentication-app-key-and-id)
+  * [Usage & Examples](#usage---examples)
+    + [Retrieve entries for the word 'ace'](#retrieve-entries-for-the-word--ace-)
+    + [Retrieve entries for the word 'ace' with complex query](#retrieve-entries-for-the-word--ace--with-complex-query)
+    + [Retrieve grammatical features for 'en-us' language](#retrieve-grammatical-features-for--en-us--language)
+
 ## Supported endpoints
 
 The API currently supports all endpoints.
@@ -45,8 +58,7 @@ The API currently supports all endpoints.
 </p>
 </details>
 
-
-# Install
+## Install
 
 All needed to start using the project is to add the dependency
 
@@ -55,23 +67,32 @@ All needed to start using the project is to add the dependency
 <dependency>
   <groupId>com.github.sparkmuse</groupId>
   <artifactId>kotlin-oxford-dictionaries</artifactId>
-  <version>1.0.6</version>
+  <version>1.0.7</version>
 </dependency>
 ```
 
 **Gradle Kotlin DSL**
 ```shell script
-implementation("com.github.sparkmuse:kotlin-oxford-dictionaries:1.0.6")
+implementation("com.github.sparkmuse:kotlin-oxford-dictionaries:1.0.7")
 ```
 
 **Gradle**
 ```shell script
-implementation 'com.github.sparkmuse:kotlin-oxford-dictionaries:1.0.6'
+implementation 'com.github.sparkmuse:kotlin-oxford-dictionaries:1.0.7'
 ```
-# Examples
 
+## Authentication App Key and Id
 
-## Retrieve entries for the word 'ace' ##
+Oxford Dictionaries comes with three price tiers: Prototype, Developer and Research. A key can be obtained by following
+the link [https://developer.oxforddictionaries.com/?tag=#plans](https://developer.oxforddictionaries.com/?tag=#plans).
+
+Use the **AppId** and **AppKey**  when creating the client.
+
+## Usage & Examples
+
+Use the OxfordClient class to interact with the API.
+
+### Retrieve entries for the word 'ace'
 
 <details open>
 <summary>kotlin</summary>
@@ -120,9 +141,7 @@ void entries() {
 </p>
 </details>
 
-
-
-## Retrieve entries for the word 'ace' with complex query ##
+### Retrieve entries for the word 'ace' with complex query
 
 <details open>
 <summary>kotlin</summary>
@@ -187,9 +206,7 @@ void complexQueryEntries() {
 </p>
 </details>
 
-
-
-## Retrieve grammatical features for 'en-us' language ## 
+### Retrieve grammatical features for 'en-us' language 
 
 <details open>
 <summary>kotlin</summary>
