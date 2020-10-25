@@ -41,8 +41,6 @@
 
         <kotlin.version>1.4.10</kotlin.version>
         <jackson-module-kotlin.version>2.11.3</jackson-module-kotlin.version>
-        <kotlin-logging.version>1.12.0</kotlin-logging.version>
-        <slf4j-simple.version>1.7.29</slf4j-simple.version>
 
         <junit-jupiter.version>5.7.0</junit-jupiter.version>
         <assertj-core.version>3.17.2</assertj-core.version>
@@ -65,16 +63,6 @@
             <groupId>com.fasterxml.jackson.module</groupId>
             <artifactId>jackson-module-kotlin</artifactId>
             <version>${jackson-module-kotlin.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>io.github.microutils</groupId>
-            <artifactId>kotlin-logging</artifactId>
-            <version>${kotlin-logging.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-simple</artifactId>
-            <version>${slf4j-simple.version}</version>
         </dependency>
 
         <dependency>
@@ -248,7 +236,7 @@
                 <executions>
                     <execution>
                         <id>compile</id>
-                        <phase>compile</phase>
+                        <phase>process-sources</phase>
                         <goals>
                             <goal>compile</goal>
                         </goals>

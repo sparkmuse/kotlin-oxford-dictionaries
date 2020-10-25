@@ -15,9 +15,9 @@ import java.time.Duration
 import java.time.temporal.ChronoUnit.SECONDS
 
 class OxfordClient(
-    val appId: String,
-    val appKey: String,
-    val baseUrl: String = "https://od-api.oxforddictionaries.com/api/v2"
+        val appId: String,
+        val appKey: String,
+        val baseUrl: String = "https://od-api.oxforddictionaries.com/api/v2"
 ) {
 
     /**
@@ -265,21 +265,19 @@ class OxfordClient(
         val url = createUri(query)
 
         val request: HttpRequest = HttpRequest.newBuilder()
-            .uri(url)
-            .header("Accept", "application/json")
-            .header("app_id", appId)
-            .header("app_key", appKey)
-            .timeout(Duration.of(10, SECONDS))
-            .GET()
-            .build()
+                .uri(url)
+                .header("Accept", "application/json")
+                .header("app_id", appId)
+                .header("app_key", appKey)
+                .timeout(Duration.of(10, SECONDS))
+                .GET()
+                .build()
 
         val response = HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString())
 
         return when (response.statusCode()) {
             200 -> jacksonObjectMapper().readValue(response.body(), T::class.java)
-            else -> {
-                throw OxfordClientException("StatusCode: ${response.statusCode()} Error: ${response.body()}")
-            }
+            else -> throw OxfordClientException("StatusCode: ${response.statusCode()} Error: ${response.body()}")
         }
     }
 
