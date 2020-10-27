@@ -7,18 +7,35 @@ import com.github.sparkmuse.query.search.SearchQuery
 import com.github.sparkmuse.query.search.SearchThesaurusQuery
 import com.github.sparkmuse.query.search.SearchTranslationsQuery
 import com.github.sparkmuse.query.utility.*
+import okhttp3.Interceptor
+import okhttp3.OkHttpClient
+import okhttp3.Request
+import okhttp3.Response
 import java.net.URI
-import java.net.http.HttpClient
-import java.net.http.HttpRequest
-import java.net.http.HttpResponse
-import java.time.Duration
-import java.time.temporal.ChronoUnit.SECONDS
+import java.util.concurrent.TimeUnit
+import java.util.concurrent.TimeUnit.SECONDS
 
 class OxfordClient(
         val appId: String,
         val appKey: String,
         val baseUrl: String = "https://od-api.oxforddictionaries.com/api/v2"
 ) {
+
+    val okHttpClient: OkHttpClient = OkHttpClient()
+            .newBuilder()
+            .addInterceptor(Interceptor { chain: Interceptor.Chain ->
+                val old = chain.request()
+                val new = old.newBuilder()
+                        .addHeader("Accept", "application/json")
+                        .addHeader("app_id", appId)
+                        .addHeader("app_key", appKey)
+                        .build()
+                chain.proceed(new)
+            })
+            .readTimeout(10, SECONDS)
+            .connectTimeout(10, SECONDS)
+            .callTimeout(10, SECONDS)
+            .build()
 
     /**
      * /api/v2/entries/{source_lang}/{word_id}:
@@ -259,25 +276,19 @@ class OxfordClient(
      */
     fun languages(query: LanguageQuery): RetrieveLanguage = execute(query)
 
-
     internal inline fun <reified T> execute(query: Query): T {
 
         val url = createUri(query)
 
-        val request: HttpRequest = HttpRequest.newBuilder()
-                .uri(url)
-                .header("Accept", "application/json")
-                .header("app_id", appId)
-                .header("app_key", appKey)
-                .timeout(Duration.of(10, SECONDS))
-                .GET()
-                .build()
+        val request = Request.Builder().url(url.toString()).build()
 
-        val response = HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString())
+        return okHttpClient.newCall(request).execute().use { response: Response ->
 
-        return when (response.statusCode()) {
-            200 -> jacksonObjectMapper().readValue(response.body(), T::class.java)
-            else -> throw OxfordClientException("StatusCode: ${response.statusCode()} Error: ${response.body()}")
+            if (!response.isSuccessful) {
+                throw OxfordClientException("StatusCode: ${response.code} Error: ${response.body!!.string()}")
+            }
+
+            jacksonObjectMapper().readValue(response.body!!.string(), T::class.java)
         }
     }
 
@@ -287,3 +298,4 @@ class OxfordClient(
         return URI("$baseUrl//${query.pathFragment}?${query.queryParams}").normalize()
     }
 }
+
