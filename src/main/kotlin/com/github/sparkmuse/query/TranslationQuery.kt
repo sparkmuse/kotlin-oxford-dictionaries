@@ -71,23 +71,18 @@ class TranslationQuery(
      */
     val registers: List<String> = listOf()
 
-    ) : Query {
+) : Query {
 
-    override val queryParams: String
-        get() {
-            return mapOf(
-                "fields" to fields.joinWithComma(),
-                "grammaticalFeatures" to grammaticalFeatures.joinWithComma(),
-                "lexicalCategory" to lexicalCategory.joinWithComma(),
-                "domains" to domains.joinWithComma(),
-                "registers" to registers.joinWithComma(),
-                "strictMatch" to strictMatch.toString()
-            )
-                .filterValues { it.isNotEmpty() }
-                .joinWithAmpersand()
-        }
+    override val fragments get() = listOf("translations", sourceLanguage.value, targetLanguage.value, word)
 
-    override val pathFragment: String
-        get() = "translations/${sourceLanguage.value}/${targetLanguage.value}/${word}"
+    override val parameters
+        get() = mapOf(
+            "fields" to fields.joinWithComma(),
+            "grammaticalFeatures" to grammaticalFeatures.joinWithComma(),
+            "lexicalCategory" to lexicalCategory.joinWithComma(),
+            "domains" to domains.joinWithComma(),
+            "registers" to registers.joinWithComma(),
+            "strictMatch" to strictMatch.toString()
+        )
 }
 

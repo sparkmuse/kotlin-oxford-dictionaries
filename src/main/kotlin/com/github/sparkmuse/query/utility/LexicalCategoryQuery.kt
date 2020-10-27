@@ -14,12 +14,11 @@ class LexicalCategoryMonolingualQuery(
      */
     val sourceLanguage: LanguageMonolingual = LanguageMonolingual.English_gb
 
-    ) : Query {
+) : Query {
 
-    override val queryParams: String get() = ""
+    override val fragments: List<String> = listOf("lexicalCategories", sourceLanguage.value)
 
-    override val pathFragment: String
-        get() = "lexicalCategories/${sourceLanguage.value}"
+    override val parameters: Map<String, String> = mapOf()
 }
 
 /**
@@ -37,10 +36,9 @@ class LexicalCategoryBilingualQuery(
      */
     val targetLanguage: LanguageBilingual = LanguageBilingual.Spanish
 
-    ) : Query {
+) : Query {
 
-    override val queryParams: String get() = ""
+    override val fragments get() = listOf("lexicalCategories", sourceLanguage.value, targetLanguage.value)
 
-    override val pathFragment: String
-        get() = "lexicalCategories/${sourceLanguage.value}/${targetLanguage.value}"
+    override val parameters: Map<String, String> get() = mapOf()
 }

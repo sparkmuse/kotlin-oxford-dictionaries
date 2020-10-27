@@ -15,14 +15,14 @@ class FilterQueryTest {
     inner class Filter {
         @TestWithFixture
         fun `parameters gets always empty map`(query: FilterQuery) {
-            assertThat(query.queryParams).isEmpty()
+            assertThat(query.parameters).isEmpty()
         }
 
         @Test
         fun pathFragment() {
             val query = FilterQuery()
-            val actual = query.pathFragment
-            assertThat(actual).isEqualTo("filters")
+            val actual = query.fragments
+            assertThat(actual).containsExactly("filters")
         }
     }
 
@@ -31,14 +31,14 @@ class FilterQueryTest {
 
         @TestWithFixture
         fun `parameters gets always empty map`(query: FilterEndpointQuery) {
-            assertThat(query.queryParams).isEmpty()
+            assertThat(query.parameters).isEmpty()
         }
 
         @Test
         fun pathFragment() {
             val query = FilterEndpointQuery("entries")
-            val actual = query.pathFragment
-            assertThat(actual).isEqualTo("filters/entries")
+            val actual = query.fragments
+            assertThat(actual).containsExactly("filters", "entries")
         }
     }
 }

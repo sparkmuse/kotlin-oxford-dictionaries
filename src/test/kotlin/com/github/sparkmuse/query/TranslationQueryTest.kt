@@ -17,31 +17,17 @@ class TranslationQueryTest {
             "domains" to query.domains.joinWithComma(),
             "registers" to query.registers.joinWithComma(),
             "strictMatch" to query.strictMatch.toString()
-        ).joinWithAmpersand()
+        )
 
-        val actual = query.queryParams
+        val actual = query.parameters
 
-        assertThat(actual).isEqualTo(expected)
-    }
-
-    @Test
-    fun `parameters gets NON empty query parameters`() {
-
-        val entryQuery = TranslationQuery(word = "ace")
-
-        val actual = entryQuery.queryParams
-
-        val expected = mapOf(
-            "strictMatch" to entryQuery.strictMatch.toString()
-        ).joinWithAmpersand()
-
-        assertThat(actual).isEqualTo(expected)
+        assertThat(actual).containsExactlyEntriesOf(expected)
     }
 
     @Test
     fun pathFragment() {
         val query = TranslationQuery(word = "ace", sourceLanguage = English, targetLanguage = Spanish)
-        val actual = query.pathFragment
-        assertThat(actual).isEqualTo("translations/en/es/ace")
+        val actual = query.fragments
+        assertThat(actual).containsExactly("translations", "en", "es", "ace")
     }
 }

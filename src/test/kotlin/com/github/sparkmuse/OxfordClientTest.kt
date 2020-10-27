@@ -13,7 +13,6 @@ import org.assertj.core.api.Assertions.assertThatThrownBy
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.extension.ExtendWith
-import java.net.http.HttpClient
 
 @ExtendWith(WiremockExtension::class)
 class OxfordClientTest {
@@ -282,7 +281,7 @@ class OxfordClientTest {
         val query = EntryQuery("ace")
 
         wiremock.stubFor(
-            get(urlPathMatching("/${query.pathFragment}"))
+            get(urlPathMatching("/${query.fragments.joinToString("/")}"))
                 .withHeader("Accept", equalTo("application/json"))
                 .withHeader("app_id", equalTo(client.appId))
                 .withHeader("app_key", equalTo(client.appKey))

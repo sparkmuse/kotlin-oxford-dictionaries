@@ -16,16 +16,17 @@ class RegisterQueryTest {
 
     @Nested
     inner class Monolingual {
-        @TestWithFixture
-        fun `parameters gets always empty map`(query: RegisterMonolingualQuery) {
-            assertThat(query.queryParams).isEmpty()
+        @Test
+        fun `parameters gets always empty map`() {
+            val query = RegisterMonolingualQuery()
+            assertThat(query.parameters).isEmpty()
         }
 
         @Test
         fun pathFragment() {
             val query = RegisterMonolingualQuery(English_gb)
-            val actual = query.pathFragment
-            assertThat(actual).isEqualTo("registers/en-gb")
+            val actual = query.fragments
+            assertThat(actual).containsExactly("registers", "en-gb")
         }
     }
 
@@ -34,14 +35,14 @@ class RegisterQueryTest {
 
         @TestWithFixture
         fun `parameters gets always empty map`(query: RegisterBilingualQuery) {
-            assertThat(query.queryParams).isEmpty()
+            assertThat(query.parameters).isEmpty()
         }
 
         @Test
         fun pathFragment() {
             val query = RegisterBilingualQuery(English, Spanish)
-            val actual = query.pathFragment
-            assertThat(actual).isEqualTo("registers/en/es")
+            val actual = query.fragments
+            assertThat(actual).containsExactly("registers", "en", "es")
         }
     }
 }

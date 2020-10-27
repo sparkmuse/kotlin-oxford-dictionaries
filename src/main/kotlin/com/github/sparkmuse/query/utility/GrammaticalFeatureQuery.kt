@@ -14,12 +14,11 @@ class GrammaticalFeatureMonolingualQuery(
      */
     val sourceLanguage: LanguageMonolingual = LanguageMonolingual.English_gb
 
-    ) : Query {
+) : Query {
 
-    override val queryParams: String get() = ""
+    override val fragments: List<String> = listOf("grammaticalFeatures", sourceLanguage.value)
 
-    override val pathFragment: String
-        get() = "grammaticalFeatures/${sourceLanguage.value}"
+    override val parameters: Map<String, String> = mapOf()
 }
 
 /**
@@ -37,10 +36,9 @@ class GrammaticalFeatureBilingualQuery(
      */
     val targetLanguage: LanguageBilingual = LanguageBilingual.Spanish
 
-    ) : Query {
+) : Query {
 
-    override val queryParams: String get() = ""
+    override val fragments get() = listOf("grammaticalFeatures", sourceLanguage.value, targetLanguage.value)
 
-    override val pathFragment: String
-        get() = "grammaticalFeatures/${sourceLanguage.value}/${targetLanguage.value}"
+    override val parameters: Map<String, String> get() = mapOf()
 }

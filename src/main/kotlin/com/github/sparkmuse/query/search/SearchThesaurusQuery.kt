@@ -31,19 +31,14 @@ class SearchThesaurusQuery(
 
 ) : Query {
 
-    override val queryParams: String
-        get() {
-            return mapOf(
-                "q" to q,
-                "prefix" to prefix.toString(),
-                "limit" to limit.toString(),
-                "offset" to offset.toString()
-            )
-                .filterValues { it.isNotEmpty() }
-                .joinWithAmpersand()
-        }
+    override val fragments get() = listOf("search", "thesaurus", sourceLanguage.value)
 
-    override val pathFragment: String
-        get() = "search/thesaurus/${sourceLanguage.value}"
+    override val parameters
+        get() = mapOf(
+            "q" to q,
+            "prefix" to prefix.toString(),
+            "limit" to limit.toString(),
+            "offset" to offset.toString()
+        )
 }
 

@@ -68,20 +68,15 @@ class EntryQuery(
 
 ) : Query {
 
-    override val queryParams: String
-        get() {
-            return mapOf(
-                "fields" to fields.joinWithComma(),
-                "grammaticalFeatures" to grammaticalFeatures.joinWithComma(),
-                "lexicalCategory" to lexicalCategory.joinWithComma(),
-                "domains" to domains.joinWithComma(),
-                "registers" to registers.joinWithComma(),
-                "strictMatch" to strictMatch.toString()
-            )
-                .filterValues { it.isNotEmpty() }
-                .joinWithAmpersand()
-        }
+    override val fragments get() = listOf("entries", sourceLanguage.value, word)
 
-    override val pathFragment: String
-        get() = "entries/${sourceLanguage.value}/$word"
+    override val parameters
+        get() = mapOf(
+            "fields" to fields.joinWithComma(),
+            "grammaticalFeatures" to grammaticalFeatures.joinWithComma(),
+            "lexicalCategory" to lexicalCategory.joinWithComma(),
+            "domains" to domains.joinWithComma(),
+            "registers" to registers.joinWithComma(),
+            "strictMatch" to strictMatch.toString()
+        )
 }

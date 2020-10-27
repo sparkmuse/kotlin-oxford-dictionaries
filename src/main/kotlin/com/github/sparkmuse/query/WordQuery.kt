@@ -60,22 +60,17 @@ class WordQuery(
      */
     val registers: List<String> = listOf()
 
-    ) : Query {
+) : Query {
 
-    override val queryParams: String
-        get() {
-            return mapOf(
-                "q" to q,
-                "fields" to fields.joinWithComma(),
-                "grammaticalFeatures" to grammaticalFeatures.joinWithComma(),
-                "lexicalCategory" to lexicalCategory.joinWithComma(),
-                "domains" to domains.joinWithComma(),
-                "registers" to registers.joinWithComma()
-            )
-                .filterValues { it.isNotEmpty() }
-                .joinWithAmpersand()
-        }
+    override val fragments get() = listOf("words", sourceLanguage.value)
 
-    override val pathFragment: String
-        get() = "words/${sourceLanguage.value}"
+    override val parameters
+        get() = mapOf(
+            "q" to q,
+            "fields" to fields.joinWithComma(),
+            "grammaticalFeatures" to grammaticalFeatures.joinWithComma(),
+            "lexicalCategory" to lexicalCategory.joinWithComma(),
+            "domains" to domains.joinWithComma(),
+            "registers" to registers.joinWithComma()
+        )
 }

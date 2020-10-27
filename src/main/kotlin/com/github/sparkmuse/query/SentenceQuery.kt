@@ -20,9 +20,7 @@ class SentenceQuery(
 
 ) : Query {
 
-    override val queryParams: String
-        get() = "strictMatch=$strictMatch"
+    override val fragments get() = listOf("sentences", sourceLanguage.value, word)
 
-    override val pathFragment: String
-        get() = "sentences/${sourceLanguage.value}/$word"
+    override val parameters get() = mapOf("strictMatch" to strictMatch.toString())
 }

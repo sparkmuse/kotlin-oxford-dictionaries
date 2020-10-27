@@ -21,18 +21,18 @@ class SearchQueryTest {
                 "prefix" to query.prefix.toString(),
                 "limit" to query.limit.toString(),
                 "offset" to query.offset.toString(),
-            ).joinWithAmpersand()
+            )
 
-            val actual = query.queryParams
+            val actual = query.parameters
 
-            assertThat(actual).isEqualTo(expected)
+            assertThat(actual).containsAllEntriesOf(expected)
         }
 
         @Test
         fun pathFragment() {
             val query = SearchTranslationsQuery("ace", LanguageBilingual.English, LanguageBilingual.Spanish)
-            val actual = query.pathFragment
-            assertThat(actual).isEqualTo("search/translations/en/es")
+            val actual = query.fragments
+            assertThat(actual).containsExactly("search", "translations", "en", "es")
         }
     }
 
@@ -47,18 +47,18 @@ class SearchQueryTest {
                 "prefix" to query.prefix.toString(),
                 "limit" to query.limit.toString(),
                 "offset" to query.offset.toString(),
-            ).joinWithAmpersand()
+            )
 
-            val actual = query.queryParams
+            val actual = query.parameters
 
-            assertThat(actual).isEqualTo(expected)
+            assertThat(actual).containsExactlyEntriesOf(expected)
         }
 
         @Test
         fun pathFragment() {
             val query = SearchQuery("ace", LanguageMonolingual.English_gb)
-            val actual = query.pathFragment
-            assertThat(actual).isEqualTo("search/en-gb")
+            val actual = query.fragments
+            assertThat(actual).containsExactly("search", "en-gb")
         }
     }
 
@@ -73,18 +73,18 @@ class SearchQueryTest {
                 "prefix" to query.prefix.toString(),
                 "limit" to query.limit.toString(),
                 "offset" to query.offset.toString(),
-            ).joinWithAmpersand()
+            )
 
-            val actual = query.queryParams
+            val actual = query.parameters
 
-            assertThat(actual).isEqualTo(expected)
+            assertThat(actual).containsExactlyEntriesOf(expected)
         }
 
         @Test
         fun pathFragment() {
             val query = SearchThesaurusQuery("ace", LanguageThesaurus.English)
-            val actual = query.pathFragment
-            assertThat(actual).isEqualTo("search/thesaurus/en")
+            val actual = query.fragments
+            assertThat(actual).containsExactly("search", "thesaurus", "en")
         }
     }
 }
