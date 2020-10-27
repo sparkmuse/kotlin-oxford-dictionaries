@@ -16,16 +16,17 @@ class GrammaticalFeatureQueryTest {
 
     @Nested
     inner class Monolingual {
-        @TestWithFixture
-        fun `parameters gets always empty map`(query: GrammaticalFeatureMonolingualQuery) {
-            assertThat(query.queryParams).isEmpty()
+        @Test
+        fun `parameters gets always empty map`() {
+            val query = GrammaticalFeatureMonolingualQuery()
+            assertThat(query.parameters).isEmpty()
         }
 
         @Test
         fun pathFragment() {
             val query = GrammaticalFeatureMonolingualQuery(English_gb)
-            val actual = query.pathFragment
-            assertThat(actual).isEqualTo("grammaticalFeatures/en-gb")
+            val actual = query.fragments
+            assertThat(actual).containsExactly("grammaticalFeatures", "en-gb")
         }
     }
 
@@ -34,14 +35,14 @@ class GrammaticalFeatureQueryTest {
 
         @TestWithFixture
         fun `parameters gets always empty map`(query: GrammaticalFeatureBilingualQuery) {
-            assertThat(query.queryParams).isEmpty()
+            assertThat(query.parameters).isEmpty()
         }
 
         @Test
         fun pathFragment() {
             val query = GrammaticalFeatureBilingualQuery(English, Spanish)
-            val actual = query.pathFragment
-            assertThat(actual).isEqualTo("grammaticalFeatures/en/es")
+            val actual = query.fragments
+            assertThat(actual).containsExactly("grammaticalFeatures", "en", "es")
         }
     }
 }

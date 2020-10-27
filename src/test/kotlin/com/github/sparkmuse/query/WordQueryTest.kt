@@ -17,31 +17,17 @@ class WordQueryTest {
             "lexicalCategory" to query.lexicalCategory.joinWithComma(),
             "domains" to query.domains.joinWithComma(),
             "registers" to query.registers.joinWithComma(),
-        ).joinWithAmpersand()
+        )
 
-        val actual = query.queryParams
+        val actual = query.parameters
 
-        assertThat(actual).isEqualTo(expected)
-    }
-
-    @Test
-    fun `parameters gets NON empty query parameters`() {
-
-        val wordQuery = WordQuery(q = "ace")
-
-        val actual = wordQuery.queryParams
-
-        val expected = mapOf(
-            "q" to wordQuery.q
-        ).joinWithAmpersand()
-
-        assertThat(actual).isEqualTo(expected)
+        assertThat(actual).containsExactlyEntriesOf(expected)
     }
 
     @Test
     fun pathFragment() {
         val query = WordQuery(q = "ace", sourceLanguage = English_gb)
-        val actual = query.pathFragment
-        assertThat(actual).isEqualTo("words/en-gb")
+        val actual = query.fragments
+        assertThat(actual).containsExactly("words", "en-gb")
     }
 }

@@ -9,10 +9,9 @@ import com.github.sparkmuse.query.Query
  */
 class FieldQuery : Query {
 
-    override val queryParams: String get() = ""
+    override val fragments get() = listOf("fields")
 
-    override val pathFragment: String
-        get() = "fields"
+    override val parameters: Map<String, String> get() = mapOf()
 }
 
 /**
@@ -27,8 +26,7 @@ class FieldEndpointQuery(
 
 ) : Query {
 
-    override val queryParams: String get() = ""
+    override val fragments get() = listOf("fields", endpoint)
 
-    override val pathFragment: String
-        get() = "fields/$endpoint"
+    override val parameters: Map<String, String> get() = mapOf()
 }

@@ -2,7 +2,6 @@ package com.github.sparkmuse.query.search
 
 import com.github.sparkmuse.query.LanguageBilingual
 import com.github.sparkmuse.query.Query
-import com.github.sparkmuse.query.joinWithAmpersand
 
 class SearchTranslationsQuery(
 
@@ -38,19 +37,14 @@ class SearchTranslationsQuery(
 
 ) : Query {
 
-    override val queryParams: String
-        get() {
-            return mapOf(
-                "q" to q,
-                "prefix" to prefix.toString(),
-                "limit" to limit.toString(),
-                "offset" to offset.toString()
-            )
-                .filterValues { it.isNotEmpty() }
-                .joinWithAmpersand()
-        }
+    override val fragments get() = listOf("search", "translations", sourceLanguage.value, targetLanguage.value)
 
-    override val pathFragment: String
-        get() = "search/translations/${sourceLanguage.value}/${targetLanguage.value}"
+    override val parameters
+        get() = mapOf(
+            "q" to q,
+            "prefix" to prefix.toString(),
+            "limit" to limit.toString(),
+            "offset" to offset.toString()
+        )
 }
 

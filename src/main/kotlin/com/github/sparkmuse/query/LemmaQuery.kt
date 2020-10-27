@@ -34,17 +34,12 @@ class LemmaQuery(
 
 ) : Query {
 
-    override val queryParams: String
-        get() {
-            return mapOf(
-                "grammaticalFeatures" to grammaticalFeatures.joinWithComma(),
-                "lexicalCategory" to lexicalCategory.joinWithComma()
-            )
-                .filterValues { it.isNotEmpty() }
-                .joinWithAmpersand()
-        }
+    override val fragments get() = listOf("lemmas", sourceLanguage.value, word)
 
-    override val pathFragment: String
-        get() = "lemmas/${sourceLanguage.value}/$word"
+    override val parameters
+        get() = mapOf(
+            "grammaticalFeatures" to grammaticalFeatures.joinWithComma(),
+            "lexicalCategory" to lexicalCategory.joinWithComma()
+        )
 }
 

@@ -12,28 +12,17 @@ class LemmaQueryTest {
         val expected = mapOf(
             "grammaticalFeatures" to query.grammaticalFeatures.joinWithComma(),
             "lexicalCategory" to query.lexicalCategory.joinWithComma(),
-        ).joinWithAmpersand()
+        )
 
-        val actual = query.queryParams
+        val actual = query.parameters
 
-        assertThat(actual).isEqualTo(expected)
-    }
-
-    @Test
-    fun `parameters gets NON empty query parameters`() {
-
-        val entryQuery = LemmaQuery("ace", grammaticalFeatures = listOf("abbreviation"))
-
-        val actual = entryQuery.queryParams
-
-        val expected = mapOf("grammaticalFeatures" to "abbreviation").joinWithAmpersand()
-        assertThat(actual).isEqualTo(expected)
+        assertThat(actual).containsExactlyEntriesOf(expected)
     }
 
     @Test
     fun pathFragment() {
         val query = LemmaQuery("ace", LanguageMonolingual.English_gb)
-        val actual = query.pathFragment
-        assertThat(actual).isEqualTo("lemmas/en-gb/ace")
+        val actual = query.fragments
+        assertThat(actual).containsExactly("lemmas", "en-gb", "ace")
     }
 }

@@ -20,9 +20,7 @@ class InflectionQuery(
 
 ) : Query {
 
-    override val pathFragment: String
-        get() = "inflections/${sourceLanguage.value}/$word"
+    override val fragments get() = listOf("inflections", sourceLanguage.value, word)
 
-    override val queryParams: String
-        get() = "strictMatch=$strictMatch"
+    override val parameters get() = mapOf("strictMatch" to strictMatch.toString())
 }

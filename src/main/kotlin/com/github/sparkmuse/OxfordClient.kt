@@ -7,35 +7,33 @@ import com.github.sparkmuse.query.search.SearchQuery
 import com.github.sparkmuse.query.search.SearchThesaurusQuery
 import com.github.sparkmuse.query.search.SearchTranslationsQuery
 import com.github.sparkmuse.query.utility.*
-import okhttp3.Interceptor
-import okhttp3.OkHttpClient
-import okhttp3.Request
-import okhttp3.Response
+import okhttp3.*
+import okhttp3.HttpUrl.Companion.toHttpUrl
 import java.net.URI
 import java.util.concurrent.TimeUnit
 import java.util.concurrent.TimeUnit.SECONDS
 
 class OxfordClient(
-        val appId: String,
-        val appKey: String,
-        val baseUrl: String = "https://od-api.oxforddictionaries.com/api/v2"
+    val appId: String,
+    val appKey: String,
+    val baseUrl: String = "https://od-api.oxforddictionaries.com/api/v2"
 ) {
 
     val okHttpClient: OkHttpClient = OkHttpClient()
-            .newBuilder()
-            .addInterceptor(Interceptor { chain: Interceptor.Chain ->
-                val old = chain.request()
-                val new = old.newBuilder()
-                        .addHeader("Accept", "application/json")
-                        .addHeader("app_id", appId)
-                        .addHeader("app_key", appKey)
-                        .build()
-                chain.proceed(new)
-            })
-            .readTimeout(10, SECONDS)
-            .connectTimeout(10, SECONDS)
-            .callTimeout(10, SECONDS)
-            .build()
+        .newBuilder()
+        .addInterceptor(Interceptor { chain: Interceptor.Chain ->
+            val old = chain.request()
+            val new = old.newBuilder()
+                .addHeader("Accept", "application/json")
+                .addHeader("app_id", appId)
+                .addHeader("app_key", appKey)
+                .build()
+            chain.proceed(new)
+        })
+        .readTimeout(10, SECONDS)
+        .connectTimeout(10, SECONDS)
+        .callTimeout(10, SECONDS)
+        .build()
 
     /**
      * /api/v2/entries/{source_lang}/{word_id}:
@@ -278,12 +276,17 @@ class OxfordClient(
 
     internal inline fun <reified T> execute(query: Query): T {
 
-        val url = createUri(query)
-
-        val request = Request.Builder().url(url.toString()).build()
+        val url = baseUrl.toHttpUrl().newBuilder()
+            .apply { query.fragments.forEach { addPathSegment(it) } }
+            .apply {
+                query.parameters
+                    .filter { it.value.isNotEmpty() }
+                    .forEach { (key, value) -> addQueryParameter(key, value) }
+            }
+            .build()
+        val request = Request.Builder().url(url).build()
 
         return okHttpClient.newCall(request).execute().use { response: Response ->
-
             if (!response.isSuccessful) {
                 throw OxfordClientException("StatusCode: ${response.code} Error: ${response.body!!.string()}")
             }
@@ -293,9 +296,5 @@ class OxfordClient(
     }
 
     class OxfordClientException(message: String) : Exception(message)
-
-    private fun createUri(query: Query): URI {
-        return URI("$baseUrl//${query.pathFragment}?${query.queryParams}").normalize()
-    }
 }
 
