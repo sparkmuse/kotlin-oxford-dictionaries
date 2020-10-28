@@ -8,6 +8,13 @@ import com.github.sparkmuse.wiremock.Wiremock
 import com.github.sparkmuse.wiremock.WiremockExtension
 import com.github.tomakehurst.wiremock.WireMockServer
 import com.github.tomakehurst.wiremock.client.WireMock.*
+import io.mockk.every
+import io.mockk.mockk
+import io.mockk.spyk
+import io.mockk.verify
+import okhttp3.OkHttpClient
+import okhttp3.Request
+import okhttp3.Response
 import org.assertj.core.api.Assertions.assertThat
 import org.assertj.core.api.Assertions.assertThatThrownBy
 import org.junit.jupiter.api.BeforeEach
