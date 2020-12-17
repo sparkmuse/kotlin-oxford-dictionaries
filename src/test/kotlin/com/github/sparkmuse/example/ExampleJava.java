@@ -1,7 +1,6 @@
 package com.github.sparkmuse.example;
 
 import com.github.sparkmuse.OxfordClient;
-import com.github.sparkmuse.entity.GrammaticalFeature;
 import com.github.sparkmuse.entity.RetrieveEntry;
 import com.github.sparkmuse.entity.RetrieveGrammaticalFeature;
 import com.github.sparkmuse.query.DataField;
@@ -16,7 +15,6 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 
-import java.net.http.HttpClient;
 import java.util.List;
 
 import static com.github.tomakehurst.wiremock.client.WireMock.*;

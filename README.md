@@ -67,18 +67,18 @@ All needed to start using the project is to add the dependency
 <dependency>
   <groupId>com.github.sparkmuse</groupId>
   <artifactId>kotlin-oxford-dictionaries</artifactId>
-  <version>1.0.7</version>
+  <version>1.0.8</version>
 </dependency>
 ```
 
 **Gradle Kotlin DSL**
 ```shell script
-implementation("com.github.sparkmuse:kotlin-oxford-dictionaries:1.0.7")
+implementation("com.github.sparkmuse:kotlin-oxford-dictionaries:1.0.8")
 ```
 
 **Gradle**
 ```shell script
-implementation 'com.github.sparkmuse:kotlin-oxford-dictionaries:1.0.7'
+implementation 'com.github.sparkmuse:kotlin-oxford-dictionaries:1.0.8'
 ```
 
 ## Authentication App Key and Id
